@@ -1,0 +1,75 @@
+.hero-slider {
+	.slider-bg {
+		background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: top center;
+	    position: relative;
+	    img {
+		    visibility: hidden;
+	    }
+	}
+	.welcome {
+		max-width: 500px;
+		color: #fff;
+		p {
+			margin-bottom: 40px;
+			font-weight: 300;
+			&#body {
+				margin-top: 30px;
+			}
+		}
+		h1 {
+			font-size: 90px;
+			font-weight: 300;
+		}
+	}
+	.hero-text {
+		position: absolute;
+	    top: 50%;
+	    z-index: 9;
+	    width: 100%;
+	    margin-top: -30%;
+	}
+}
+.mission-statement {
+	max-width: 50%;
+    background: #fff;
+    position: relative;
+    margin-top: -42%;
+    padding: 40px 0 70px 0;
+    overflow: hidden;
+/*
+   
+*/
+	.content {
+		float: right;
+	    max-width: 60%;
+	    margin-right: 10%;
+	    img {
+		    &.clock {
+			    margin-bottom: 20px;
+		    }
+	    }
+		p {
+		    font-size: 26px;
+			color: #232539;
+			margin-bottom: 50px;
+		}
+		a {
+			float: right;
+			color: #232539;
+			&:after {
+				right: -30px;
+			}
+		}
+	}
+}
+.secondary-tiles {
+	.content {
+		width: 50%;
+		display: inline-block;
+		background: #fff;
+		&.first {
+		}
+	}
+}

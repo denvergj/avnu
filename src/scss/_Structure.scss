@@ -1,0 +1,26 @@
+main {
+	max-width: 1920px;
+}
+.content-container {
+	max-width: 930px;
+	padding: 0 20px;
+	margin: 0 auto;
+	position: relative;
+}
+
+@media (max-width:960px) {
+	.content-container {
+		max-width: 768px; 
+		padding: 0 20px;
+	}
+}
+
+@media (max-width:767px) {
+	.content-container {
+		padding: 0 20px;
+		max-width: 100%;
+		h3 {
+			line-height: 30px;
+		}
+	}
+}

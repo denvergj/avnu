@@ -1,0 +1,17 @@
+a {
+	&.with-arrow {
+		text-decoration: none;
+		&:after {
+		    content: "";
+		    width: 30px;
+		    height: 30px;
+		    background: url(/images/red-arrow.png) no-repeat;
+		    top: 17px;
+		    right: 0;
+		    position: relative;
+		    display: inline-block;
+		    /* float: right; */
+		    margin-left: 25px;
+		}
+	}
+}

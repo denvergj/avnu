@@ -1,0 +1,22 @@
+// Vendors
+@import "vendors/hamburgers/_hamburgers"; 
+
+// Mixins
+@import "_mixins";
+
+@import "_Structure"; 
+@import "_Fonts"; 
+@import "_Variables";
+@import "_reset"; 
+
+// Components
+@import "components/_Header.scss";
+@import "components/_Footer.scss";
+@import "components/_Links.scss";
+
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+
+// Components
+@import "_Home.scss";

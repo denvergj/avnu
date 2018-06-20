@@ -1,0 +1,83 @@
+.avnu-header {
+	width: 100%;
+	border-top: 5px solid $primary-color;
+	position: absolute;
+	z-index: 9;
+	button {
+		background: $primary-color;
+		border: none;
+		min-width: 300px;
+		padding: 20px 30px 20px 30px;
+		img {
+			float: right;
+		}
+		&.hamburger {
+			.hamburger-box {
+				float: left;
+				top:10px;
+			}
+			&.is-active {
+				.hamburger-inner {
+					background: #fff;
+					border-radius: 0;
+					width: 20px;
+					height: 2px;
+				}
+			}
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+	.overlay-menu {
+		top:87px;
+		padding-left: 0;
+		max-width: 300px;
+		&.is-open {
+			background: $primary-color;
+		}
+		.menu-item {
+			color: #fff;
+			font-size: 30px;
+			font-family: 'Arial';
+			cursor: pointer;
+			margin-bottom: 50px;
+			a {
+				text-decoration: none;
+				color: #fff;
+			}
+			&.open {
+				.sub-menu {
+					display: block;
+				}
+			}
+			.sub-menu {
+				display: none;
+				.menu-item {
+					padding-top: 15px;
+					margin-bottom: 0;
+				}
+				a {
+					font-size: 22px;
+				}
+			}
+		}
+	}
+	.is-open.overlay-menu {
+		.overlay-menu__wrap {
+			min-width: 300px;
+			padding-top: 50px;
+		}	
+		.overlay-menu__overlay {
+			display: none;
+		}
+	}
+	.overlay-menu__overlay,
+	.overlay-menu__wrap {
+		background: none;
+		box-shadow: none;
+	}
+	.overlay-menu__wrap {
+		padding-left: 30px;
+	}
+}
