@@ -28,19 +28,17 @@
 	    top: 50%;
 	    z-index: 9;
 	    width: 100%;
-	    margin-top: -30%;
+	    margin-top: -450px;
 	}
 }
 .mission-statement {
 	max-width: 50%;
     background: #fff;
-    position: relative;
-    margin-top: -42%;
-    padding: 40px 0 70px 0;
+    position: absolute;
+    margin-top: -640px;
+    padding: 40px 0 0 0;
+    height: 597px;
     overflow: hidden;
-/*
-   
-*/
 	.content {
 		float: right;
 	    max-width: 60%;
@@ -65,11 +63,105 @@
 	}
 }
 .secondary-tiles {
+	margin-top: -248px;
 	.content {
-		width: 50%;
+		width: 49%;
 		display: inline-block;
-		background: #fff;
-		&.first {
+		&:last-child {
+			margin-left: 2%;
+			background: none;
+		}
+		.info {
+			background: #fff;
+			padding: 20px;
+			overflow: hidden;
+			position: relative;
+			top: -3px;
+			h3 {
+				font-size: 24px;
+			}
+			p {
+				font-size: 14px;
+				margin-bottom: 20px;
+			}
+			a {
+				float: right;
+				color: $primary-color;
+			}
+		}
+	}
+}
+
+.quoting-area {
+	margin-top: -155px;
+	.content-container {
+		float: right;
+	    margin: 0;
+	    padding: 0;
+	    width: 80%;
+	    max-width: 100%;
+	}
+	.white {
+		padding: 100px 0;
+	}
+	.grey {
+		padding: 220px 0;
+		background: #E6E6E5;
+	}
+	.the-quote {
+		background: $primary-color;
+		padding: 30px 30px;
+		margin-top: -200px;
+		img {
+			margin-bottom: 180px;
+		}
+		p {
+			color: #fff;
+			font-size: 46px;
+			line-height: 54px;
+			max-width: 700px;
+		}
+	}
+}
+
+.three-tiles {
+	margin-top: 100px;
+    position: relative;
+    margin-bottom: -336px;
+    .row {
+	    margin: 0 -30px;
+    }
+	.content {
+		width: 31.3%;
+		padding: 0 10px;
+		display: inline-block;
+		vertical-align: top;
+		img {
+			width: 100%;
+		}
+		.info {
+			background: #fff;
+			padding: 20px;
+			overflow: hidden;
+			position: relative;
+			top: -3px;
+			min-height: 150px;
+			h3 {
+				font-size: 24px;
+				margin-bottom: 10px;
+			}
+			p {
+				font-size: 14px;
+				margin-bottom: 20px;
+				line-height: 18px;
+			}
+			a {
+				float: right;
+				color: $primary-color;
+			    position: absolute;
+			    bottom: 20px;
+			    right: 10px;
+			}
 		}
 	}
 }

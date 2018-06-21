@@ -740,7 +740,7 @@ input {
 .avnu-header {
   width: 100%;
   border-top: 5px solid #ee654d;
-  position: absolute;
+  position: fixed;
   z-index: 9; }
   .avnu-header button {
     background: #ee654d;
@@ -796,10 +796,10 @@ input {
     padding-left: 30px; }
 
 footer {
-  margin-top: 11%;
+  margin-top: 139px;
   clear: both; }
   footer .grey {
-    padding: 200px 0;
+    padding: 290px 0 200px 0;
     background: #E6E6E5; }
     footer .grey p {
       position: relative;
@@ -883,18 +883,16 @@ a.with-arrow {
   top: 50%;
   z-index: 9;
   width: 100%;
-  margin-top: -30%; }
+  margin-top: -450px; }
 
 .mission-statement {
   max-width: 50%;
   background: #fff;
-  position: relative;
-  margin-top: -42%;
-  padding: 40px 0 70px 0;
-  overflow: hidden;
-  /*
-   
-*/ }
+  position: absolute;
+  margin-top: -640px;
+  padding: 40px 0 0 0;
+  height: 597px;
+  overflow: hidden; }
   .mission-statement .content {
     float: right;
     max-width: 60%;
@@ -911,7 +909,84 @@ a.with-arrow {
       .mission-statement .content a:after {
         right: -30px; }
 
-.secondary-tiles .content {
-  width: 50%;
-  display: inline-block;
-  background: #fff; }
+.secondary-tiles {
+  margin-top: -248px; }
+  .secondary-tiles .content {
+    width: 49%;
+    display: inline-block; }
+    .secondary-tiles .content:last-child {
+      margin-left: 2%;
+      background: none; }
+    .secondary-tiles .content .info {
+      background: #fff;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+      top: -3px; }
+      .secondary-tiles .content .info h3 {
+        font-size: 24px; }
+      .secondary-tiles .content .info p {
+        font-size: 14px;
+        margin-bottom: 20px; }
+      .secondary-tiles .content .info a {
+        float: right;
+        color: #ee654d; }
+
+.quoting-area {
+  margin-top: -155px; }
+  .quoting-area .content-container {
+    float: right;
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    max-width: 100%; }
+  .quoting-area .white {
+    padding: 100px 0; }
+  .quoting-area .grey {
+    padding: 220px 0;
+    background: #E6E6E5; }
+  .quoting-area .the-quote {
+    background: #ee654d;
+    padding: 30px 30px;
+    margin-top: -200px; }
+    .quoting-area .the-quote img {
+      margin-bottom: 180px; }
+    .quoting-area .the-quote p {
+      color: #fff;
+      font-size: 46px;
+      line-height: 54px;
+      max-width: 700px; }
+
+.three-tiles {
+  margin-top: 100px;
+  position: relative;
+  margin-bottom: -336px; }
+  .three-tiles .row {
+    margin: 0 -30px; }
+  .three-tiles .content {
+    width: 31.3%;
+    padding: 0 10px;
+    display: inline-block;
+    vertical-align: top; }
+    .three-tiles .content img {
+      width: 100%; }
+    .three-tiles .content .info {
+      background: #fff;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+      top: -3px;
+      min-height: 150px; }
+      .three-tiles .content .info h3 {
+        font-size: 24px;
+        margin-bottom: 10px; }
+      .three-tiles .content .info p {
+        font-size: 14px;
+        margin-bottom: 20px;
+        line-height: 18px; }
+      .three-tiles .content .info a {
+        float: right;
+        color: #ee654d;
+        position: absolute;
+        bottom: 20px;
+        right: 10px; }

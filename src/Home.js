@@ -53,7 +53,8 @@ class Home extends Component {
     	heroImageValuePropBody,
     	missionStatement,
     	missionStatementLink,
-    	missionStatementLinkText;
+    	missionStatementLinkText,
+    	primaryQuote;
     
     // Slider Settings.
     var settings = {
@@ -71,6 +72,7 @@ class Home extends Component {
 		missionStatement = getMarkup(this.state.pageData.missionStatement);
 		missionStatementLink = this.state.pageData.missionStatementLinkTo;
 		missionStatementLinkText = this.state.pageData.missionStatementLinkToText;
+		primaryQuote = getMarkup(this.state.pageData.primaryQuote.fields.quoteBody);
 	}
     
     return (
@@ -109,18 +111,70 @@ class Home extends Component {
 	      		</div>
 	      </div>
 	      
-	      {/*<div className="secondary-tiles">
+	      <div className="secondary-tiles">
 	      	<div className="content-container">
 	      		{this.state.pageData && this.state.pageData.secondaryValuePropTiles.map((tiles, i) => {     
 		       		 imgTileSrc = tiles.fields.tileImage.fields.file.url;
 		             return (
-		              	<div key={i} className="content first">
+		              	<div key={i} className="content last">
 			      			<img src={imgTileSrc} />
+			      			<div className="info">
+			      				<h3>{tiles.fields.tileTitle}</h3>
+			      				<p>{tiles.fields.tileBody}</p>
+			      				<a href={tiles.fields.tileLinkTo} className="with-arrow">{tiles.fields.tileLinkToText}</a>
+			      			</div>
 			      		</div>
 		            );             
 		        })}
 	      	</div>
-	      </div>*/}
+	      </div>
+	      
+	      <div className="quoting-area">
+	      		<div className="grey">
+	      		
+	      		</div>
+	      		<div className="content-container">
+		      		<div className="the-quote">
+		      			<img src="/images/man.png" />
+		      			{primaryQuote}
+		      		</div>
+	      		</div>
+	      		<div className="white">
+	      		
+	      		</div>
+	      </div>
+	      
+	       <div className="three-tiles">
+	       		<div className="content-container">
+		      	<div className="row">
+	              	<div className="content">
+		      			<img src="/images/ninety-years.jpg" />
+		      			<div className="info">
+		      				<h3>90 Years Young</h3>
+		      				<p>A rich heritage of excellance has shaped Avnu.</p>
+		      				<a href="#" className="with-arrow">Read our story</a>
+		      			</div>
+		      		</div>
+		      		<div className="content">
+		      			<img src="/images/market-snapshot.jpg"  />
+		      			<div className="info">
+		      				<h3>Market Snapshot</h3>
+		      				<p>Whats going on in the area you live.</p>
+		      				<a href="#" className="with-arrow">Take a peek</a>
+		      			</div>
+		      		</div>
+		      		<div className="content">
+		      			<img src="/images/simply-smarter.jpg"  />
+		      			<div className="info">
+		      				<h3>Simply Smarter</h3>
+		      				<p>Real estate in real time, sounds incredible.</p>
+		      				<a href="#" className="with-arrow">Discover</a>
+		      			</div>
+		      		</div>     
+		      	</div>
+		      	</div>
+	      </div>
+	      
 		</div>
     );
   }
