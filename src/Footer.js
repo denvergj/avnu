@@ -14,9 +14,9 @@ class Footer extends Component {
 			</div>
 			<div className="dark-grey">
 				<div className="content-container"> 
-					<img src="/images/footer-logo.png" />
+					<img src="https://images.ctfassets.net/dkcrc82u6zt9/lTZUbHlICOwiMKK62aAwk/94bdc4dfbeb0f6b78b2e1ebc97df31ab/footer-logo.png" />
 					<div className="address">
-						<img src="/images/location.png" />
+						<img src="https://images.ctfassets.net/dkcrc82u6zt9/5wKVppaX9moO0CyAwMSSKK/4a0547ab6c987cc7d881d967a8f054bf/location.png" />
 						<p>175 Sailors Bay Road
 Northbridge Rd 175
 Sydney, Australia</p>

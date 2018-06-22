@@ -23,7 +23,7 @@ class MenuArea extends Component {
         	<span className="hamburger-box">
 		    	<span className="hamburger-inner"></span>
 		    </span>
-        	<img src="/images/logo.png" className="App-logo" alt="logo" />
+        	<img src="https://images.ctfassets.net/dkcrc82u6zt9/5dmP7ER9zO8wMUs4UkYYwg/e28d44c0ef1cbeed182835a56362719a/avnu-logo.png" className="App-logo" alt="logo" />
         </button>
         <OverlayMenu 
           open={this.state.isOpen} 

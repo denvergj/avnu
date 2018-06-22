@@ -133,7 +133,7 @@ class Home extends Component {
 	      		<div className="grey"></div>
 	      		<div className="content-container">
 		      		<div className="the-quote">
-		      			<img src="/images/man.png" />
+		      			<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
 		      			{primaryQuote}
 		      		</div>
 	      		</div>
