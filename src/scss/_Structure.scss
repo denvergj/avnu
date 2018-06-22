@@ -8,16 +8,16 @@ main {
 	position: relative;
 }
 
-@media (max-width:960px) {
+@media (max-width:1199px) {
 	.content-container {
-		max-width: 768px; 
-		padding: 0 20px;
+		max-width: 100%; 
+		padding: 0 40px;
 	}
 }
 
 @media (max-width:767px) {
 	.content-container {
-		padding: 0 20px;
+		padding: 0 10px;
 		max-width: 100%;
 		h3 {
 			line-height: 30px;

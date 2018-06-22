@@ -59,3 +59,24 @@ footer {
 		}
 	}
 }
+
+@media (max-width:767px) {
+	footer {
+		.grey {
+			padding-bottom: 60px;
+			p {
+				font-size: 64px;
+				line-height: 65px;
+				padding: 0 10px;
+				margin-bottom: 100px;
+			}
+		}
+		.bottom-dark-grey {
+			text-align: left;
+			a {
+				margin-right: 16px;
+			    font-size: 12px;
+			}
+		}
+	}
+}

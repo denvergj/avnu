@@ -636,14 +636,14 @@ main {
   margin: 0 auto;
   position: relative; }
 
-@media (max-width: 960px) {
+@media (max-width: 1199px) {
   .content-container {
-    max-width: 768px;
-    padding: 0 20px; } }
+    max-width: 100%;
+    padding: 0 40px; } }
 
 @media (max-width: 767px) {
   .content-container {
-    padding: 0 20px;
+    padding: 0 10px;
     max-width: 100%; }
     .content-container h3 {
       line-height: 30px; } }
@@ -748,7 +748,8 @@ input {
     min-width: 300px;
     padding: 20px 30px 20px 30px; }
     .avnu-header button img {
-      float: right; }
+      float: right;
+      max-width: 100px; }
     .avnu-header button.hamburger .hamburger-box {
       float: left;
       top: 10px; }
@@ -844,6 +845,20 @@ footer {
       footer .bottom-dark-grey a:last-child {
         margin-right: 0; }
 
+@media (max-width: 767px) {
+  footer .grey {
+    padding-bottom: 60px; }
+    footer .grey p {
+      font-size: 64px;
+      line-height: 65px;
+      padding: 0 10px;
+      margin-bottom: 100px; }
+  footer .bottom-dark-grey {
+    text-align: left; }
+    footer .bottom-dark-grey a {
+      margin-right: 16px;
+      font-size: 12px; } }
+
 a.with-arrow {
   text-decoration: none; }
   a.with-arrow:after {
@@ -872,7 +887,7 @@ a.with-arrow {
   .hero-slider .welcome p {
     margin-bottom: 40px;
     font-weight: 300; }
-    .hero-slider .welcome p#body {
+    .hero-slider .welcome p:last-child {
       margin-top: 30px; }
   .hero-slider .welcome h1 {
     font-size: 90px;
@@ -886,7 +901,7 @@ a.with-arrow {
   margin-top: -450px; }
 
 .mission-statement {
-  max-width: 50%;
+  width: 50%;
   background: #fff;
   position: absolute;
   margin-top: -640px;
@@ -895,8 +910,8 @@ a.with-arrow {
   overflow: hidden; }
   .mission-statement .content {
     float: right;
-    max-width: 60%;
-    margin-right: 10%; }
+    width: 400px;
+    margin-right: 70px; }
     .mission-statement .content img.clock {
       margin-bottom: 20px; }
     .mission-statement .content p {
@@ -914,6 +929,8 @@ a.with-arrow {
   .secondary-tiles .content {
     width: 49%;
     display: inline-block; }
+    .secondary-tiles .content img {
+      max-width: 100%; }
     .secondary-tiles .content:last-child {
       margin-left: 2%;
       background: none; }
@@ -938,7 +955,7 @@ a.with-arrow {
     float: right;
     margin: 0;
     padding: 0;
-    width: 80%;
+    width: 90%;
     max-width: 100%; }
   .quoting-area .white {
     padding: 100px 0; }
@@ -962,10 +979,10 @@ a.with-arrow {
   position: relative;
   margin-bottom: -336px; }
   .three-tiles .row {
-    margin: 0 -30px; }
+    margin: 0 -30px 0 -4px; }
   .three-tiles .content {
     width: 31.3%;
-    padding: 0 10px;
+    padding: 0 9px;
     display: inline-block;
     vertical-align: top; }
     .three-tiles .content img {
@@ -990,3 +1007,80 @@ a.with-arrow {
         position: absolute;
         bottom: 20px;
         right: 10px; }
+
+@media (max-width: 980px) {
+  .mission-statement .content {
+    padding: 0 20px 0 0;
+    max-width: 82%;
+    margin-right: 10px; }
+    .mission-statement .content a:after {
+      right: -20px; }
+  .three-tiles .content {
+    padding: 0 7px; } }
+
+@media (max-width: 767px) {
+  .hero-slider .slider-bg {
+    height: 700px;
+    background-position: 30% 0; }
+  .hero-slider .hero-text {
+    margin-top: -220px; }
+  .hero-slider .welcome h1 {
+    font-size: 50px; }
+  .hero-slider .welcome p {
+    margin-bottom: 10px;
+    font-size: 14px; }
+    .hero-slider .welcome p:last-child {
+      font-size: 16px;
+      margin-top: 20px; }
+  .mission-statement {
+    margin-top: -300px;
+    height: 278px;
+    width: 85%;
+    max-width: 460px;
+    padding: 20px 0 0 0; }
+    .mission-statement img {
+      max-width: 50px; }
+    .mission-statement .content {
+      max-width: 82%; }
+      .mission-statement .content p {
+        font-size: 18px;
+        margin-bottom: 30px; }
+      .mission-statement .content a:after {
+        margin-left: 5px;
+        right: -10px; }
+  .secondary-tiles {
+    margin-top: 0;
+    background: #e6e6e5; }
+    .secondary-tiles .content {
+      width: 100%; }
+      .secondary-tiles .content .info {
+        padding: 20px 5px; }
+      .secondary-tiles .content:last-child {
+        margin-left: 0; }
+  .quoting-area {
+    margin-top: 0;
+    background: #e6e6e5;
+    padding-bottom: 5px; }
+    .quoting-area .grey,
+    .quoting-area .white {
+      display: none; }
+    .quoting-area .content-container {
+      width: 100%;
+      padding: 0;
+      box-sizing: border-box;
+      float: none; }
+    .quoting-area .the-quote {
+      margin-top: 0; }
+      .quoting-area .the-quote img {
+        margin-bottom: 80px; }
+      .quoting-area .the-quote p {
+        font-size: 31px;
+        line-height: 34px; }
+  .three-tiles {
+    background: #e6e6e5;
+    margin-top: 0; }
+    .three-tiles .row {
+      margin: 0; }
+    .three-tiles .content {
+      width: 100%;
+      padding: 0; } }

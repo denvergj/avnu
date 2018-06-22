@@ -32,7 +32,8 @@ class Home extends Component {
 		return homepageContent.sys.id;
 	}).then(id => {
 		client.getEntries({
-			content_type: id
+			content_type: id,
+			include: 2
 		}).then(response => {
 			const homepageFieldData = response.items.find(item => item.fields);
 			console.log(homepageFieldData);
@@ -40,7 +41,7 @@ class Home extends Component {
 			  pageData: homepageFieldData.fields,
               heroItems: homepageFieldData.fields.heroImageScrollerImages
             });
-		})
+		});
 	});
 	
   }
@@ -91,11 +92,10 @@ class Home extends Component {
 				              		<div className="welcome">
 				              			{heroImageValuePropGreeting}
 				              			{heroImageValuePropHeading}
-				              			<p id="body">{heroImageValuePropBody}</p>
+				              			{heroImageValuePropBody}
 				              		</div>
 				              	</div>
 			              	</div>
-		              		
 		              	</div>
 				      </div>
 		            );             
@@ -107,7 +107,7 @@ class Home extends Component {
 	      		<div className="content">
 	      			<img src="/images/clock.svg" className="clock" alt="logo" />
 	      			{missionStatement}
-			  		<a href={missionStatementLink} class="with-arrow">{missionStatementLinkText}</a>
+			  		<a href={missionStatementLink} className="with-arrow">{missionStatementLinkText}</a>
 	      		</div>
 	      </div>
 	      
@@ -130,18 +130,14 @@ class Home extends Component {
 	      </div>
 	      
 	      <div className="quoting-area">
-	      		<div className="grey">
-	      		
-	      		</div>
+	      		<div className="grey"></div>
 	      		<div className="content-container">
 		      		<div className="the-quote">
 		      			<img src="/images/man.png" />
 		      			{primaryQuote}
 		      		</div>
 	      		</div>
-	      		<div className="white">
-	      		
-	      		</div>
+	      		<div className="white"></div>
 	      </div>
 	      
 	       <div className="three-tiles">
