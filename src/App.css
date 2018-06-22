@@ -796,6 +796,15 @@ input {
   .avnu-header .overlay-menu__wrap {
     padding-left: 30px; }
 
+@media (max-width: 767px) {
+  .avnu-header button {
+    padding: 20px 15px 27px 15px;
+    min-width: 10px; }
+    .avnu-header button img {
+      display: none; }
+  .avnu-header .overlay-menu {
+    top: 74px; } }
+
 footer {
   margin-top: 139px;
   clear: both; }
@@ -1051,6 +1060,8 @@ a.with-arrow {
   .secondary-tiles {
     margin-top: 0;
     background: #e6e6e5; }
+    .secondary-tiles .content-container {
+      max-width: 453px; }
     .secondary-tiles .content {
       width: 100%; }
       .secondary-tiles .content .info {
@@ -1081,6 +1092,8 @@ a.with-arrow {
     margin-top: 0; }
     .three-tiles .row {
       margin: 0; }
+    .three-tiles .content-container {
+      max-width: 453px; }
     .three-tiles .content {
       width: 100%;
       padding: 0; } }

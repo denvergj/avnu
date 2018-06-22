@@ -82,3 +82,18 @@
 		padding-left: 30px;
 	}
 }
+
+@media (max-width:767px) {
+	.avnu-header {
+		button {
+			padding: 20px 15px 27px 15px;
+			min-width: 10px;
+			img {
+				display: none;
+			}
+		}
+		.overlay-menu {
+			top:74px;
+		}
+	}	
+}

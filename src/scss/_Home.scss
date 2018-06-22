@@ -239,6 +239,9 @@
 	.secondary-tiles {
 		margin-top: 0;
 		background: #e6e6e5;
+		.content-container {
+			max-width: 453px;
+		}
 		.content {
 			width: 100%;
 			.info {
@@ -279,6 +282,9 @@
 		margin-top: 0;
 		.row {
 			margin: 0;
+		}
+		.content-container {
+			max-width: 453px;
 		}
 		.content {
 			width: 100%;

@@ -33,7 +33,7 @@ class Home extends Component {
 	}).then(id => {
 		client.getEntries({
 			content_type: id,
-			include: 2
+			include: 3
 		}).then(response => {
 			const homepageFieldData = response.items.find(item => item.fields);
 			console.log(homepageFieldData);
@@ -143,30 +143,19 @@ class Home extends Component {
 	       <div className="three-tiles">
 	       		<div className="content-container">
 		      	<div className="row">
-	              	<div className="content">
-		      			<img src="/images/ninety-years.jpg" />
-		      			<div className="info">
-		      				<h3>90 Years Young</h3>
-		      				<p>A rich heritage of excellance has shaped Avnu.</p>
-		      				<a href="#" className="with-arrow">Read our story</a>
-		      			</div>
-		      		</div>
-		      		<div className="content">
-		      			<img src="/images/market-snapshot.jpg"  />
-		      			<div className="info">
-		      				<h3>Market Snapshot</h3>
-		      				<p>Whats going on in the area you live.</p>
-		      				<a href="#" className="with-arrow">Take a peek</a>
-		      			</div>
-		      		</div>
-		      		<div className="content">
-		      			<img src="/images/simply-smarter.jpg"  />
-		      			<div className="info">
-		      				<h3>Simply Smarter</h3>
-		      				<p>Real estate in real time, sounds incredible.</p>
-		      				<a href="#" className="with-arrow">Discover</a>
-		      			</div>
-		      		</div>     
+			      	{this.state.pageData && this.state.pageData.standardContentBlockTiles.map((contentBlocks, i) => {     
+			       		 imgTileSrc = contentBlocks.fields.homePageDisplayTile.fields.tileImage.fields.file.url;
+			             return (
+			              	<div key={i} className="content">
+				      			<img src={imgTileSrc} />
+				      			<div className="info">
+				      				<h3>{contentBlocks.fields.homePageDisplayTile.fields.tileTitle}</h3>
+				      				<p>{contentBlocks.fields.homePageDisplayTile.fields.tileBody}</p>
+				      				<a href={contentBlocks.fields.homePageDisplayTile.fields.tileLinkTo} className="with-arrow">{contentBlocks.fields.homePageDisplayTile.fields.tileLinkToText}</a>
+				      			</div>
+				      		</div>
+			            );             
+			        })}
 		      	</div>
 		      	</div>
 	      </div>
