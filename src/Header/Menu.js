@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import OverlayMenu from 'react-overlay-menu';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
  
 class MenuArea extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class MenuArea extends Component {
           onClose={this.toggleMenu}
         >
           <div className={"menu-item "+(this.state.subMenuOpen==0 ? 'open': '')} onClick={this.toggleSubMenu.bind(this, 0)}>
-          		Our agents <i className="fa fa-chevron-down"></i>
+          		Our agents <i className={"fas "+(this.state.subMenuOpen==0 ? 'fa-chevron-up': 'fa-chevron-down')}></i>
           		<div className="sub-menu">
           			<div className="menu-item">
           				<a href="" className="menu-item">Adrian Bridges</a>
@@ -38,7 +39,7 @@ class MenuArea extends Component {
           		</div>
           </div>
           <div className={"menu-item "+(this.state.subMenuOpen==1 ? 'open': '')} onClick={this.toggleSubMenu.bind(this, 1)}>
-          		About Avnu <i className="fa fa-chevron-down"></i>
+          		About Avnu <i className={"fas "+(this.state.subMenuOpen==1 ? 'fa-chevron-up': 'fa-chevron-down')}></i>
           		<div className="sub-menu">
           			<div className="menu-item">
           				<a href="" className="menu-item">Page #1</a>

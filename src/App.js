@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import MenuArea from './Header/Menu';
 import Footer from './Footer';
 import Home from './Home';
-import Post from './Post';
+import StandardPage from './StandardPage';
 import './App.css';
 
 class App extends Component {
@@ -13,14 +16,11 @@ class App extends Component {
         <div className="App">
           <header className="avnu-header">
           	<MenuArea />
-            {/*<Link to="/">
-              <img src={logo} className="App-logo" alt="logo" />
-            </Link>*/}
           </header>
           <main>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/:id" component={Post} />
+              <Route path="/:id" component={StandardPage} />
             </Switch>
           </main>
           
