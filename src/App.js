@@ -13,7 +13,7 @@ class App extends Component {
         <div className="App">
           <header className="avnu-header">
           	<MenuArea />
-          	<Link to="/:id"></Link>
+          	<Link to="/*"></Link>
           </header>
           <main>
             <Switch>
