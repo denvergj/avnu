@@ -1,4 +1,5 @@
 .hero-slider {
+	min-height: 1133px;
 	.slider-bg {
 		background-repeat: no-repeat;
 	    background-size: cover;
@@ -64,6 +65,8 @@
 }
 .secondary-tiles {
 	margin-top: -248px;
+	z-index: 1;
+    position: relative;
 	.content {
 		width: 49%;
 		display: inline-block;
@@ -192,6 +195,7 @@
 
 @media (max-width:767px) {
 	.hero-slider {
+		min-height: 703px;
 		.slider-bg {
 			height: 700px;
 			background-position: 30% 0;

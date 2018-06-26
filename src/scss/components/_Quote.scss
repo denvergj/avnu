@@ -11,7 +11,7 @@
 		padding: 30px 30px;
 		margin-top: 0;
 		margin-bottom: -200px;
-		width: 100%;
+		max-width: 100%;
 		img {
 			margin-bottom: 180px;
 		}
@@ -20,6 +20,31 @@
 			font-size: 46px;
 			line-height: 54px;
 			max-width: 700px;
+		}
+	}
+}
+
+
+@media (max-width:767px) {
+	.quote-area {
+		margin-top: 0;
+		background: #e6e6e5;
+		padding-bottom: 5px;
+		&.content-container {
+			width: 100%;
+			padding: 0;
+			box-sizing: border-box;
+			float: none;
+		}
+		.the-quote {
+			margin-top: 0;
+			img {
+				margin-bottom: 80px;
+			}
+			p {
+				font-size: 31px;
+				line-height: 34px;
+			}
 		}
 	}
 }

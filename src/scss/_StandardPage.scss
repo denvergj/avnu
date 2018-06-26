@@ -15,7 +15,7 @@
 			padding-bottom: 100px;
 		}
 		&:first-of-type {
-			padding-top: 0px;
+			padding-top: 110px;
 			background: #fff;
 			margin-bottom: 100px;
 			padding-bottom: 0;
@@ -90,6 +90,88 @@
 		}
 		img {
 			max-width: 100%;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.standard-page-content {
+		footer {
+			margin-top: 0px;
+			.grey {
+				padding-top: 40px;
+			}
+		}
+	}
+	.standard-page {
+		section {
+			background: #E6E6E6;
+			&:first-of-type {
+				padding-top: 0;
+				margin-bottom: 40px;
+				background: #fff;
+			}
+			&:nth-of-type(even) {
+				padding-top: 250px;
+				padding-bottom: 350px;
+				&.content {
+					&.double {
+					}
+				}
+			}
+			&:nth-of-type(odd) {
+				padding-top: 0;
+				margin-top: 0;
+				padding-bottom: 0;
+			}
+		}
+		.content {
+			.full-width {
+				h2 {
+					max-width: 100%;
+				}
+			}
+			img {
+			    margin: 0 auto;
+				display: block;
+			}
+			&.double {
+				.full-width {
+					&.content-container {
+						padding: 0 15px;
+					}
+				}
+				.content-container {
+					padding: 0;
+					&.flex {
+						display: block;
+					}
+					img {
+						margin-bottom: 40px;
+					}
+					caption {
+						display: none;
+					}
+					div {
+						width: 100%;
+						display: inline-block;
+						box-sizing: border-box;
+						padding: 0;
+						&:first-child {
+							padding-left: 0;
+							padding-right: 0; 
+						}
+						&.text {
+							padding: 0 15px;
+						}
+					}
+				}
+			}
+		}
+		.side-area {
+			&.content-container {
+				width: 100%;
+			}
 		}
 	}
 }

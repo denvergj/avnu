@@ -47,7 +47,7 @@ class MenuArea extends Component {
           		</div>
           </div>
           <div className="menu-item">
-          		<a href="">Our Listings</a>
+          		<a href="/our-listings/">Our Listings</a>
           </div>
           <div className="menu-item">
           		<a href="">Get in touch</a>

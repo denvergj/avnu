@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { createClient } from 'contentful';
 import PostLink from './PostLink';
 import Slider from "react-slick";
+import Zoom from 'react-reveal/Zoom'; 
 import marksy from 'marksy'; 
 
 const getMarkup = field => {
@@ -111,55 +112,60 @@ class Home extends Component {
 	      		</div>
 	      </div>
 	      
-	      <div className="secondary-tiles">
-	      	<div className="content-container">
-	      		{this.state.pageData && this.state.pageData.secondaryValuePropTiles.map((tiles, i) => {     
-		       		 imgTileSrc = tiles.fields.tileImage.fields.file.url;
-		             return (
-		              	<div key={i} className="content last">
-			      			<img src={imgTileSrc} />
-			      			<div className="info">
-			      				<h3>{tiles.fields.tileTitle}</h3>
-			      				<p>{tiles.fields.tileBody}</p>
-			      				<a href={tiles.fields.tileLinkTo} className="with-arrow">{tiles.fields.tileLinkToText}</a>
-			      			</div>
-			      		</div>
-		            );             
-		        })}
-	      	</div>
-	      </div>
-	      
-	      <div className="quoting-area">
-	      		<div className="grey"></div>
-	      		<div className="content-container">
-		      		<div className="the-quote">
-		      			<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
-		      			{primaryQuote}
-		      		</div>
-	      		</div>
-	      		<div className="white"></div>
-	      </div>
-	      
-	       <div className="three-tiles">
-	       		<div className="content-container">
-		      	<div className="row">
-			      	{this.state.pageData && this.state.pageData.standardContentBlockTiles.map((contentBlocks, i) => {     
-			       		 imgTileSrc = contentBlocks.fields.homePageDisplayTile.fields.tileImage.fields.file.url;
+	      <Zoom>
+		      <div className="secondary-tiles">
+		      	<div className="content-container">
+		      		{this.state.pageData && this.state.pageData.secondaryValuePropTiles.map((tiles, i) => {     
+			       		 imgTileSrc = tiles.fields.tileImage.fields.file.url;
 			             return (
-			              	<div key={i} className="content">
+			              	<div key={i} className="content last">
 				      			<img src={imgTileSrc} />
 				      			<div className="info">
-				      				<h3>{contentBlocks.fields.homePageDisplayTile.fields.tileTitle}</h3>
-				      				<p>{contentBlocks.fields.homePageDisplayTile.fields.tileBody}</p>
-				      				<a href={contentBlocks.fields.homePageDisplayTile.fields.tileLinkTo} className="with-arrow">{contentBlocks.fields.homePageDisplayTile.fields.tileLinkToText}</a>
+				      				<h3>{tiles.fields.tileTitle}</h3>
+				      				<p>{tiles.fields.tileBody}</p>
+				      				<a href={tiles.fields.tileLinkTo} className="with-arrow">{tiles.fields.tileLinkToText}</a>
 				      			</div>
 				      		</div>
 			            );             
 			        })}
 		      	</div>
-		      	</div>
-	      </div>
+		      </div>
+	      </Zoom>
 	      
+	      <Zoom>
+		      <div className="quoting-area">
+		      		<div className="grey"></div>
+		      		<div className="content-container">
+			      		<div className="the-quote">
+			      			<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
+			      			{primaryQuote}
+			      		</div>
+		      		</div>
+		      		<div className="white"></div>
+		      </div>
+	      </Zoom>
+	      
+	      <Zoom>
+		       <div className="three-tiles">
+		       		<div className="content-container">
+			      	<div className="row">
+				      	{this.state.pageData && this.state.pageData.standardContentBlockTiles.map((contentBlocks, i) => {     
+				       		 imgTileSrc = contentBlocks.fields.homePageDisplayTile.fields.tileImage.fields.file.url;
+				             return (
+				              	<div key={i} className="content">
+					      			<img src={imgTileSrc} />
+					      			<div className="info">
+					      				<h3>{contentBlocks.fields.homePageDisplayTile.fields.tileTitle}</h3>
+					      				<p>{contentBlocks.fields.homePageDisplayTile.fields.tileBody}</p>
+					      				<a href={contentBlocks.fields.homePageDisplayTile.fields.tileLinkTo} className="with-arrow">{contentBlocks.fields.homePageDisplayTile.fields.tileLinkToText}</a>
+					      			</div>
+					      		</div>
+				            );             
+				        })}
+			      	</div>
+			      	</div>
+		      </div>
+	      </Zoom>
 		</div>
     );
   }

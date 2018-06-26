@@ -4340,7 +4340,7 @@ footer {
   margin-top: 139px;
   clear: both; }
   footer .grey {
-    padding: 390px 0 200px 0;
+    padding: 240px 0 200px 0;
     background: #E6E6E5; }
     footer .grey p {
       position: relative;
@@ -4438,8 +4438,7 @@ a.with-arrow {
     margin-left: -485px; }
   .hero .icon-header {
     margin-top: -80px;
-    z-index: 9;
-    margin-bottom: 110px; }
+    z-index: 1; }
     .hero .icon-header img {
       visibility: visible;
       margin-bottom: 30px; }
@@ -4453,6 +4452,32 @@ a.with-arrow {
     position: absolute;
     bottom: 0; }
 
+@media (min-width: 768px) and (max-width: 980px) {
+  .hero .hero-text {
+    margin-left: -385px; }
+    .hero .hero-text h1 {
+      line-height: 82px; } }
+
+@media (max-width: 767px) {
+  .hero {
+    background-position: 75% 0; }
+    .hero .hero-text {
+      margin-left: -50%;
+      transform: translate(0%, -85%); }
+      .hero .hero-text h1 {
+        font-size: 40px;
+        line-height: 43px;
+        margin-bottom: 20px; }
+    .hero .icon-header {
+      margin-top: -150px;
+      margin-bottom: 0;
+      top: -60px; }
+      .hero .icon-header h2 {
+        font-size: 20px; }
+    .hero .white-box {
+      height: 195px;
+      width: 85%; } }
+
 .quote-area.content-container {
   float: right;
   margin: 0;
@@ -4465,7 +4490,7 @@ a.with-arrow {
   padding: 30px 30px;
   margin-top: 0;
   margin-bottom: -200px;
-  width: 100%; }
+  max-width: 100%; }
   .quote-area .the-quote img {
     margin-bottom: 180px; }
   .quote-area .the-quote p {
@@ -4474,32 +4499,50 @@ a.with-arrow {
     line-height: 54px;
     max-width: 700px; }
 
-.hero-slider .slider-bg {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-  position: relative; }
-  .hero-slider .slider-bg img {
-    visibility: hidden; }
+@media (max-width: 767px) {
+  .quote-area {
+    margin-top: 0;
+    background: #e6e6e5;
+    padding-bottom: 5px; }
+    .quote-area.content-container {
+      width: 100%;
+      padding: 0;
+      box-sizing: border-box;
+      float: none; }
+    .quote-area .the-quote {
+      margin-top: 0; }
+      .quote-area .the-quote img {
+        margin-bottom: 80px; }
+      .quote-area .the-quote p {
+        font-size: 31px;
+        line-height: 34px; } }
 
-.hero-slider .welcome {
-  max-width: 500px;
-  color: #fff; }
-  .hero-slider .welcome p {
-    margin-bottom: 40px;
-    font-weight: 300; }
-    .hero-slider .welcome p:last-child {
-      margin-top: 30px; }
-  .hero-slider .welcome h1 {
-    font-size: 90px;
-    font-weight: 300; }
-
-.hero-slider .hero-text {
-  position: absolute;
-  top: 50%;
-  z-index: 9;
-  width: 100%;
-  margin-top: -450px; }
+.hero-slider {
+  min-height: 1133px; }
+  .hero-slider .slider-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    position: relative; }
+    .hero-slider .slider-bg img {
+      visibility: hidden; }
+  .hero-slider .welcome {
+    max-width: 500px;
+    color: #fff; }
+    .hero-slider .welcome p {
+      margin-bottom: 40px;
+      font-weight: 300; }
+      .hero-slider .welcome p:last-child {
+        margin-top: 30px; }
+    .hero-slider .welcome h1 {
+      font-size: 90px;
+      font-weight: 300; }
+  .hero-slider .hero-text {
+    position: absolute;
+    top: 50%;
+    z-index: 9;
+    width: 100%;
+    margin-top: -450px; }
 
 .mission-statement {
   width: 50%;
@@ -4526,7 +4569,9 @@ a.with-arrow {
         right: -30px; }
 
 .secondary-tiles {
-  margin-top: -248px; }
+  margin-top: -248px;
+  z-index: 1;
+  position: relative; }
   .secondary-tiles .content {
     width: 49%;
     display: inline-block; }
@@ -4620,19 +4665,21 @@ a.with-arrow {
     padding: 0 7px; } }
 
 @media (max-width: 767px) {
-  .hero-slider .slider-bg {
-    height: 700px;
-    background-position: 30% 0; }
-  .hero-slider .hero-text {
-    margin-top: -220px; }
-  .hero-slider .welcome h1 {
-    font-size: 50px; }
-  .hero-slider .welcome p {
-    margin-bottom: 10px;
-    font-size: 14px; }
-    .hero-slider .welcome p:last-child {
-      font-size: 16px;
-      margin-top: 20px; }
+  .hero-slider {
+    min-height: 703px; }
+    .hero-slider .slider-bg {
+      height: 700px;
+      background-position: 30% 0; }
+    .hero-slider .hero-text {
+      margin-top: -220px; }
+    .hero-slider .welcome h1 {
+      font-size: 50px; }
+    .hero-slider .welcome p {
+      margin-bottom: 10px;
+      font-size: 14px; }
+      .hero-slider .welcome p:last-child {
+        font-size: 16px;
+        margin-top: 20px; }
   .mission-statement {
     margin-top: -300px;
     height: 278px;
@@ -4704,7 +4751,7 @@ a.with-arrow {
     padding-top: 100px;
     padding-bottom: 100px; }
   .standard-page section:first-of-type {
-    padding-top: 0px;
+    padding-top: 110px;
     background: #fff;
     margin-bottom: 100px;
     padding-bottom: 0; }
@@ -4764,3 +4811,49 @@ a.with-arrow {
 
 .standard-page .side-area img {
   max-width: 100%; }
+
+@media (max-width: 767px) {
+  .standard-page-content footer {
+    margin-top: 0px; }
+    .standard-page-content footer .grey {
+      padding-top: 40px; }
+  .standard-page section {
+    background: #E6E6E6; }
+    .standard-page section:first-of-type {
+      padding-top: 0;
+      margin-bottom: 40px;
+      background: #fff; }
+    .standard-page section:nth-of-type(even) {
+      padding-top: 250px;
+      padding-bottom: 350px; }
+    .standard-page section:nth-of-type(odd) {
+      padding-top: 0;
+      margin-top: 0;
+      padding-bottom: 0; }
+  .standard-page .content .full-width h2 {
+    max-width: 100%; }
+  .standard-page .content img {
+    margin: 0 auto;
+    display: block; }
+  .standard-page .content.double .full-width.content-container {
+    padding: 0 15px; }
+  .standard-page .content.double .content-container {
+    padding: 0; }
+    .standard-page .content.double .content-container.flex {
+      display: block; }
+    .standard-page .content.double .content-container img {
+      margin-bottom: 40px; }
+    .standard-page .content.double .content-container caption {
+      display: none; }
+    .standard-page .content.double .content-container div {
+      width: 100%;
+      display: inline-block;
+      box-sizing: border-box;
+      padding: 0; }
+      .standard-page .content.double .content-container div:first-child {
+        padding-left: 0;
+        padding-right: 0; }
+      .standard-page .content.double .content-container div.text {
+        padding: 0 15px; }
+  .standard-page .side-area.content-container {
+    width: 100%; } }
