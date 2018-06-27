@@ -24,7 +24,9 @@ class MenuArea extends Component {
         	<span className="hamburger-box">
 		    	<span className="hamburger-inner"></span>
 		    </span>
-        	<img src="https://images.ctfassets.net/dkcrc82u6zt9/5dmP7ER9zO8wMUs4UkYYwg/e28d44c0ef1cbeed182835a56362719a/avnu-logo.png" className="App-logo" alt="logo" />
+        	<a href="/">
+        		<img src="https://images.ctfassets.net/dkcrc82u6zt9/5dmP7ER9zO8wMUs4UkYYwg/e28d44c0ef1cbeed182835a56362719a/avnu-logo.png" className="App-logo" alt="logo" />
+        	</a>
         </button>
         <OverlayMenu 
           open={this.state.isOpen} 
@@ -42,7 +44,7 @@ class MenuArea extends Component {
           		About Avnu <i className={"fas "+(this.state.subMenuOpen==1 ? 'fa-chevron-up': 'fa-chevron-down')}></i>
           		<div className="sub-menu">
           			<div className="menu-item">
-          				<a href="" className="menu-item">Page #1</a>
+          				<a href="/about/" className="menu-item">About</a>
           			</div>
           		</div>
           </div>
