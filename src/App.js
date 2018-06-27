@@ -4,6 +4,7 @@ import MenuArea from './Header/Menu';
 import Footer from './Footer';
 import Home from './Home';
 import StandardPage from './StandardPage';
+import OurListings from './OurListings';
 import './App.css';
 
 class App extends Component {
@@ -14,10 +15,12 @@ class App extends Component {
           <header className="avnu-header">
           	<MenuArea />
           	<Link to="/about"></Link>
+          	<Link to="/our-listings"></Link>
           </header>
           <main>
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path="/our-listings" component={OurListings} />
               <Route path="/:id" component={StandardPage} />
             </Switch>
           </main>

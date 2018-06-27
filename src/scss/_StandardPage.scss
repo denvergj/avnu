@@ -139,6 +139,7 @@
 				.full-width {
 					&.content-container {
 						padding: 0 15px;
+						box-sizing: border-box;
 					}
 				}
 				.content-container {

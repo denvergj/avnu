@@ -16,11 +16,13 @@
 @import "components/_Links.scss";
 @import "components/_Hero.scss";
 @import "components/_Quote.scss";
+@import "components/_Property.scss";
 
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
 
-// Components
+// Pages
 @import "_Home.scss"; 
 @import "_StandardPage.scss"; 
+@import "_OurListings.scss"; 

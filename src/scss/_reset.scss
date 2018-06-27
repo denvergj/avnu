@@ -95,7 +95,9 @@ p {
 input {
 	-webkit-appearance: none!important;
 }
-
+.hide {
+	display: none!important;
+}
 
 /* Hamburger Settings */
 .hamburger--collapse .hamburger-inner {

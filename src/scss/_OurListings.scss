@@ -1,0 +1,22 @@
+.listing-page {
+	footer {
+		.grey {
+			background: none;
+			padding-top: 0;
+		}
+	}
+}
+.listings {
+	padding-top: 150px;
+}
+@media (max-width:767px) {
+	.listings {
+		padding-top: 0px;
+		padding: 0;
+		.property {
+			.property-details {
+				padding: 25px 10px;
+			}
+		}
+	}	
+}
