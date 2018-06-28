@@ -97,25 +97,25 @@ class OurListings extends Component {
 							<p className="address">
 								{property.fields.addressLine1} {property.fields.suburbAndPostcode}
 							</p>
-							{/*<p className="price">
-								$1.2 -1.9m
-							</p>*/}
+							<p className="price">
+								{property.fields.priceguide}
+							</p>
 							<p className="description">
 								{property.fields.mainCopyIntro}
 							</p>
 							<div className="bottom">
 								<ul className="features">
-									<li>
+									<li className="beds">
 										<img src="/images/feature-home.png" />
-										<p>4</p>
+										<p>{property.fields.numberOfBeds}</p>
 									</li>
-									<li>
-										<img src="/images/feature-home.png" />
-										<p>2</p>
+									<li className="baths">
+										<img src="/images/feature-showers.svg" />
+										<p>{property.fields.numberOfBaths}</p>
 									</li>
-									<li>
-										<img src="/images/feature-home.png" />
-										<p>3</p>
+									<li className="cars">
+										<img src="/images/feature-carspots.svg" />
+										<p>{property.fields.numberOfCars}</p>
 									</li>
 								</ul>
 								<a href="#" className="with-arrow">View</a>

@@ -90,6 +90,22 @@
 				}
 				img {
 					margin-right: 10px;
+					max-width: 20px;
+				}
+				&.beds {
+					img {
+						margin-top:1px;
+					}
+				}
+				&.baths {
+					img {
+						margin-top:2px;
+					}
+				}
+				&.cars {
+					img {
+						margin-top:2px;
+					}
 				}
 				p {
 				    line-height: 21px;

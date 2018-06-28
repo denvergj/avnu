@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="43px" viewBox="0 0 48 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Shower</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Shower" transform="translate(0.000000, -1.000000)">
+            <g id="Group" transform="translate(6.000000, 1.000000)">
+                <path d="M2.34723157,25.6150426 C2.93121923,17.5757319 9.66300426,11.2049574 17.854,11.2049574 C26.0442373,11.2049574 32.7760223,17.5757319 33.36001,25.6150426 L2.34723157,25.6150426 Z M0.031,26.7526809 C0.031,27.382174 0.539903532,27.8903191 1.1686383,27.8903191 L15.9579362,27.8903191 L34.5393617,27.8903191 C35.167338,27.8903191 35.677,27.382174 35.677,26.7526809 C35.677,16.923486 27.681678,8.92968085 17.854,8.92968085 C8.02632196,8.92968085 0.031,16.923486 0.031,26.7526809 Z" id="5J" fill="#F26453"></path>
+                <circle id="Oval" fill="#F26453" cx="7" cy="32" r="2"></circle>
+                <circle id="Oval-Copy-3" fill="#F26453" cx="13" cy="40" r="2"></circle>
+                <circle id="Oval-Copy" fill="#F26453" cx="18" cy="32" r="2"></circle>
+                <circle id="Oval-Copy-4" fill="#F26453" cx="23" cy="40" r="2"></circle>
+                <circle id="Oval-Copy-2" fill="#F26453" cx="28" cy="32" r="2"></circle>
+                <path d="M18.5,9.5 L18.5,0" id="Line" stroke="#F26453" stroke-width="2" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>
