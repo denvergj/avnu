@@ -4,6 +4,7 @@ import { createClient } from 'contentful';
 import PostLink from './PostLink';
 import Slider from "react-slick";
 import Zoom from 'react-reveal/Zoom'; 
+import Slide from 'react-reveal/Slide';
 import marksy from 'marksy'; 
 
 const getMarkup = field => {
@@ -112,38 +113,36 @@ class Home extends Component {
 	      		</div>
 	      </div>
 	      
-	      <Zoom>
-		      <div className="secondary-tiles">
-		      	<div className="content-container">
-		      		{this.state.pageData && this.state.pageData.secondaryValuePropTiles.map((tiles, i) => {     
-			       		 imgTileSrc = tiles.fields.tileImage.fields.file.url;
-			             return (
-			              	<div key={i} className="content last">
-				      			<img src={imgTileSrc} />
-				      			<div className="info">
-				      				<h3>{tiles.fields.tileTitle}</h3>
-				      				<p>{tiles.fields.tileBody}</p>
-				      				<a href={tiles.fields.tileLinkTo} className="with-arrow">{tiles.fields.tileLinkToText}</a>
-				      			</div>
-				      		</div>
-			            );             
-			        })}
-		      	</div>
-		      </div>
-	      </Zoom>
+	      <div className="secondary-tiles">
+	      	<div className="content-container">
+	      		{this.state.pageData && this.state.pageData.secondaryValuePropTiles.map((tiles, i) => {     
+		       		 imgTileSrc = tiles.fields.tileImage.fields.file.url;
+		             return (
+		              	<div key={i} className="content last">
+			      			<img src={imgTileSrc} />
+			      			<div className="info">
+			      				<h3>{tiles.fields.tileTitle}</h3>
+			      				<p>{tiles.fields.tileBody}</p>
+			      				<a href={tiles.fields.tileLinkTo} className="with-arrow">{tiles.fields.tileLinkToText}</a>
+			      			</div>
+			      		</div>
+		            );             
+		        })}
+	      	</div>
+	      </div>
 	      
-	      <Zoom>
-		      <div className="quoting-area">
-		      		<div className="grey"></div>
+	      <div className="quoting-area">
+	      		<div className="grey"></div>
+	      		<Slide right>
 		      		<div className="content-container">
 			      		<div className="the-quote">
 			      			<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
 			      			{primaryQuote}
 			      		</div>
 		      		</div>
-		      		<div className="white"></div>
-		      </div>
-	      </Zoom>
+	      		</Slide>
+	      		<div className="white"></div>
+	      </div>
 	      
 	      <Zoom>
 		       <div className="three-tiles">
