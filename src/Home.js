@@ -82,7 +82,7 @@ class Home extends Component {
 	    <div>
 	      <div className="hero-slider">
 	      	<Helmet title="Avnu - Properties" />
-		  	<Slider {...settings}>
+		  	{/*<Slider {...settings}>
 	       		{this.state.heroItems && this.state.heroItems.map((slide, i) => {     
 		       		 imgSrc = slide.fields.file.url;
 		             return (
@@ -102,7 +102,19 @@ class Home extends Component {
 				      </div>
 		            );             
 		        })}
-		    </Slider>
+		    </Slider>*/}
+              	<div className="slider-bg" style={{backgroundImage: `url(/images/hero.jpg)`}}>
+              	<img src="/images/hero.jpg" />
+              		<div className="hero-text">
+	              		<div className="content-container">
+		              		<div className="welcome">
+		              			{heroImageValuePropGreeting}
+		              			{heroImageValuePropHeading}
+		              			{heroImageValuePropBody}
+		              		</div>
+		              	</div>
+	              	</div>
+              	</div>
 	      </div>
 	      
 	      <div className="mission-statement">
