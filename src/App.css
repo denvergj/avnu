@@ -4357,6 +4357,8 @@ footer {
     background: #535353;
     overflow: hidden;
     padding: 30px 0; }
+    footer .dark-grey img {
+      max-width: 100px; }
     footer .dark-grey .address {
       text-align: right;
       float: right;

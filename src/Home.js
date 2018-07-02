@@ -88,7 +88,7 @@ class Home extends Component {
 		             return (
 		              <div key={i}>
 		              	<div className="slider-bg" style={{backgroundImage: `url(${imgSrc})`}}>
-		              	<img src={imgSrc} />
+		              	<img src="/images/hero.jpg" />
 		              		<div className="hero-text">
 			              		<div className="content-container">
 				              		<div className="welcome">
@@ -144,27 +144,30 @@ class Home extends Component {
 	      		<div className="white"></div>
 	      </div>
 	      
-	      <Zoom>
-		       <div className="three-tiles">
-		       		<div className="content-container">
-			      	<div className="row">
-				      	{this.state.pageData && this.state.pageData.standardContentBlockTiles.map((contentBlocks, i) => {     
-				       		 imgTileSrc = contentBlocks.fields.homePageDisplayTile.fields.tileImage.fields.file.url;
-				             return (
-				              	<div key={i} className="content">
-					      			<img src={imgTileSrc} />
-					      			<div className="info">
-					      				<h3>{contentBlocks.fields.homePageDisplayTile.fields.tileTitle}</h3>
-					      				<p>{contentBlocks.fields.homePageDisplayTile.fields.tileBody}</p>
-					      				<a href={contentBlocks.fields.homePageDisplayTile.fields.tileLinkTo} className="with-arrow">{contentBlocks.fields.homePageDisplayTile.fields.tileLinkToText}</a>
-					      			</div>
-					      		</div>
-				            );             
-				        })}
-			      	</div>
-			      	</div>
-		      </div>
-	      </Zoom>
+	      
+	       <div className="three-tiles">
+	       		<div className="content-container">
+	       		<Zoom>
+		      	<div className="row">
+		      	
+			      	{this.state.pageData && this.state.pageData.standardContentBlockTiles.map((contentBlocks, i) => {     
+			       		 imgTileSrc = contentBlocks.fields.homePageDisplayTile.fields.tileImage.fields.file.url;
+			             return (
+			              	<div key={i} className="content">
+				      			<img src={imgTileSrc} />
+				      			<div className="info">
+				      				<h3>{contentBlocks.fields.homePageDisplayTile.fields.tileTitle}</h3>
+				      				<p>{contentBlocks.fields.homePageDisplayTile.fields.tileBody}</p>
+				      				<a href={contentBlocks.fields.homePageDisplayTile.fields.tileLinkTo} className="with-arrow">{contentBlocks.fields.homePageDisplayTile.fields.tileLinkToText}</a>
+				      			</div>
+				      		</div>
+			            );             
+			        })}
+		      	
+		      	</div>
+		      	</Zoom>
+		      	</div>
+	      </div>
 		</div>
     );
   }

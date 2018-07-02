@@ -21,6 +21,9 @@ footer {
 		background: #535353;
 		overflow: hidden;
 		padding: 30px 0;
+		img {
+			max-width: 100px;
+		}
 		.address {
 			text-align: right;
 			float: right;
