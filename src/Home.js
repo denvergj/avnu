@@ -28,25 +28,30 @@ class Home extends Component {
       space: process.env.REACT_APP_SPACE_ID,
       accessToken: process.env.REACT_APP_ACCESS_TOKEN
     });
-    
-    client.getContentTypes().then(response => {
-		const homepageContent = response.items.find(item => item.name === 'Homepage');
-		return homepageContent.sys.id;
-	}).then(id => {
-		client.getEntries({
-			content_type: id,
-			include: 3
-		}).then(response => {
-			const homepageFieldData = response.items.find(item => item.fields);
-			console.log(homepageFieldData);
-			this.setState({
-			  pageData: homepageFieldData.fields,
-              heroItems: homepageFieldData.fields.heroImageScrollerImages
-            });
-		});
-	});
+	
+	
+	client
+	  // use getEntries because it does link resolution
+	  .getEntries({
+	    content_type: 'homepage',
+	    include: 3
+	  })
+	  .then(response => {
+	    // extract the data from the response array
+	    return response.items[0].fields;
+	  })
+	  .then(fields => {
+		  console.log(fields);
+	    this.setState({
+		  pageData: fields,
+          heroItems: fields.heroImageScrollerImages
+        });
+	  })
+	  .catch(console.error);
+	
 	
   }
+  
 
   render() {
     let imgSrc = null,

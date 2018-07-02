@@ -31,9 +31,7 @@ class Hero extends Component {
       		<img src={this.props.icon} /> 
       		<h2>{this.props.headline}</h2>
       	</div>
-      	<div className="white-box">
-      		
-      	</div>
+      	<div className="white-box"></div>
       </div>
     );
   }

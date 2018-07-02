@@ -8,6 +8,12 @@ import OurListings from './OurListings';
 import './App.css';
 
 class App extends Component {
+	
+
+  componentDidMount() {
+	  console.log('finished loading');
+  }	
+	
   render() {
     return (
       <BrowserRouter>
