@@ -87,7 +87,7 @@ class Home extends Component {
 		       		 imgSrc = slide.fields.file.url;
 		             return (
 		              <div key={i}>
-		              	<div className="slider-bg">
+		              	<div className="slider-bg" style={{backgroundImage: `url(${imgSrc})`}}>
 		              	<img src="/images/hero.jpg" />
 		              		<div className="hero-text">
 			              		<div className="content-container">

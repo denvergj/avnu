@@ -1,5 +1,12 @@
 .hero-slider {
 	min-height: 1133px;
+	.slick-slider {
+		&:not(.slick-initialized) {
+			.slider-bg {
+				background-image: none;
+			}
+		}
+	}
 	.slider-bg {
 		background-repeat: no-repeat;
 	    background-size: cover;
