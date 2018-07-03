@@ -44,9 +44,6 @@ class OurListings extends Component {
 	  document.body.classList.add('listing-page');
   }
   
-  
-
-
   render() {
     let imgSrc = null,
     	imgTileSrc = null;

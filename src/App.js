@@ -6,6 +6,8 @@ import Home from './Home';
 import StandardPage from './StandardPage';
 import OurListings from './OurListings';
 import OurAgents from './OurAgents';
+import AgentProfile from './AgentProfile';
+import AgentProfileThird from './AgentProfileThird';
 import './App.css';
 
 class App extends Component {
@@ -24,11 +26,14 @@ class App extends Component {
           	<Link to="/about"></Link>
           	<Link to="/our-listings"></Link>
           	<Link to="/our-agents"></Link>
+          	<Link to="/our-agents/adrian"></Link>
           </header>
           <main>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/our-listings" component={OurListings} />
+              <Route path="/our-agents/agent-third" component={AgentProfileThird} />
+              <Route path="/our-agents/:agent" component={AgentProfile} />
               <Route path="/our-agents" component={OurAgents} />
               <Route path="/:id" component={StandardPage} />
             </Switch>
