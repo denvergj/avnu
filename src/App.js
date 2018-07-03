@@ -27,6 +27,7 @@ class App extends Component {
           	<Link to="/our-listings"></Link>
           	<Link to="/our-agents"></Link>
           	<Link to="/our-agents/adrian"></Link>
+          	<Link to="/our-agents/agent-third"></Link>
           </header>
           <main>
             <Switch>

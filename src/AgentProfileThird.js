@@ -66,7 +66,7 @@ class AgentProfileThird extends Component {
     }
     
     return (
-	    <div className="agent-profile-page">
+	    <div className="agent-third-profile-page">
 	    	<Helmet title="Avnu - Standard Page" />
 			<Hero 
 				mainTitle="3rd party agent, 2088 expert."
@@ -117,6 +117,10 @@ class AgentProfileThird extends Component {
 			<div className="three-tiles">
 				<div className="content-container">
 					<div className="row">
+					<div className="head">
+						<img src="/images/clock.svg" />
+						<h3>Meet the 3rd part agents team, a collective of 2088 experts.</h3>
+					</div>
 				  	<div className="content">
 							<img src="/images/agent-profile.png" />
 							<div className="info">

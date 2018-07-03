@@ -5053,126 +5053,144 @@ a.with-arrow {
   .our-agents-page-content .quote-area.black {
     margin-bottom: 200px; } }
 
-.agent-profile-page-content .agent-profile-page .hero {
+.agent-profile-page-content .hero {
   margin-bottom: 150px; }
 
-.agent-profile-page-content .agent-profile-page .intro {
+.agent-profile-page-content .intro {
   overflow: hidden;
   padding-bottom: 60px; }
-  .agent-profile-page-content .agent-profile-page .intro .imageSide,
-  .agent-profile-page-content .agent-profile-page .intro .text {
+  .agent-profile-page-content .intro .imageSide,
+  .agent-profile-page-content .intro .text {
     width: 47%;
     display: inline-block;
     vertical-align: top; }
-  .agent-profile-page-content .agent-profile-page .intro .imageSide {
+  .agent-profile-page-content .intro .imageSide {
     padding-left: 0;
     padding-right: 20px; }
-    .agent-profile-page-content .agent-profile-page .intro .imageSide img {
+    .agent-profile-page-content .intro .imageSide img {
       max-width: 100%;
       margin-bottom: 25px; }
-    .agent-profile-page-content .agent-profile-page .intro .imageSide .stats .stat {
+    .agent-profile-page-content .intro .imageSide .stats .stat {
       width: 50%;
       display: inline-block;
       vertical-align: top;
       margin-bottom: 20px;
       color: #ee654d;
       font-size: 40px; }
-      .agent-profile-page-content .agent-profile-page .intro .imageSide .stats .stat span {
+      .agent-profile-page-content .intro .imageSide .stats .stat span {
         font-size: 16px;
         color: #232539;
         display: block;
         margin-bottom: 5px; }
-  .agent-profile-page-content .agent-profile-page .intro .text {
+  .agent-profile-page-content .intro .text {
     padding-left: 20px;
     padding-right: 0px; }
-    .agent-profile-page-content .agent-profile-page .intro .text p {
+    .agent-profile-page-content .intro .text p {
       color: #232539;
       font-size: 16px;
       margin-bottom: 20px; }
-      .agent-profile-page-content .agent-profile-page .intro .text p:first-child {
+      .agent-profile-page-content .intro .text p:first-child {
         font-size: 26px;
         line-height: 32px; }
-  .agent-profile-page-content .agent-profile-page .intro .ctas {
+  .agent-profile-page-content .intro .ctas {
     float: right;
     margin-top: 100px; }
-    .agent-profile-page-content .agent-profile-page .intro .ctas a {
+    .agent-profile-page-content .intro .ctas a {
       color: #ee654d;
       text-decoration: none;
       margin-left: 60px; }
-      .agent-profile-page-content .agent-profile-page .intro .ctas a img {
+      .agent-profile-page-content .intro .ctas a img {
         display: inline-block;
         position: relative;
         top: 5px;
         margin-left: 10px; }
 
-.agent-profile-page-content .agent-profile-page .head {
+.agent-profile-page-content .three-tiles {
+  background: #E6E6E5;
+  margin-bottom: 0px;
+  padding: 50px 0 300px 0; }
+  .agent-profile-page-content .three-tiles .head {
+    margin-bottom: 50px; }
+    .agent-profile-page-content .three-tiles .head h3 {
+      line-height: 36px; }
+
+.agent-profile-page-content .head {
   max-width: 47%;
   margin-right: 3%; }
-  .agent-profile-page-content .agent-profile-page .head img {
+  .agent-profile-page-content .head img {
     margin-bottom: 30px; }
-  .agent-profile-page-content .agent-profile-page .head h3 {
+  .agent-profile-page-content .head h3 {
     font-size: 26px; }
 
-.agent-profile-page-content .agent-profile-page .recent-listings {
+.agent-profile-page-content .recent-listings {
   background: #E6E6E5;
   margin-top: 200px;
   padding: 300px 0; }
-  .agent-profile-page-content .agent-profile-page .recent-listings .head {
+  .agent-profile-page-content .recent-listings .head {
     float: left; }
-  .agent-profile-page-content .agent-profile-page .recent-listings .content-container {
+  .agent-profile-page-content .recent-listings .content-container {
     overflow: hidden; }
-  .agent-profile-page-content .agent-profile-page .recent-listings #googleMapContainer {
+  .agent-profile-page-content .recent-listings #googleMapContainer {
     overflow: hidden;
     margin: 50px 0; }
-  .agent-profile-page-content .agent-profile-page .recent-listings .property {
+  .agent-profile-page-content .recent-listings .property {
     background: #fff;
     width: 47%;
     float: left; }
-    .agent-profile-page-content .agent-profile-page .recent-listings .property:nth-child(odd) {
+    .agent-profile-page-content .recent-listings .property:nth-child(odd) {
       margin-right: 3%; }
-    .agent-profile-page-content .agent-profile-page .recent-listings .property .property-details p.address {
+    .agent-profile-page-content .recent-listings .property .property-details p.address {
       color: #ee654d;
       font-size: 12px; }
 
-.agent-profile-page-content .agent-profile-page .quote-area.content-container.black {
+.agent-profile-page-content .quote-area.content-container.black {
   float: left;
   margin-top: -200px;
   margin-bottom: 250px; }
 
-.agent-profile-page-content .agent-profile-page .vendors {
+.agent-profile-page-content .vendors {
   background: #FFF; }
-  .agent-profile-page-content .agent-profile-page .vendors .head {
+  .agent-profile-page-content .vendors .head {
     margin-bottom: 60px; }
-  .agent-profile-page-content .agent-profile-page .vendors .review {
+  .agent-profile-page-content .vendors .review {
     box-shadow: 10px 9px 20px -15px #4a4a4a;
     display: flex;
     margin-top: 40px;
     background: #fff; }
-    .agent-profile-page-content .agent-profile-page .vendors .review img {
+    .agent-profile-page-content .vendors .review img {
       display: inline-block; }
-    .agent-profile-page-content .agent-profile-page .vendors .review .content {
+    .agent-profile-page-content .vendors .review .content {
       display: inline-block;
       padding: 20px; }
-      .agent-profile-page-content .agent-profile-page .vendors .review .content .star {
+      .agent-profile-page-content .vendors .review .content .star {
         color: #ee654d; }
-        .agent-profile-page-content .agent-profile-page .vendors .review .content .star span {
+        .agent-profile-page-content .vendors .review .content .star span {
           margin-left: 5px; }
-      .agent-profile-page-content .agent-profile-page .vendors .review .content h3 {
+      .agent-profile-page-content .vendors .review .content h3 {
         font-size: 26px;
         color: #4A4A4A;
         line-height: 56px; }
-      .agent-profile-page-content .agent-profile-page .vendors .review .content p {
+      .agent-profile-page-content .vendors .review .content p {
         color: #4A4A4A;
         font-size: 14px;
         line-height: 18px; }
-      .agent-profile-page-content .agent-profile-page .vendors .review .content a {
+      .agent-profile-page-content .vendors .review .content a {
         float: right;
         text-decoration: none;
         color: #ee654d; }
-        .agent-profile-page-content .agent-profile-page .vendors .review .content a img {
+        .agent-profile-page-content .vendors .review .content a img {
           margin-left: 10px;
           position: relative;
           top: 5px; }
+
+.agent-profile-page-content .agent-third-profile-page .recent-listings {
+  background: none; }
+
+.agent-profile-page-content .agent-third-profile-page .quote-area {
+  margin-top: -200px; }
+
+.agent-profile-page-content .agent-third-profile-page .recent-listings {
+  padding-top: 100px; }
 
 .agent-profile-page-content footer {
   margin-top: -100px; }
@@ -5180,83 +5198,85 @@ a.with-arrow {
     padding: 150px 0 150px 0; }
 
 @media (min-width: 768px) and (max-width: 960px) {
-  .agent-profile-page-content .agent-profile-page .recent-listings .property .features {
+  .agent-profile-page-content .recent-listings .property .features {
     margin-top: 0px; }
-    .agent-profile-page-content .agent-profile-page .recent-listings .property .features li {
+    .agent-profile-page-content .recent-listings .property .features li {
       margin-right: 7px; }
-      .agent-profile-page-content .agent-profile-page .recent-listings .property .features li img {
+      .agent-profile-page-content .recent-listings .property .features li img {
         margin-right: 5px; } }
 
 @media (max-width: 767px) {
-  .agent-profile-page-content .agent-profile-page .hero {
+  .agent-profile-page-content .hero {
     margin-bottom: 5px; }
-  .agent-profile-page-content .agent-profile-page .intro .imageSide,
-  .agent-profile-page-content .agent-profile-page .intro .text {
+  .agent-profile-page-content .intro .imageSide,
+  .agent-profile-page-content .intro .text {
     width: 100%; }
-  .agent-profile-page-content .agent-profile-page .intro.content-container {
+  .agent-profile-page-content .intro.content-container {
     padding: 0;
     padding-bottom: 50px; }
-  .agent-profile-page-content .agent-profile-page .intro .stats,
-  .agent-profile-page-content .agent-profile-page .intro .text,
-  .agent-profile-page-content .agent-profile-page .intro .ctas {
+  .agent-profile-page-content .intro .stats,
+  .agent-profile-page-content .intro .text,
+  .agent-profile-page-content .intro .ctas {
     padding: 0 5px;
     box-sizing: border-box; }
-  .agent-profile-page-content .agent-profile-page .intro .stats {
+  .agent-profile-page-content .intro .stats {
     margin-bottom: 20px; }
-  .agent-profile-page-content .agent-profile-page .intro .text p:first-child {
+  .agent-profile-page-content .intro .text p:first-child {
     font-size: 22px;
     line-height: 34px; }
-  .agent-profile-page-content .agent-profile-page .intro .ctas {
+  .agent-profile-page-content .intro .ctas {
     margin-top: 50px;
     float: left; }
-    .agent-profile-page-content .agent-profile-page .intro .ctas a {
+    .agent-profile-page-content .intro .ctas a {
       margin: 0; }
-      .agent-profile-page-content .agent-profile-page .intro .ctas a:first-child {
+      .agent-profile-page-content .intro .ctas a:first-child {
         margin-right: 15px; }
-  .agent-profile-page-content .agent-profile-page .quote-area.content-container.black {
+  .agent-profile-page-content .three-tiles {
+    padding-bottom: 210px; }
+  .agent-profile-page-content .quote-area.content-container.black {
     margin-bottom: 50px; }
-  .agent-profile-page-content .agent-profile-page .quote-area .the-quote {
+  .agent-profile-page-content .quote-area .the-quote {
     margin-bottom: 0; }
-  .agent-profile-page-content .agent-profile-page .head {
+  .agent-profile-page-content .head {
     max-width: 100%;
     margin-right: 0; }
-  .agent-profile-page-content .agent-profile-page .recent-listings {
+  .agent-profile-page-content .recent-listings {
     margin-top: 0px;
     padding-top: 50px;
     padding-bottom: 190px; }
-    .agent-profile-page-content .agent-profile-page .recent-listings #googleMap {
+    .agent-profile-page-content .recent-listings #googleMap {
       width: 100% !important; }
-    .agent-profile-page-content .agent-profile-page .recent-listings .head.list {
+    .agent-profile-page-content .recent-listings .head.list {
       margin-bottom: 30px; }
-    .agent-profile-page-content .agent-profile-page .recent-listings .property {
+    .agent-profile-page-content .recent-listings .property {
       width: 100%;
       display: flex; }
-      .agent-profile-page-content .agent-profile-page .recent-listings .property:nth-child(odd) {
+      .agent-profile-page-content .recent-listings .property:nth-child(odd) {
         margin-right: 0; }
-      .agent-profile-page-content .agent-profile-page .recent-listings .property .property-image {
+      .agent-profile-page-content .recent-listings .property .property-image {
         max-width: 40%; }
-      .agent-profile-page-content .agent-profile-page .recent-listings .property .property-details {
+      .agent-profile-page-content .recent-listings .property .property-details {
         max-width: 60%;
         padding-bottom: 10px;
         padding-right: 5px;
         padding-top: 5px; }
-        .agent-profile-page-content .agent-profile-page .recent-listings .property .property-details .features {
+        .agent-profile-page-content .recent-listings .property .property-details .features {
           margin-top: 10px; }
-        .agent-profile-page-content .agent-profile-page .recent-listings .property .property-details p.price {
+        .agent-profile-page-content .recent-listings .property .property-details p.price {
           margin-bottom: 5px; }
-  .agent-profile-page-content .agent-profile-page .vendors {
+  .agent-profile-page-content .vendors {
     background: #E6E6E5;
     padding-top: 50px; }
-    .agent-profile-page-content .agent-profile-page .vendors img.feature {
+    .agent-profile-page-content .vendors img.feature {
       width: 100%; }
-    .agent-profile-page-content .agent-profile-page .vendors .review .content {
+    .agent-profile-page-content .vendors .review .content {
       padding: 10px; }
-      .agent-profile-page-content .agent-profile-page .vendors .review .content h3 {
+      .agent-profile-page-content .vendors .review .content h3 {
         font-size: 22px; }
-      .agent-profile-page-content .agent-profile-page .vendors .review .content a {
+      .agent-profile-page-content .vendors .review .content a {
         font-size: 12px;
         margin-top: 30px; }
-        .agent-profile-page-content .agent-profile-page .vendors .review .content a img {
+        .agent-profile-page-content .vendors .review .content a img {
           max-width: 15px; }
-  .agent-profile-page-content .agent-profile-page .vendors .review {
+  .agent-profile-page-content .vendors .review {
     display: block; } }
