@@ -4463,7 +4463,7 @@ a.with-arrow {
       margin-bottom: 30px; }
     .hero .icon-header h2 {
       font-size: 26px;
-      max-width: 320px; }
+      max-width: 340px; }
   .hero .white-box {
     background: #fff;
     height: 100px;
@@ -4505,6 +4505,9 @@ a.with-arrow {
   padding: 0;
   width: 90%;
   max-width: 100%; }
+
+.quote-area.black .the-quote {
+  background: #3C3C3C; }
 
 .quote-area .the-quote {
   background: #ee654d;
@@ -4997,3 +5000,51 @@ a.with-arrow {
     padding: 0; }
     .listings .property .property-details {
       padding: 25px 10px; } }
+
+.our-agents-page-content .row {
+  margin: 0 -30px; }
+
+.our-agents-page-content .three-tiles {
+  margin-bottom: 100px;
+  background: none; }
+  .our-agents-page-content .three-tiles .content {
+    padding: 0;
+    margin: 0 8px;
+    border: 2px solid #E6E6E5; }
+  .our-agents-page-content .three-tiles.grey {
+    background: #E6E6E5;
+    margin-bottom: 0;
+    margin-top: 300px;
+    padding-top: 300px;
+    padding-bottom: 300px; }
+
+.our-agents-page-content .quote-area {
+  z-index: 9; }
+  .our-agents-page-content .quote-area.black {
+    float: left;
+    margin-top: -250px;
+    margin-bottom: 300px; }
+
+.our-agents-page-content footer {
+  margin-top: 50px; }
+  .our-agents-page-content footer .grey {
+    padding-top: 0px;
+    background: none; }
+
+@media (min-width: 768px) and (max-width: 960px) {
+  .our-agents-page-content .three-tiles .content {
+    margin: 0 5px; } }
+
+@media (max-width: 767px) {
+  .our-agents-page-content .row {
+    margin: 0; }
+  .our-agents-page-content .three-tiles {
+    margin-bottom: 0; }
+    .our-agents-page-content .three-tiles .content {
+      margin: 0; }
+    .our-agents-page-content .three-tiles.grey {
+      margin-top: 0;
+      padding-top: 200px;
+      padding-bottom: 250px; }
+  .our-agents-page-content .quote-area.black {
+    margin-bottom: 200px; } }

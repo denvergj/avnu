@@ -6,6 +6,11 @@
 	    width: 90%;
 	    max-width: 100%;
 	}
+	&.black {
+		.the-quote {
+			background: #3C3C3C;
+		}
+	}
 	.the-quote {
 		background: $primary-color;
 		padding: 30px 30px;

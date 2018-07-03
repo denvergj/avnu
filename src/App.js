@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Home from './Home';
 import StandardPage from './StandardPage';
 import OurListings from './OurListings';
+import OurAgents from './OurAgents';
 import './App.css';
 
 class App extends Component {
@@ -22,11 +23,13 @@ class App extends Component {
           	<MenuArea />
           	<Link to="/about"></Link>
           	<Link to="/our-listings"></Link>
+          	<Link to="/our-agents"></Link>
           </header>
           <main>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/our-listings" component={OurListings} />
+              <Route path="/our-agents" component={OurAgents} />
               <Route path="/:id" component={StandardPage} />
             </Switch>
           </main>
