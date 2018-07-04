@@ -14,6 +14,8 @@
 	    position: relative;
 	    img {
 		    visibility: hidden;
+		    max-width: 100%;
+		    min-height: 1130px;
 	    }
 	}
 	.welcome {

@@ -1,0 +1,242 @@
+.contactForm {
+	float: right;
+	width: 60%;
+	background: none;
+	&.is-active {
+		background: $primary-color;
+		&:before {
+			content: "";
+			position: fixed;
+			width: 40%;
+			background: rgba(0,0,0,0.6);
+			height: 100%;
+			left: 0;
+			top: 0;
+		}
+	}
+	button {
+		min-width: 100%;
+		background: none;
+		img {
+			display: block;
+		}
+		.hamburger-box {
+			display: none;
+		}
+		&.is-active {
+			background: $primary-color;
+			.hamburger-box {
+				float: right;
+				display: block;
+			}
+		}
+	}
+	.overlay-menu {
+		left: auto;
+		right: 0;
+		max-width: 60%;
+		top: 67px;
+		overflow-y: auto;
+		.overlay-menu__wrap {
+			position: relative;
+			width: 100%;
+			.blurb,
+			form {
+				width: 44%;
+				display: inline-block;
+				vertical-align: top;
+			}
+			.blurb {
+				h3 {
+					font-size: 50px;
+					color:#fff;
+					line-height: 56px;
+					margin-bottom: 15px;
+				}
+				p {
+					color: #fff;
+				}
+			}
+			form {
+				margin-left: 2%;
+				.field {
+					font-family: $primary-font;
+					margin-bottom: 20px;
+					label {
+						color: #fff;
+						font-size: 16px;
+						font-family: $primary-font;
+						display: block;
+					}
+					.is-searchable {
+						cursor: pointer!important;
+					}
+					.Select-control {
+						background: none;
+						border: none;
+						color: #fff;
+						border-bottom: 1px solid #fff;
+						border-radius: 0;
+						margin-top: 15px;
+						outline: 0;
+						cursor: pointer!important;
+					}
+					.Select-clear-zone {
+						display: none;
+					}
+					.Select-arrow-zone {
+						padding-right: 0;
+						width: 10px;
+						span {
+							&.Select-arrow {
+								border: none;
+								background: url('/images/select-dropdown.png');
+								width: 13px;
+							    height: 10px;
+							    background-repeat: no-repeat;
+							}
+						}
+					}
+					.Select {
+						&.is-open {
+							.Select-arrow-zone {
+								span {
+									&.Select-arrow {
+										width: 12px;
+										height: 8px;
+										background: url('/images/select-dropup.png');
+									}
+								}
+							}
+						}
+					}
+					.Select-placeholder,
+					.Select-value {
+						color: #fff!important;
+						font-size: 22px;
+						padding-left: 0;
+						cursor: pointer!important;
+						outline: 0;
+						span {
+							color: #fff!important;
+							&.Select-value-label {
+								color: #fff;
+							}
+						}
+					}
+					input {
+						display: block;
+						box-sizing: border-box;
+						border: none;
+						font-family: $primary-font;
+						width: 100%;
+						border-bottom: 1px solid #fff;
+						&[type="text"] {
+							font-size: 22px;
+							padding: 15px;
+							background: none;
+							padding-left: 0;
+							color: #fff;
+						}
+						@include placeholder {
+							color: #fff;
+							font-family: $primary-font;
+   						}
+					}
+				}
+				button {
+					color: #fff;
+					font-size: 18px;
+					padding-right: 0px;
+					cursor: pointer;
+					text-align: right;
+					&:after {
+					    content: "";
+					    width: 20px;
+					    height: 30px;
+					    background: url('/images/yellow-arrow.png') no-repeat;
+					    top: 17px;
+					    right: 0;
+					    position: relative;
+					    display: inline-block;
+					    /* float: right; */
+					    margin-left: 25px;
+					}
+				}
+			}
+		}
+	}
+	.overlay-menu__wrap {
+		transform: translateX(250%);
+	}
+}
+
+
+
+@media (max-width:980px) {
+	.contactForm {
+		.overlay-menu {
+			.overlay-menu__wrap {
+				.blurb,
+				form {
+					width: 80%;
+					display: block;
+				}
+				.blurb {
+					margin-bottom: 20px;
+					h3 {
+						font-size: 40px;
+						color:#fff;
+						line-height: 46px;
+						margin-bottom: 15px;
+					}
+					p {
+						color: #fff;
+					}
+				}
+				form {
+					margin-left: 0px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width:767px) {
+	.contactForm {
+		width: 100%;
+		position: relative;
+		top: -71px;
+		&.is-active {
+			&:before {
+				display: none;
+			}
+		}
+		.overlay-menu {
+			width: 100%;
+			max-width: 100%;
+			.overlay-menu__wrap {
+				.blurb,
+				form {
+					width: 80%;
+					display: block;
+				}
+				.blurb {
+					margin-bottom: 20px;
+					h3 {
+						font-size: 40px;
+						color:#fff;
+						line-height: 46px;
+						margin-bottom: 15px;
+					}
+					p {
+						color: #fff;
+					}
+				}
+				form {
+					margin-left: 0px;
+				}
+			}
+		}
+	}
+}

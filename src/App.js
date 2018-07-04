@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 import MenuArea from './Header/Menu';
+import ContactArea from './Header/Contact';
 import Footer from './Footer';
 import Home from './Home';
 import StandardPage from './StandardPage';
@@ -24,6 +25,7 @@ class App extends Component {
         <div className="App">
           <header className="avnu-header">
           	<MenuArea />
+          	<ContactArea />
           	<Link to="/about"></Link>
           	<Link to="/our-listings"></Link>
           	<Link to="/our-listings/property-detail"></Link>

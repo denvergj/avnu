@@ -19,7 +19,7 @@ class MenuArea extends Component {
  
   render() {
     return (
-      <div>
+      <div className="menuArea">
         <button type="button" className={(this.state.isOpen ? 'is-active' : 'hidden') + ' hamburger--collapse hamburger'} onClick={this.toggleMenu}>
         	<span className="hamburger-box">
 		    	<span className="hamburger-inner"></span>

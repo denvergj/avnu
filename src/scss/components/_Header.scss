@@ -3,6 +3,9 @@
 	border-top: 5px solid $primary-color;
 	position: fixed;
 	z-index: 100;
+	.menuArea {
+		float: left;
+	}
 	button {
 		background: $primary-color;
 		border: none;

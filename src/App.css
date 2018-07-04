@@ -4278,6 +4278,8 @@ input {
   border-top: 5px solid #ee654d;
   position: fixed;
   z-index: 100; }
+  .avnu-header .menuArea {
+    float: left; }
   .avnu-header button {
     background: #ee654d;
     border: none;
@@ -4411,6 +4413,187 @@ footer {
     footer .bottom-dark-grey a {
       margin-right: 16px;
       font-size: 12px; } }
+
+.contactForm {
+  float: right;
+  width: 60%;
+  background: none; }
+  .contactForm.is-active {
+    background: #ee654d; }
+    .contactForm.is-active:before {
+      content: "";
+      position: fixed;
+      width: 40%;
+      background: rgba(0, 0, 0, 0.6);
+      height: 100%;
+      left: 0;
+      top: 0; }
+  .contactForm button {
+    min-width: 100%;
+    background: none; }
+    .contactForm button img {
+      display: block; }
+    .contactForm button .hamburger-box {
+      display: none; }
+    .contactForm button.is-active {
+      background: #ee654d; }
+      .contactForm button.is-active .hamburger-box {
+        float: right;
+        display: block; }
+  .contactForm .overlay-menu {
+    left: auto;
+    right: 0;
+    max-width: 60%;
+    top: 67px;
+    overflow-y: auto; }
+    .contactForm .overlay-menu .overlay-menu__wrap {
+      position: relative;
+      width: 100%; }
+      .contactForm .overlay-menu .overlay-menu__wrap .blurb,
+      .contactForm .overlay-menu .overlay-menu__wrap form {
+        width: 44%;
+        display: inline-block;
+        vertical-align: top; }
+      .contactForm .overlay-menu .overlay-menu__wrap .blurb h3 {
+        font-size: 50px;
+        color: #fff;
+        line-height: 56px;
+        margin-bottom: 15px; }
+      .contactForm .overlay-menu .overlay-menu__wrap .blurb p {
+        color: #fff; }
+      .contactForm .overlay-menu .overlay-menu__wrap form {
+        margin-left: 2%; }
+        .contactForm .overlay-menu .overlay-menu__wrap form .field {
+          font-family: "GTWalsheimLight";
+          margin-bottom: 20px; }
+          .contactForm .overlay-menu .overlay-menu__wrap form .field label {
+            color: #fff;
+            font-size: 16px;
+            font-family: "GTWalsheimLight";
+            display: block; }
+          .contactForm .overlay-menu .overlay-menu__wrap form .field .is-searchable {
+            cursor: pointer !important; }
+          .contactForm .overlay-menu .overlay-menu__wrap form .field .Select-control {
+            background: none;
+            border: none;
+            color: #fff;
+            border-bottom: 1px solid #fff;
+            border-radius: 0;
+            margin-top: 15px;
+            outline: 0;
+            cursor: pointer !important; }
+          .contactForm .overlay-menu .overlay-menu__wrap form .field .Select-clear-zone {
+            display: none; }
+          .contactForm .overlay-menu .overlay-menu__wrap form .field .Select-arrow-zone {
+            padding-right: 0;
+            width: 10px; }
+            .contactForm .overlay-menu .overlay-menu__wrap form .field .Select-arrow-zone span.Select-arrow {
+              border: none;
+              background: url("/images/select-dropdown.png");
+              width: 13px;
+              height: 10px;
+              background-repeat: no-repeat; }
+          .contactForm .overlay-menu .overlay-menu__wrap form .field .Select.is-open .Select-arrow-zone span.Select-arrow {
+            width: 12px;
+            height: 8px;
+            background: url("/images/select-dropup.png"); }
+          .contactForm .overlay-menu .overlay-menu__wrap form .field .Select-placeholder,
+          .contactForm .overlay-menu .overlay-menu__wrap form .field .Select-value {
+            color: #fff !important;
+            font-size: 22px;
+            padding-left: 0;
+            cursor: pointer !important;
+            outline: 0; }
+            .contactForm .overlay-menu .overlay-menu__wrap form .field .Select-placeholder span,
+            .contactForm .overlay-menu .overlay-menu__wrap form .field .Select-value span {
+              color: #fff !important; }
+              .contactForm .overlay-menu .overlay-menu__wrap form .field .Select-placeholder span.Select-value-label,
+              .contactForm .overlay-menu .overlay-menu__wrap form .field .Select-value span.Select-value-label {
+                color: #fff; }
+          .contactForm .overlay-menu .overlay-menu__wrap form .field input {
+            display: block;
+            box-sizing: border-box;
+            border: none;
+            font-family: "GTWalsheimLight";
+            width: 100%;
+            border-bottom: 1px solid #fff; }
+            .contactForm .overlay-menu .overlay-menu__wrap form .field input[type="text"] {
+              font-size: 22px;
+              padding: 15px;
+              background: none;
+              padding-left: 0;
+              color: #fff; }
+            .contactForm .overlay-menu .overlay-menu__wrap form .field input.placeholder {
+              color: #fff;
+              font-family: "GTWalsheimLight"; }
+            .contactForm .overlay-menu .overlay-menu__wrap form .field input:-moz-placeholder {
+              color: #fff;
+              font-family: "GTWalsheimLight"; }
+            .contactForm .overlay-menu .overlay-menu__wrap form .field input::-webkit-input-placeholder {
+              color: #fff;
+              font-family: "GTWalsheimLight"; }
+        .contactForm .overlay-menu .overlay-menu__wrap form button {
+          color: #fff;
+          font-size: 18px;
+          padding-right: 0px;
+          cursor: pointer;
+          text-align: right; }
+          .contactForm .overlay-menu .overlay-menu__wrap form button:after {
+            content: "";
+            width: 20px;
+            height: 30px;
+            background: url("/images/yellow-arrow.png") no-repeat;
+            top: 17px;
+            right: 0;
+            position: relative;
+            display: inline-block;
+            /* float: right; */
+            margin-left: 25px; }
+  .contactForm .overlay-menu__wrap {
+    transform: translateX(250%); }
+
+@media (max-width: 980px) {
+  .contactForm .overlay-menu .overlay-menu__wrap .blurb,
+  .contactForm .overlay-menu .overlay-menu__wrap form {
+    width: 80%;
+    display: block; }
+  .contactForm .overlay-menu .overlay-menu__wrap .blurb {
+    margin-bottom: 20px; }
+    .contactForm .overlay-menu .overlay-menu__wrap .blurb h3 {
+      font-size: 40px;
+      color: #fff;
+      line-height: 46px;
+      margin-bottom: 15px; }
+    .contactForm .overlay-menu .overlay-menu__wrap .blurb p {
+      color: #fff; }
+  .contactForm .overlay-menu .overlay-menu__wrap form {
+    margin-left: 0px; } }
+
+@media (max-width: 767px) {
+  .contactForm {
+    width: 100%;
+    position: relative;
+    top: -71px; }
+    .contactForm.is-active:before {
+      display: none; }
+    .contactForm .overlay-menu {
+      width: 100%;
+      max-width: 100%; }
+      .contactForm .overlay-menu .overlay-menu__wrap .blurb,
+      .contactForm .overlay-menu .overlay-menu__wrap form {
+        width: 80%;
+        display: block; }
+      .contactForm .overlay-menu .overlay-menu__wrap .blurb {
+        margin-bottom: 20px; }
+        .contactForm .overlay-menu .overlay-menu__wrap .blurb h3 {
+          font-size: 40px;
+          color: #fff;
+          line-height: 46px;
+          margin-bottom: 15px; }
+        .contactForm .overlay-menu .overlay-menu__wrap .blurb p {
+          color: #fff; }
+      .contactForm .overlay-menu .overlay-menu__wrap form {
+        margin-left: 0px; } }
 
 a.with-arrow {
   text-decoration: none; }
@@ -4657,7 +4840,9 @@ a.with-arrow {
     background-position: top center;
     position: relative; }
     .hero-slider .slider-bg img {
-      visibility: hidden; }
+      visibility: hidden;
+      max-width: 100%;
+      min-height: 1130px; }
   .hero-slider .welcome {
     max-width: 500px;
     color: #fff; }
