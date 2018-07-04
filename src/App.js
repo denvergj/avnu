@@ -8,6 +8,7 @@ import OurListings from './OurListings';
 import OurAgents from './OurAgents';
 import AgentProfile from './AgentProfile';
 import AgentProfileThird from './AgentProfileThird';
+import PropertyDetail from './PropertyDetail';
 import './App.css';
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
           	<MenuArea />
           	<Link to="/about"></Link>
           	<Link to="/our-listings"></Link>
+          	<Link to="/our-listings/property-detail"></Link>
           	<Link to="/our-agents"></Link>
           	<Link to="/our-agents/adrian"></Link>
           	<Link to="/our-agents/agent-third"></Link>
@@ -32,6 +34,7 @@ class App extends Component {
           <main>
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path="/our-listings/property-detail" component={PropertyDetail} />
               <Route path="/our-listings" component={OurListings} />
               <Route path="/our-agents/agent-third" component={AgentProfileThird} />
               <Route path="/our-agents/:agent" component={AgentProfile} />

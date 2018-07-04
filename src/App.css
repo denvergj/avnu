@@ -5076,7 +5076,8 @@ a.with-arrow {
       vertical-align: top;
       margin-bottom: 20px;
       color: #ee654d;
-      font-size: 40px; }
+      font-size: 40px;
+      line-height: 46px; }
       .agent-profile-page-content .intro .imageSide .stats .stat span {
         font-size: 16px;
         color: #232539;
@@ -5115,7 +5116,7 @@ a.with-arrow {
       line-height: 36px; }
 
 .agent-profile-page-content .head {
-  max-width: 47%;
+  width: 47%;
   margin-right: 3%; }
   .agent-profile-page-content .head img {
     margin-bottom: 30px; }
@@ -5280,3 +5281,198 @@ a.with-arrow {
           max-width: 15px; }
   .agent-profile-page-content .vendors .review {
     display: block; } }
+
+.agent-profile-page-content .property-detail-page {
+  display: inline-block;
+  width: 100%; }
+  .agent-profile-page-content .property-detail-page .mapHouse {
+    display: flex;
+    overflow: hidden; }
+    .agent-profile-page-content .property-detail-page .mapHouse #googleMapContainer {
+      float: left;
+      width: 50%;
+      height: auto !important; }
+    .agent-profile-page-content .property-detail-page .mapHouse #googleMap {
+      width: 100% !important;
+      display: inline-block; }
+    .agent-profile-page-content .property-detail-page .mapHouse .property {
+      background: #fff;
+      float: left;
+      margin-bottom: 0;
+      width: 35%;
+      display: block;
+      box-shadow: none;
+      border-bottom: 1px solid #E6E6E6;
+      border-top: 1px solid #E6E6E6;
+      border-right: 1px solid #E6E6E6; }
+      .agent-profile-page-content .property-detail-page .mapHouse .property .property-image,
+      .agent-profile-page-content .property-detail-page .mapHouse .property .property-details {
+        max-width: 100%;
+        display: block; }
+      .agent-profile-page-content .property-detail-page .mapHouse .property .property-details {
+        padding-top: 17px; }
+        .agent-profile-page-content .property-detail-page .mapHouse .property .property-details .type {
+          padding-bottom: 15px; }
+        .agent-profile-page-content .property-detail-page .mapHouse .property .property-details .features {
+          margin-top: 5px; }
+        .agent-profile-page-content .property-detail-page .mapHouse .property .property-details a {
+          margin-top: -10px; }
+  .agent-profile-page-content .property-detail-page .property-amenities {
+    padding: 210px 0 290px 0;
+    background: #E6E6E6;
+    margin-top: -189px;
+    overflow: hidden; }
+    .agent-profile-page-content .property-detail-page .property-amenities .head {
+      float: left; }
+    .agent-profile-page-content .property-detail-page .property-amenities .features {
+      width: 50%;
+      float: right;
+      margin-top: 90px; }
+      .agent-profile-page-content .property-detail-page .property-amenities .features p.title {
+        margin-bottom: 20px; }
+      .agent-profile-page-content .property-detail-page .property-amenities .features ul {
+        overflow: hidden; }
+        .agent-profile-page-content .property-detail-page .property-amenities .features ul.indoor {
+          margin-bottom: 50px; }
+        .agent-profile-page-content .property-detail-page .property-amenities .features ul.outdoor li {
+          width: 100%; }
+        .agent-profile-page-content .property-detail-page .property-amenities .features ul li {
+          width: 50%;
+          float: left;
+          margin-bottom: 20px; }
+  .agent-profile-page-content .property-detail-page .quote-area .the-quote {
+    margin-top: -200px;
+    margin-bottom: 50px; }
+  .agent-profile-page-content .property-detail-page .quote-area.black {
+    float: left;
+    margin-top: 300px;
+    margin-bottom: -250px; }
+  .agent-profile-page-content .property-detail-page .local-area {
+    background: #fff;
+    clear: both;
+    display: inline-block;
+    width: 100%; }
+    .agent-profile-page-content .property-detail-page .local-area .head {
+      float: left; }
+    .agent-profile-page-content .property-detail-page .local-area .landmarks {
+      width: 50%;
+      float: right;
+      margin-top: 90px; }
+      .agent-profile-page-content .property-detail-page .local-area .landmarks .place {
+        box-shadow: 0px 0px 1px 1px rgba(150, 150, 150, 0.5);
+        display: flex;
+        margin-top: 10px;
+        background: #fff; }
+        .agent-profile-page-content .property-detail-page .local-area .landmarks .place .content {
+          display: inline-block;
+          padding: 20px;
+          width: 100%; }
+          .agent-profile-page-content .property-detail-page .local-area .landmarks .place .content .type {
+            color: #ee654d; }
+          .agent-profile-page-content .property-detail-page .local-area .landmarks .place .content h3 {
+            font-size: 26px;
+            color: #4A4A4A;
+            line-height: 56px; }
+          .agent-profile-page-content .property-detail-page .local-area .landmarks .place .content a {
+            float: right;
+            text-decoration: none;
+            color: #ee654d; }
+            .agent-profile-page-content .property-detail-page .local-area .landmarks .place .content a img {
+              margin-left: 10px;
+              position: relative;
+              top: 5px; }
+  .agent-profile-page-content .property-detail-page .recent-listings {
+    margin-top: 0;
+    clear: both;
+    padding-bottom: 60px;
+    margin-bottom: 50px; }
+  .agent-profile-page-content .property-detail-page .property-team .head {
+    float: left; }
+  .agent-profile-page-content .property-detail-page .property-team .team-members {
+    width: 50%;
+    float: right;
+    margin-top: 90px; }
+    .agent-profile-page-content .property-detail-page .property-team .team-members .member {
+      box-shadow: 0px 0px 1px 1px rgba(150, 150, 150, 0.5);
+      margin-bottom: 20px; }
+      .agent-profile-page-content .property-detail-page .property-team .team-members .member img {
+        max-width: 100%; }
+      .agent-profile-page-content .property-detail-page .property-team .team-members .member .content {
+        padding: 25px;
+        padding-right: 0;
+        overflow: hidden;
+        background: #fff; }
+        .agent-profile-page-content .property-detail-page .property-team .team-members .member .content h3 {
+          font-size: 26px; }
+        .agent-profile-page-content .property-detail-page .property-team .team-members .member .content p {
+          font-size: 14px; }
+        .agent-profile-page-content .property-detail-page .property-team .team-members .member .content .links {
+          float: right; }
+        .agent-profile-page-content .property-detail-page .property-team .team-members .member .content a {
+          color: #ee654d;
+          text-decoration: none;
+          margin-left: 20px;
+          font-size: 12px; }
+          .agent-profile-page-content .property-detail-page .property-team .team-members .member .content a img {
+            position: relative;
+            top: 4px;
+            max-width: 20px;
+            margin-left: 10px; }
+
+.property-detail-outer footer {
+  margin-top: -250px; }
+  .property-detail-outer footer .grey {
+    padding-top: 310px; }
+
+@media (max-width: 767px) {
+  .property-detail-outer .property-detail-page .mapHouse #googleMapContainer {
+    height: 400px !important;
+    width: 100%; }
+  .property-detail-outer .property-detail-page .mapHouse .property {
+    display: none; }
+  .property-detail-outer .property-detail-page .property-amenities {
+    padding-bottom: 240px; }
+    .property-detail-outer .property-detail-page .property-amenities .head {
+      width: 100%; }
+    .property-detail-outer .property-detail-page .property-amenities .features {
+      float: left;
+      width: 100%;
+      margin-top: 30px; }
+  .property-detail-outer .property-detail-page .local-area {
+    padding-bottom: 0; }
+    .property-detail-outer .property-detail-page .local-area .head {
+      width: 100%; }
+    .property-detail-outer .property-detail-page .local-area .landmarks {
+      float: left;
+      width: 100%;
+      margin-top: 30px; }
+      .property-detail-outer .property-detail-page .local-area .landmarks .place {
+        margin-top: 5px; }
+        .property-detail-outer .property-detail-page .local-area .landmarks .place .content h3 {
+          font-size: 18px; }
+  .property-detail-outer .property-detail-page .quote-area.black {
+    margin-top: 220px;
+    margin-bottom: -70px; }
+  .property-detail-outer .property-detail-page .recent-listings {
+    width: 100%;
+    padding-bottom: 30px;
+    margin-bottom: 0; }
+  .property-detail-outer .property-detail-page .property-team {
+    background: #E6E6E5;
+    display: inline-block;
+    width: 100%; }
+    .property-detail-outer .property-detail-page .property-team .head {
+      width: 100%; }
+    .property-detail-outer .property-detail-page .property-team .team-members {
+      float: left;
+      width: 100%;
+      margin-top: 30px; }
+      .property-detail-outer .property-detail-page .property-team .team-members .member .content .links {
+        float: left; }
+        .property-detail-outer .property-detail-page .property-team .team-members .member .content .links a {
+          margin-left: 0;
+          margin-right: 10px; }
+          .property-detail-outer .property-detail-page .property-team .team-members .member .content .links a.with-arrow {
+            margin-right: 0; }
+            .property-detail-outer .property-detail-page .property-team .team-members .member .content .links a.with-arrow:after {
+              margin-left: 15px; } }
