@@ -3,15 +3,23 @@ a {
 		text-decoration: none;
 		&:after {
 		    content: "";
-		    width: 30px;
+		    width: 27px;
 		    height: 30px;
-		    background: url(https://images.ctfassets.net/dkcrc82u6zt9/3CPqGaacdiSaYUwucyGYMs/142cf2f968ec842b1fd2cafcf47cb775/red-arrow.png) no-repeat;
+		    background: url(/images/arrow-sunrise.svg) no-repeat; 
+		    background-size: 100%;
 		    top: 17px;
 		    right: 0;
 		    position: relative;
 		    display: inline-block;
 		    /* float: right; */
 		    margin-left: 25px;
+		}
+		&:hover {
+			color: #000;
+			&:after {
+				background: url(/images/arrow-gunmetal.svg) no-repeat; 
+				background-size: 100%;
+			}
 		}
 	}
 }

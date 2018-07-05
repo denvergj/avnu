@@ -32,22 +32,22 @@ class PropertyDetail extends Component {
     });
 
     client
-      // use getEntries because it does link resolution
-      .getEntries({
-	    content_type: 'aboutAvnuStandardContentPages',
-        'fields.menuItemText[in]': 'Our Story'
-      })
-      .then(response => {
-        // extract the data from the response array
-        return response.items[0].fields;
-      })
-      .then(fields => {
-        this.setState({
-          data: fields
-        });
-        console.log(fields);
-      })
-      .catch(console.error);
+	// use getEntries because it does link resolution
+	.getEntries({
+		content_type: 'listing',
+		'fields.slug[in]': this.props.match.params.property
+	})
+	.then(response => {
+		// extract the data from the response array
+		return response.items[0].fields;
+	})
+	.then(fields => {
+		this.setState({
+		  data: fields
+		});
+		console.log(fields);
+	})
+	.catch(console.error);
   }
   
   componentDidMount() {
@@ -56,62 +56,68 @@ class PropertyDetail extends Component {
   }
 
   render() {
-    let mainTitle = null,
-    	introText = null,
-    	pageHeading = null;
+    let propertyData = null,
+    	addressLine1 = null,
+    	suburbAndPostcode = null,
+    	catchphrasePrimary = null,
+    	catchphraseSecondary = null,
+    	propertyHighlightedInfo = null,
+    	mainCopyIntro = null,
+    	mainCopyBody = null,
+    	indoorFeatures = null,
+    	outdoorFeatures = null,
+    	primaryQuote = null,
+    	secondaryQuote = null,
+    	allPointsOfInterest = null,
+    	listingComparableSales = null,
+    	agents = null;
 		
-	 if (this.state.data) {
-      mainTitle = this.state.data.heroImageHeading;
-      introText = this.state.data.heroImageBody;
-      pageHeading = this.state.data.pageHeading;
-    }
+	if(this.state.data) {
+		propertyData = this.state.data;
+		addressLine1 = propertyData.addressLine1;
+		suburbAndPostcode = propertyData.suburbAndPostcode;
+		catchphrasePrimary = propertyData.catchphrasePrimary;
+		catchphraseSecondary = propertyData.catchphraseSecondary;
+		propertyHighlightedInfo = propertyData.propertyHighlightedInfo;
+		mainCopyIntro = propertyData.mainCopyIntro;
+		mainCopyBody = getMarkup(propertyData.mainCopyBody);
+		indoorFeatures = propertyData.indoorFeatures;
+		outdoorFeatures = propertyData.outdoorFeatures;
+		primaryQuote = propertyData.primaryQuote.fields.quoteBody;
+		secondaryQuote = propertyData.secondaryQuote.fields.quoteBody;
+		allPointsOfInterest = propertyData.allPointsOfInterest;
+		listingComparableSales = propertyData.listingComparableSales;
+		agents = propertyData.agents;
+	}
     
     return (
 	    <div className="property-detail-page">
-	    	<Helmet title="Avnu - Standard Page" />
+	    	<Helmet title={"Avnu - " + addressLine1 + " " + suburbAndPostcode} />
 			<Hero 
-				mainTitle="100 Speith Street, Mosman 2088"
-				introText="Modest luxury in the heart of Mosman" 
+				mainTitle={addressLine1 + " " + suburbAndPostcode}
+				introText={catchphrasePrimary}
 				imgSrc="/images/property-header.jpg" 
 				icon="/images/our-listings.png"
-				headline="Home on the lower north shore never looked so cosy."
+				headline={catchphraseSecondary}
 			/>
-      		
       		
 			<div className="intro content-container">
 				<div className="imageSide">
 					<div className="stats">
-						<p className="stat">
-							<span>Type</span>
-							House
-						</p>
-						<p className="stat">
-							<span>Material</span>
-							Double Brick
-						</p>
-						<p className="stat">
-							<span>Building Size</span>
-							1200m
-						</p>
-						<p className="stat">
-							<span>Land Size</span>
-							1500m
-						</p>
-						<p className="stat">
-							<span>Air Con</span>
-							Ducted
-						</p>
-						<p className="stat">
-							<span>Construction date</span>
-							2018
-						</p>
+					{propertyHighlightedInfo && propertyHighlightedInfo.map((statInfo, i) => { 
+			      		return (
+					      	<p id={i} className="stat">
+			       				<span>{statInfo.fields.title}</span>
+			       				{statInfo.fields.body}
+			       			</p>
+			      		);
+					})}
 					</div>
 				</div>
 				
 				<div className="text">
-					<p>Wake up to brilliant morning light that floods into your own furnished, luxury doorman "cottage in the city" loft terrace with separate bike storage. </p>
-					<p>Currently configured as a junior 1-bedroom the unit contains a queen bed and tons of closets. With extra-high ceilings and exposed beams, this space was completely renovated with a custom solid wood, floor-to-ceiling built-in library; 16 feet of glass erasable marker whiteboard; and an additional queen sized Murphy bed for guests. </p>
-					<p>private terrace bathed with sunlight. The kitchen is complete with a high-end stainless steel dishwasher, gas range, and an extra-large French door refrigerator. Some of the furnishings in the unit include white, extra-wide Hunter Douglas plantation blinds, a West Elm leather lounge chair, a reclaimed wood farmers dining table and benches and crystal chandeliers in the living room, hallway and bedroom.</p>
+					<p>{mainCopyIntro}</p>
+					{mainCopyBody}
 				</div>
 			</div>
 			
@@ -160,22 +166,19 @@ class PropertyDetail extends Component {
 					<div className="features">
 						<p className="title">Indoor Features</p>
 						<ul className="indoor">
-							<li>Laundry</li>
-							<li>Washer / Dryer in Unit</li>
-							<li>Master Ensuite</li>
-							<li>Stainless Steel Appliances</li>
-							<li>Indoor Terrace</li>
-							<li>Formal Dining Room</li>
-							<li>Double glazing</li>
-							<li>Home Office</li>
-							<li>Rumpus room</li>
-							<li>Northern Exposure</li>
+							{indoorFeatures && indoorFeatures.map((indoorFeature, i) => { 
+					      		return (
+							      	<li id={i}>{indoorFeature}</li>
+					      		);
+							})}
 						</ul>
 						<p className="title">Outdoor Features</p>
 						<ul className="outdoor">
-							<li>Pool</li>
-							<li>Gardens</li>
-							<li>Lock up garage</li>
+							{outdoorFeatures && outdoorFeatures.map((outdoorFeature, i) => { 
+					      		return (
+							      	<li id={i}>{outdoorFeature}</li>
+					      		);
+							})}
 						</ul>
 					</div>
 				</div>
@@ -185,7 +188,7 @@ class PropertyDetail extends Component {
 			<div className="quote-area content-container">
 				<div className="the-quote">
 					<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
-					<p>"17 Mins from the CBD, 10 Mins to the beach."</p>
+					<p>{primaryQuote}</p>
 				</div>
 			</div>
 			
@@ -197,33 +200,19 @@ class PropertyDetail extends Component {
 						<h3>Parts of the local area that will. make it time well spent.</h3>
 					</div>
 					<div className="landmarks">
-						<div className="place">
-							<div className="content">
-								<div className="type">
-									Transport
+						{allPointsOfInterest && allPointsOfInterest.map((pointOfInterest, i) => { 
+				      		return (
+						      	<div id={i} className="place">
+									<div className="content">
+										<div className="type">
+											{pointOfInterest.fields.title}
+										</div>
+										<h3>{pointOfInterest.fields.body}</h3>
+										<a href="#">{pointOfInterest.fields.distance} <img src="/images/review-marker.png" /></a>
+									</div>
 								</div>
-								<h3>Mosman Ferry Terminal</h3>
-								<a href="#">8.5km <img src="/images/review-marker.png" /></a>
-							</div>
-						</div>
-						<div className="place">
-							<div className="content">
-								<div className="type">
-									Transport
-								</div>
-								<h3>Mosman Ferry Terminal</h3>
-								<a href="#">8.5km <img src="/images/review-marker.png" /></a>
-							</div>
-						</div>
-						<div className="place">
-							<div className="content">
-								<div className="type">
-									Transport
-								</div>
-								<h3>Mosman Ferry Terminal</h3>
-								<a href="#">8.5km <img src="/images/review-marker.png" /></a>
-							</div>
-						</div>
+				      		);
+						})}
 					</div>
 				</div>
 			</div>
@@ -232,7 +221,7 @@ class PropertyDetail extends Component {
 			<div className="quote-area content-container black">
 				<div className="the-quote">
 					<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
-					<p>"17 Mins from the CBD, 10 Mins to the beach."</p>
+					<p>{secondaryQuote}</p>
 				</div>
 			</div>
 			
@@ -244,142 +233,36 @@ class PropertyDetail extends Component {
 						<h3>Comparable sales in the local area.</h3>
 					</div>
 					
-					
-					<div className="property">
-					   <div className="property-image" style={{backgroundImage: `url(https://images.ctfassets.net/dkcrc82u6zt9/6aAUwXB1PGgmwiqQkKMOeK/9e3ab5010af7779a838391e91407b004/640x480__2_.jpg)`}}>
-					  	 <img src="https://images.ctfassets.net/dkcrc82u6zt9/6aAUwXB1PGgmwiqQkKMOeK/9e3ab5010af7779a838391e91407b004/640x480__2_.jpg" />
-					   </div>
-					   <div className="property-details">
-					      <p className="address">Mossman, 2088</p>
-					      <p className="price">100 Speith St</p>
-					      <p className="price">$1,500,120</p>
-					      <div className="bottom">
-					         <ul className="features">
-					            <li className="beds">
-					               <img src="/images/feature-home.png" />
-					               <p>3</p>
-					            </li>
-					            <li className="baths">
-					               <img src="/images/feature-showers.svg" />
-					               <p>2</p>
-					            </li>
-					            <li className="cars">
-					               <img src="/images/feature-carspots.svg" />
-					               <p>2</p>
-					            </li>
-					         </ul>
-					      </div>
-					   </div>
-					</div>
-					
-					<div className="property">
-					   <div className="property-image" style={{backgroundImage: `url(https://images.ctfassets.net/dkcrc82u6zt9/6aAUwXB1PGgmwiqQkKMOeK/9e3ab5010af7779a838391e91407b004/640x480__2_.jpg)`}}>
-					  	 <img src="https://images.ctfassets.net/dkcrc82u6zt9/6aAUwXB1PGgmwiqQkKMOeK/9e3ab5010af7779a838391e91407b004/640x480__2_.jpg" />
-					   </div>
-					   <div className="property-details">
-					      <p className="address">Mossman, 2088</p>
-					      <p className="price">100 Speith St</p>
-					      <p className="price">$1,500,120</p>
-					      <div className="bottom">
-					         <ul className="features">
-					            <li className="beds">
-					               <img src="/images/feature-home.png" />
-					               <p>3</p>
-					            </li>
-					            <li className="baths">
-					               <img src="/images/feature-showers.svg" />
-					               <p>2</p>
-					            </li>
-					            <li className="cars">
-					               <img src="/images/feature-carspots.svg" />
-					               <p>2</p>
-					            </li>
-					         </ul>
-					      </div>
-					   </div>
-					</div>
-					
-					<div className="property">
-					   <div className="property-image" style={{backgroundImage: `url(https://images.ctfassets.net/dkcrc82u6zt9/6aAUwXB1PGgmwiqQkKMOeK/9e3ab5010af7779a838391e91407b004/640x480__2_.jpg)`}}>
-					  	 <img src="https://images.ctfassets.net/dkcrc82u6zt9/6aAUwXB1PGgmwiqQkKMOeK/9e3ab5010af7779a838391e91407b004/640x480__2_.jpg" />
-					   </div>
-					   <div className="property-details">
-					      <p className="address">Mossman, 2088</p>
-					      <p className="price">100 Speith St</p>
-					      <p className="price">$1,500,120</p>
-					      <div className="bottom">
-					         <ul className="features">
-					            <li className="beds">
-					               <img src="/images/feature-home.png" />
-					               <p>3</p>
-					            </li>
-					            <li className="baths">
-					               <img src="/images/feature-showers.svg" />
-					               <p>2</p>
-					            </li>
-					            <li className="cars">
-					               <img src="/images/feature-carspots.svg" />
-					               <p>2</p>
-					            </li>
-					         </ul>
-					      </div>
-					   </div>
-					</div>
-					
-					<div className="property">
-					   <div className="property-image" style={{backgroundImage: `url(https://images.ctfassets.net/dkcrc82u6zt9/6aAUwXB1PGgmwiqQkKMOeK/9e3ab5010af7779a838391e91407b004/640x480__2_.jpg)`}}>
-					  	 <img src="https://images.ctfassets.net/dkcrc82u6zt9/6aAUwXB1PGgmwiqQkKMOeK/9e3ab5010af7779a838391e91407b004/640x480__2_.jpg" />
-					   </div>
-					   <div className="property-details">
-					      <p className="address">Mossman, 2088</p>
-					      <p className="price">100 Speith St</p>
-					      <p className="price">$1,500,120</p>
-					      <div className="bottom">
-					         <ul className="features">
-					            <li className="beds">
-					               <img src="/images/feature-home.png" />
-					               <p>3</p>
-					            </li>
-					            <li className="baths">
-					               <img src="/images/feature-showers.svg" />
-					               <p>2</p>
-					            </li>
-					            <li className="cars">
-					               <img src="/images/feature-carspots.svg" />
-					               <p>2</p>
-					            </li>
-					         </ul>
-					      </div>
-					   </div>
-					</div>
-					
-					
-					<div className="property">
-					   <div className="property-image" style={{backgroundImage: `url(https://images.ctfassets.net/dkcrc82u6zt9/6aAUwXB1PGgmwiqQkKMOeK/9e3ab5010af7779a838391e91407b004/640x480__2_.jpg)`}}>
-					  	 <img src="https://images.ctfassets.net/dkcrc82u6zt9/6aAUwXB1PGgmwiqQkKMOeK/9e3ab5010af7779a838391e91407b004/640x480__2_.jpg" />
-					   </div>
-					   <div className="property-details">
-					      <p className="address">Mossman, 2088</p>
-					      <p className="price">100 Speith St</p>
-					      <p className="price">$1,500,120</p>
-					      <div className="bottom">
-					         <ul className="features">
-					            <li className="beds">
-					               <img src="/images/feature-home.png" />
-					               <p>3</p>
-					            </li>
-					            <li className="baths">
-					               <img src="/images/feature-showers.svg" />
-					               <p>2</p>
-					            </li>
-					            <li className="cars">
-					               <img src="/images/feature-carspots.svg" />
-					               <p>2</p>
-					            </li>
-					         </ul>
-					      </div>
-					   </div>
-					</div>
+					{listingComparableSales && listingComparableSales.map((compareableSale, i) => { 
+			      		return (
+					      	<div id={i} className="property">
+							   <div className="property-image" style={{backgroundImage: `url(${compareableSale.fields.tileImage.fields.file.url})`}}>
+							  	 <img src={compareableSale.fields.tileImage.fields.file.url} />
+							   </div>
+							   <div className="property-details">
+							      <p className="address">{compareableSale.fields.suburbAndPostcode}</p>
+							      <p className="price">{compareableSale.fields.addressLine1}</p>
+							      <p className="price">${compareableSale.fields.price}</p>
+							      <div className="bottom">
+							         <ul className="features">
+							            <li className="beds">
+							               <img src="/images/feature-home.png" />
+							               <p>3</p>
+							            </li>
+							            <li className="baths">
+							               <img src="/images/feature-showers.svg" />
+							               <p>2</p>
+							            </li>
+							            <li className="cars">
+							               <img src="/images/feature-carspots.svg" />
+							               <p>2</p>
+							            </li>
+							         </ul>
+							      </div>
+							   </div>
+							</div>
+			      		);
+					})}
 					
 				</div>
 			</div>
@@ -392,28 +275,21 @@ class PropertyDetail extends Component {
 						<h3>Get in touch with the Avnu property team.</h3>
 					</div>
 					<div className="team-members">
-						<div className="member">
-							<img src="/images/adrian.jpg"/>
-							<div className="content">
-								<h3>Adrian</h3>
-								<p>Listings with a 2.2 wks average time in market.</p>
-								<div className="links">
-									<a href="#">Send message <img src="/images/email.svg"/></a>
-									<a href="#" className="with-arrow">See Adrians profile</a>
+						{agents && agents.map((agent, i) => { 
+				      		return (
+						      	<div id={i} className="member">
+									<img src="/images/adrian.jpg"/>
+									<div className="content">
+										<h3>{agent.fields.firstName}</h3>
+										<p>{agent.fields.tileBody}</p>
+										<div className="links">
+											<a href={"mailto:" +agent.fields.emailAddress}>Send message <img src="/images/email.svg"/></a>
+											<a href={"/our-agents/" + agent.fields.slug} className="with-arrow">See {agent.fields.firstName +"'s"} profile</a>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-						<div className="member">
-							<img src="/images/adrian.jpg"/>
-							<div className="content">
-								<h3>Adrian</h3>
-								<p>Listings with a 2.2 wks average time in market.</p>
-								<div className="links">
-									<a href="#">Send message <img src="/images/email.svg"/></a>
-									<a href="#" className="with-arrow">See Adrians profile</a>
-								</div>
-							</div>
-						</div>
+				      		);
+						})}
 					</div>
 				</div>
       		</div>

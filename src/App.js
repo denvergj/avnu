@@ -16,7 +16,6 @@ class App extends Component {
 	
 
   componentDidMount() {
-	  console.log('finished loading');
   }	
 	
   render() {
@@ -28,17 +27,13 @@ class App extends Component {
           	<ContactArea />
           	<Link to="/about"></Link>
           	<Link to="/our-listings"></Link>
-          	<Link to="/our-listings/property-detail"></Link>
           	<Link to="/our-agents"></Link>
-          	<Link to="/our-agents/adrian"></Link>
-          	<Link to="/our-agents/agent-third"></Link>
           </header>
           <main>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/our-listings/property-detail" component={PropertyDetail} />
+              <Route path="/our-listings/:property" component={PropertyDetail} />
               <Route path="/our-listings" component={OurListings} />
-              <Route path="/our-agents/agent-third" component={AgentProfileThird} />
               <Route path="/our-agents/:agent" component={AgentProfile} />
               <Route path="/our-agents" component={OurAgents} />
               <Route path="/:id" component={StandardPage} />

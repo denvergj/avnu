@@ -1,5 +1,6 @@
 import React, { Component, createElement } from 'react';
 import Helmet from 'react-helmet';
+import { Link } from 'react-router-dom';
 import { createClient } from 'contentful';
 import Zoom from 'react-reveal/Zoom'; 
 import Hero from './Hero';
@@ -115,7 +116,9 @@ class OurListings extends Component {
 										<p>{property.fields.numberOfCars}</p>
 									</li>
 								</ul>
-								<a href="#" className="with-arrow">View</a>
+								<Link to={`/our-listings/${property.fields.slug}/`} className="with-arrow">
+									View
+								</Link>
 							</div>
 						</div>
 					</div>

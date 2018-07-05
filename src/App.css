@@ -4315,7 +4315,7 @@ input {
         margin-right: 50px;
         font-size: 18px;
         line-height: 28px;
-        color: #000; }
+        color: #fff; }
       .avnu-header .overlay-menu .menu-item a {
         text-decoration: none;
         color: #fff; }
@@ -4599,15 +4599,21 @@ a.with-arrow {
   text-decoration: none; }
   a.with-arrow:after {
     content: "";
-    width: 30px;
+    width: 27px;
     height: 30px;
-    background: url(https://images.ctfassets.net/dkcrc82u6zt9/3CPqGaacdiSaYUwucyGYMs/142cf2f968ec842b1fd2cafcf47cb775/red-arrow.png) no-repeat;
+    background: url(/images/arrow-sunrise.svg) no-repeat;
+    background-size: 100%;
     top: 17px;
     right: 0;
     position: relative;
     display: inline-block;
     /* float: right; */
     margin-left: 25px; }
+  a.with-arrow:hover {
+    color: #000; }
+    a.with-arrow:hover:after {
+      background: url(/images/arrow-gunmetal.svg) no-repeat;
+      background-size: 100%; }
 
 .hero {
   background-repeat: no-repeat;
@@ -4703,7 +4709,7 @@ a.with-arrow {
   margin-bottom: -200px;
   max-width: 100%; }
   .quote-area .the-quote img {
-    margin-bottom: 180px; }
+    margin-bottom: 100px; }
   .quote-area .the-quote p {
     color: #fff;
     font-size: 46px;
@@ -5190,6 +5196,13 @@ a.with-arrow {
     .listings .property .property-details {
       padding: 25px 10px; } }
 
+.our-agents-page-content .hero .icon-header img {
+  max-width: 60px;
+  height: 60px; }
+
+.our-agents-page-content .hero .icon-header h2 {
+  max-width: 370px; }
+
 .our-agents-page-content .row {
   margin: 0 -30px; }
 
@@ -5199,16 +5212,21 @@ a.with-arrow {
   .our-agents-page-content .three-tiles .content {
     padding: 0;
     margin: 0 8px;
-    border: 2px solid #E6E6E5; }
+    box-shadow: 0px 0px 5px 1px rgba(150, 150, 150, 0.5);
+    width: 28.3%;
+    margin: 0 20px; }
   .our-agents-page-content .three-tiles.grey {
     background: #E6E6E5;
     margin-bottom: 0;
     margin-top: 300px;
-    padding-top: 300px;
+    padding-top: 180px;
     padding-bottom: 300px; }
 
 .our-agents-page-content .quote-area {
   z-index: 9; }
+  .our-agents-page-content .quote-area img {
+    max-width: 60px;
+    height: 60px; }
   .our-agents-page-content .quote-area.black {
     float: left;
     margin-top: -250px;
@@ -5222,15 +5240,18 @@ a.with-arrow {
 
 @media (min-width: 768px) and (max-width: 960px) {
   .our-agents-page-content .three-tiles .content {
-    margin: 0 5px; } }
+    margin: 0 15px; } }
 
 @media (max-width: 767px) {
+  .our-agents-page-content .hero .icon-header h2 {
+    max-width: 240px; }
   .our-agents-page-content .row {
     margin: 0; }
   .our-agents-page-content .three-tiles {
     margin-bottom: 0; }
     .our-agents-page-content .three-tiles .content {
-      margin: 0; }
+      margin: 0;
+      width: 100%; }
     .our-agents-page-content .three-tiles.grey {
       margin-top: 0;
       padding-top: 200px;

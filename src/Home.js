@@ -49,10 +49,8 @@ class Home extends Component {
 	  })
 	  .catch(console.error);
 	
-	
   }
   
-
   render() {
     let imgSrc = null,
     	imgTileSrc = null;

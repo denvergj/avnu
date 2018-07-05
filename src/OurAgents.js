@@ -1,8 +1,11 @@
 import React, { Component, createElement } from 'react';
 import Helmet from 'react-helmet';
+import { Link } from 'react-router-dom';
 import { createClient } from 'contentful';
 import Hero from './Hero';
 import marksy from 'marksy'; 
+import Zoom from 'react-reveal/Zoom'; 
+import Slide from 'react-reveal/Slide';
 
 const getMarkup = field => {
   if (!field) return null;
@@ -13,12 +16,14 @@ const getMarkup = field => {
   return compile(field).tree;
 };
 
-class StandardPage extends Component {
+class OurAgents extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      data: null
+	  hero: null,
+      agents: null,
+      quotes: null
     };
   }
 
@@ -28,21 +33,57 @@ class StandardPage extends Component {
       accessToken: process.env.REACT_APP_ACCESS_TOKEN
     });
 
-    client
+	
+	  // Quotes
+      client
       // use getEntries because it does link resolution
       .getEntries({
-	    content_type: 'aboutAvnuStandardContentPages',
-        'fields.menuItemText[in]': 'Our Story'
+	    content_type: 'agentListPage'
       })
       .then(response => {
         // extract the data from the response array
         return response.items[0].fields;
       })
+      .then(heroContent => {
+        this.setState({
+          hero: heroContent
+        });
+      })
+      .catch(console.error);
+		
+
+      client
+      // use getEntries because it does link resolution
+      .getEntries({
+	    content_type: 'agent'
+      })
+      .then(response => {
+        // extract the data from the response array
+        return response.items;
+      })
       .then(fields => {
         this.setState({
-          data: fields
+          agents: fields
         });
-        console.log(fields);
+         console.log(fields);
+      })
+      .catch(console.error);
+      
+      // Quotes
+      client
+      // use getEntries because it does link resolution
+      .getEntries({
+	    content_type: 'brandQuoteBlock'
+      })
+      .then(response => {
+        // extract the data from the response array
+        return response.items;
+      })
+      .then(fields => {
+        this.setState({
+          quotes: fields
+        });
+       // console.log(fields);
       })
       .catch(console.error);
   }
@@ -54,12 +95,17 @@ class StandardPage extends Component {
   render() {
     let mainTitle = null,
     	introText = null,
-    	pageHeading = null;
-		
-	 if (this.state.data) {
-      mainTitle = this.state.data.heroImageHeading;
-      introText = this.state.data.heroImageBody;
-      pageHeading = this.state.data.pageHeading;
+    	pageHeading = null,
+    	heroData = null,
+    	headline = null,
+    	heroImage = null;
+    
+    if(this.state.hero) {
+	  heroData = this.state.hero;
+	  mainTitle = heroData.heroImageBody;
+	  introText = heroData.heroImageHeading;
+	  heroImage = heroData.heroImage.fields.file.url;
+	  headline = heroData.pageHeading;
     }
     
     return (
@@ -77,39 +123,32 @@ class StandardPage extends Component {
       	  <div className="three-tiles">
 	       	<div className="content-container">
 		      	<div className="row">
-			      	<div className="content">
-		      			<img src="/images/agent-profile.png" />
-		      			<div className="info">
-		      				<h3>Adrian</h3>
-		      				<p>Listings with a 2.2 wks average time in market.</p>
-		      				<a href="" className="with-arrow">See Adrians profile</a>
-		      			</div>
-		      		</div>
-		      		<div className="content">
-		      			<img src="/images/agent-profile.png" />
-		      			<div className="info">
-		      				<h3>Adrian</h3>
-		      				<p>Listings with a 2.2 wks average time in market.</p>
-		      				<a href="" className="with-arrow">See Adrians profile</a>
-		      			</div>
-		      		</div>
-		      		<div className="content">
-		      			<img src="/images/agent-profile.png" />
-		      			<div className="info">
-		      				<h3>Adrian</h3>
-		      				<p>Listings with a 2.2 wks average time in market.</p>
-		      				<a href="" className="with-arrow">See Adrians profile</a>
-		      			</div>
-		      		</div>
+			      	{this.state.agents && this.state.agents.map((agent, i) => { 
+			      		return (
+					      	<div key={i} className="content">
+					      		<img src={(agent.fields.agentTile ? agent.fields.agentTile.fields.tileImage.fields.file.url : '')} />
+				      			<div className="info">
+				      				<h3>{agent.fields.firstName}</h3>
+				      				<p>{agent.fields.tileBody}</p>
+				      				<Link to={`our-agents/${agent.fields.slug}/`} className="with-arrow">
+										See {agent.fields.firstName + "'s"} profile
+									</Link>
+				      			</div>
+				      		</div>
+			      		);
+					})}
 		      	</div>
 		    </div>
 	      </div>
 	      
+	    
 			<div className="quote-area content-container">
+			  <Slide left>
 				<div className="the-quote">
 					<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
 					<p>"Time or brand related quote that relates to the brand."</p>
 				</div>
+				</Slide>
 			</div>
 	      
 	      
@@ -189,4 +228,4 @@ class StandardPage extends Component {
   }
 }
 
-export default StandardPage;
+export default OurAgents;

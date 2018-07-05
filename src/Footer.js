@@ -2,7 +2,7 @@ import React, { Component, createElement } from 'react';
 import Helmet from 'react-helmet';
 
 class Footer extends Component {
-
+  
   render() {
     return (
     	<footer>
@@ -18,8 +18,8 @@ class Footer extends Component {
 					<div className="address">
 						<img src="https://images.ctfassets.net/dkcrc82u6zt9/5wKVppaX9moO0CyAwMSSKK/4a0547ab6c987cc7d881d967a8f054bf/location.png" />
 						<p>175 Sailors Bay Road
-Northbridge Rd 175
-Sydney, Australia</p>
+							Northbridge Rd 175
+							Sydney, Australia</p>
 						<a href="#">Get in touch</a>
 					</div>
 				</div>

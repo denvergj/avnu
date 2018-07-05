@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import OverlayMenu from 'react-overlay-menu';
+import { Link } from 'react-router-dom';
+import { createClient } from 'contentful';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
  
 class MenuArea extends Component {
   constructor(props) {
     super(props);
-    this.state = { isOpen: false, subMenuOpen: null };
+    this.state = { isOpen: false, subMenuOpen: null, agents: null };
     this.toggleMenu = this.toggleMenu.bind(this);
   }
  
@@ -15,6 +17,32 @@ class MenuArea extends Component {
   
   toggleSubMenu(index, e) {
     this.setState({ subMenuOpen: index });
+  }
+  
+  componentWillMount() {
+		const client = createClient({
+			space: process.env.REACT_APP_SPACE_ID,
+			accessToken: process.env.REACT_APP_ACCESS_TOKEN
+		});
+	  
+	  
+	  // Agents
+	  client
+      // use getEntries because it does link resolution
+      .getEntries({
+	    content_type: 'agent'
+      })
+      .then(response => {
+        // extract the data from the response array
+        return response.items;
+      })
+      .then(fields => {
+        this.setState({
+          agents: fields
+        });
+      })
+      .catch(console.error);
+      
   }
  
   render() {
@@ -35,9 +63,13 @@ class MenuArea extends Component {
           <div className={"menu-item "+(this.state.subMenuOpen==0 ? 'open': '')} onClick={this.toggleSubMenu.bind(this, 0)}>
           		Our agents <i className={"fas "+(this.state.subMenuOpen==0 ? 'fa-chevron-up': 'fa-chevron-down')}></i>
           		<div className="sub-menu">
-          			<div className="menu-item">
-          				<a href="" className="menu-item">Adrian Bridges</a>
-          			</div>
+          		{this.state.agents && this.state.agents.map((agent, i) => { 
+				    return (
+	          			<div key={i} className="menu-item">
+	          				<Link to={"/our-agents/"+agent.fields.slug} className="menu-item">{agent.fields.firstName} {agent.fields.lastName}</Link>
+	          			</div>
+          			);
+				})}
           		</div>
           </div>
           <div className={"menu-item "+(this.state.subMenuOpen==1 ? 'open': '')} onClick={this.toggleSubMenu.bind(this, 1)}>
