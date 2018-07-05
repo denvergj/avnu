@@ -1,6 +1,11 @@
 .agent-profile-page-content {
 	.hero {
 		margin-bottom: 150px;
+		.icon-header {
+			h2 {
+				font-family: 'Montserrat-Regular';
+			}
+		}
 	}
 	.intro {
 		overflow: hidden;
@@ -27,11 +32,13 @@
 					color:$primary-color;
 					font-size: 40px;
 					line-height: 46px;
+					font-family: 'Montserrat-Regular';
 					span {
 						font-size: 16px;
 						color:#232539;
 						display: block;
 						margin-bottom: 5px;
+						font-family: 'Montserrat-Light';
 					}
 				}
 			}
@@ -42,9 +49,11 @@
 			p {
 				color:#232539;
 				font-size: 16px;
+				font-family: 'Montserrat-Light';
 				&:first-child {
 					font-size: 26px;
 					line-height: 32px;
+					font-family: 'Montserrat-Regular';
 				}
 				margin-bottom: 20px;
 			}
@@ -83,6 +92,7 @@
 		margin-right: 3%;
 		img {
 			margin-bottom: 30px;
+			max-width: 60px;
 		}
 		h3 {
 			font-size: 26px;
@@ -107,6 +117,7 @@
 			background: #fff;
 			width: 47%;
 			float: left;
+			box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 			&:nth-child(odd) {
 				margin-right: 3%;
 			}
@@ -115,6 +126,14 @@
 					&.address {
 						color: $primary-color;
 						font-size: 12px;
+					}
+					&.price {
+						margin-bottom: 5px;
+						font-size: 16px;
+						margin-top: 5px;
+					}
+					&.addressLine1 {
+						margin-top: 5px;
 					}
 				}
 			}

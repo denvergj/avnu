@@ -13,10 +13,6 @@ import PropertyDetail from './PropertyDetail';
 import './App.css';
 
 class App extends Component {
-	
-  componentDidMount() {
-  }	
-	
   render() {
     return (
       <BrowserRouter forceRefresh>

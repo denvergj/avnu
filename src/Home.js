@@ -4,8 +4,8 @@ import { createClient } from 'contentful';
 import PostLink from './PostLink';
 import Slider from "react-slick";
 import Zoom from 'react-reveal/Zoom'; 
-import Slide from 'react-reveal/Slide';
 import marksy from 'marksy'; 
+import InViewMonitor from 'react-inview-monitor';
 
 const getMarkup = field => {
   if (!field) return null;
@@ -148,14 +148,16 @@ class Home extends Component {
 	      
 	      <div className="quoting-area">
 	      		<div className="grey"></div>
-	      		<Slide right>
-		      		<div className="content-container">
-			      		<div className="the-quote">
-			      			<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
-			      			{primaryQuote}
-			      		</div>
+	      		 <InViewMonitor
+				  classNameNotInView='vis-hidden'
+				  intoViewMargin='10px'
+				  classNameInView='animated slideInRight content-container'
+				>
+		      		<div className="the-quote">
+		      			<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
+		      			{primaryQuote}
 		      		</div>
-	      		</Slide>
+	      		</InViewMonitor>
 	      		<div className="white"></div>
 	      </div>
 	      

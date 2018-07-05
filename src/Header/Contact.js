@@ -6,48 +6,76 @@ import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 import 'react-select/dist/react-select.css';
 import Recaptcha from 'react-recaptcha';
+import axios from 'axios';
  
 class ContactArea extends Component {
   constructor(props) {
     super(props);
-    this.state = { isOpen: false, subMenuOpen: null, selectedOption: '', selectedTimeOption: '', selectedAgentOption: '', agents: null};
+    this.state = { 
+	    isOpen: false, 
+	    subMenuOpen: null,
+	    agents: null,
+	    name: '',
+		contact: '',
+		address: '',
+	    type: '', 
+	    timeRequested: '', 
+	    preferredAgent: '', 
+	    recaptcha: '', 
+	};
     this.toggleForm = this.toggleForm.bind(this);
     
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.verifyCallback = this.verifyCallback.bind(this);
   }
  
   toggleForm() {
     this.setState({ isOpen: !this.state.isOpen });
   }
   
-  toggleSubMenu(index, e) {
-    this.setState({ subMenuOpen: index });
+  handleChange = (type) => {
+    this.setState({ type });
   }
   
-  handleChange = (selectedOption) => {
-    this.setState({ selectedOption });
+  handleTimeChange = (timeRequested) => {
+    this.setState({ timeRequested });
   }
   
-  handleTimeChange = (selectedTimeOption) => {
-    this.setState({ selectedTimeOption });
+  handleAgentChange = (preferredAgent) => {
+    this.setState({ preferredAgent });
   }
   
-  handleAgentChange = (selectedAgentOption) => {
-    this.setState({ selectedAgentOption });
+  onChange = (e) => {
+    // Because we named the inputs to match their corresponding values in state, it's
+    // super easy to update the state
+    this.setState({ [e.target.name]: e.target.value });
   }
-    
-  handleSubmit(event) {
-    event.preventDefault();
-    const data = new FormData(event.target);
-    
-    fetch('https://api.ljx.cloud/enquiry', {
-      method: 'POST',
-      body: data,
+  
+    verifyCallback(response) {
+	  console.log(response);
+	};
+  
+  onSubmit = (e) => {
+    e.preventDefault();
+    // get our form data out of state
+    const { name, contact, address, type, timeRequested, preferredAgent } = this.state;
+
+    axios({
+	    method: 'POST',
+	    url: 'https://api.ljx.cloud/enquiry',
+	    data: { "name" : name, "g-recaptcha-response": 'ssss' },
+	    mode: 'no-cors',
+		headers: {
+			Accept: 'application/x-www-form-urlencoded',
+			'Content-Type': 'application/x-www-form-urlencoded',
+		},
+	}).then(function (response) {
+        //handle success
+        console.log(response);
+    })
+    .catch(function (response) {
+        //handle error
+        console.log(response);
     });
-  }
-  
-  verifyCallback(response) {
-  console.log(response);
   }
   
   componentWillMount() {
@@ -90,9 +118,9 @@ class ContactArea extends Component {
   
   render() {
 	  
-	const { selectedOption } = this.state;
-	const { selectedTimeOption } = this.state;
-	const { selectedAgentOption } = this.state;
+	const { type } = this.state;
+	const { timeRequested } = this.state;
+	const { preferredAgent } = this.state;
 	  
 	let agentDropdown = [];
 	 
@@ -101,7 +129,6 @@ class ContactArea extends Component {
 	        agentDropdown.push({"value": agent.fields.slug, "label": agent.fields.firstName + " " + agent.fields.lastName});
 		});
 	}
-	
 	  
     return (
       <div className={'contactForm ' + (this.state.isOpen ? 'is-active' : '')}>
@@ -121,12 +148,12 @@ class ContactArea extends Component {
           	<p>Fill in the form below and we will get in touch.</p>
           </div>
           
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.onSubmit}>
           	<div className="field">
           		<label>Enquiry Type</label>
           		<Select
 			        name="type"
-			        value={selectedOption}
+			        value={type}
 			        onChange={this.handleChange}
 			        options={[
 			          { value: 'sale', label: 'Sale' },
@@ -151,7 +178,7 @@ class ContactArea extends Component {
           		<label>Best time to talk</label>
           		<Select
 			        name="timeRequested"
-			        value={selectedTimeOption}
+			        value={timeRequested}
 			        onChange={this.handleTimeChange}
 			        options={[
 			          { value: 'morning', label: 'Morning' },
@@ -164,16 +191,16 @@ class ContactArea extends Component {
           		<label>Preferred agent</label>
           		<Select
 			        name="preferredAgent"
-			        value={selectedAgentOption}
+			        value={preferredAgent}
 			        onChange={this.handleAgentChange}
 			        options={agentDropdown}
 			      />
           	</div>
           	
-          	<Recaptcha
-		  		sitekey="6LfEXGIUAAAAAPIvXJBqlEj8_KiKkA33BCkIsIuz"
-		  		verifyCallback={this.verifyCallback}
-		  	/>
+          	<Recaptcha 
+          		sitekey="6LfEXGIUAAAAAPIvXJBqlEj8_KiKkA33BCkIsIuz"
+          		verifyCallback={this.verifyCallback}
+          	/>
           	
           	<div className="enter">
           		<button>Send enquiry</button>

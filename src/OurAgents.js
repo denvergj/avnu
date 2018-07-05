@@ -3,9 +3,10 @@ import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { createClient } from 'contentful';
 import Hero from './Hero';
-import marksy from 'marksy'; 
-import Zoom from 'react-reveal/Zoom'; 
+import marksy from 'marksy';  
 import Slide from 'react-reveal/Slide';
+import VisibilitySensor from 'react-visibility-sensor';
+import InViewMonitor from 'react-inview-monitor';
 
 const getMarkup = field => {
   if (!field) return null;
@@ -141,17 +142,19 @@ class OurAgents extends Component {
 		    </div>
 	      </div>
 	      
-	    
-			<div className="quote-area content-container">
-			  <Slide left>
-				<div className="the-quote">
-					<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
+	    <InViewMonitor
+		  classNameNotInView='vis-hidden'
+		  classNameInView='animated slideInRight quote-area content-container'
+		>
+		  <div>
+		    	<div className="the-quote">
+					<img src="/images/man-white.png" />
 					<p>"Time or brand related quote that relates to the brand."</p>
 				</div>
-				</Slide>
 			</div>
-	      
-	      
+		</InViewMonitor>
+		
+		
 	      <div className="three-tiles grey">
 	       	<div className="content-container">
 		      	<div className="row">
@@ -183,13 +186,19 @@ class OurAgents extends Component {
 		    </div>
 	      </div>
 	      
-	      	<div className="quote-area content-container black">
+	      
+	      <InViewMonitor
+			  classNameNotInView='vis-hidden'
+			  intoViewMargin='100px'
+			  classNameInView='animated slideInLeft quote-area content-container black'
+			>
+	      	<div>
 				<div className="the-quote">
-					<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
+					<img src="/images/man-white.png" />
 					<p>"Time or brand related quote that relates to the brand."</p>
 				</div>
 			</div>
-			
+			</InViewMonitor>
 			
 			
 		 <div className="three-tiles">

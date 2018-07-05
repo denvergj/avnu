@@ -207,6 +207,10 @@
 		width: 100%;
 		position: relative;
 		top: -71px;
+		button {
+		    min-width: 50%;
+		    float:right;
+		}
 		&.is-active {
 			&:before {
 				display: none;

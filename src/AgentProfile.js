@@ -4,6 +4,7 @@ import { createClient } from 'contentful';
 import Hero from './Hero';
 import marksy from 'marksy';
 import MyMapComponent from "./GoogleMap"
+import InViewMonitor from 'react-inview-monitor';
 
 const getMarkup = field => {
   if (!field) return null;
@@ -134,12 +135,16 @@ class AgentProfile extends Component {
 	      </div>
 	      
 	      
-			<div className="quote-area content-container">
+			<InViewMonitor
+			  classNameNotInView='vis-hidden'
+			  intoViewMargin='50px'
+			  classNameInView='animated slideInLeft quote-area content-container'
+			>
 				<div className="the-quote">
 					<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
 					<p>{primaryQuote}</p>
 				</div>
-			</div>
+			</InViewMonitor>
 			
 			
 			<div className="recent-listings">
@@ -154,7 +159,7 @@ class AgentProfile extends Component {
 				
 				<div className="content-container">
 					<div className="head list">
-						<img src="/images/graph.png" />
+						<img src="/images/graph-icon.png" />
 						<h3>Browse all of {firstName +"'s"} past and present listings</h3>
 					</div>
 					
@@ -166,7 +171,7 @@ class AgentProfile extends Component {
 							   </div>
 							   <div className="property-details">
 							      <p className="address">{propertyListing.fields.suburbAndPostcode}</p>
-							      <p className="price">{propertyListing.fields.addressLine1}</p>
+							      <p className="addressLine1">{propertyListing.fields.addressLine1}</p>
 							      <p className="price">${propertyListing.fields.price}</p>
 							      <div className="bottom">
 							         <ul className="features">
@@ -193,18 +198,22 @@ class AgentProfile extends Component {
 			</div>
 			
 			
-			<div className="quote-area content-container black">
+			<InViewMonitor
+			  classNameNotInView='vis-hidden'
+			  intoViewMargin='100px'
+			  classNameInView='animated slideInLeft quote-area content-container black'
+			>
 				<div className="the-quote">
-					<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
+					<img src="/images/graph-grey.png" />
 					<p>{secondaryQuote}</p>
 				</div>
-			</div>
+			</InViewMonitor>
       		
       		
       		<div className="vendors">
       			<div className="content-container">
 					<div className="head">
-						<img src="/images/rss.png" />
+						<img src="/images/heart-icon.png" />
 						<h3>A snapshot of some of {firstName +"'s"} recent listings and sales.</h3>
 					</div>
 					{agentReviews && agentReviews.map((reviews, i) => { 

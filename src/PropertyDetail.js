@@ -4,6 +4,7 @@ import { createClient } from 'contentful';
 import Hero from './Hero';
 import marksy from 'marksy';
 import MyMapComponent from "./GoogleMap"
+import InViewMonitor from 'react-inview-monitor';
 
 const getMarkup = field => {
   if (!field) return null;
@@ -106,7 +107,7 @@ class PropertyDetail extends Component {
 					<div className="stats">
 					{propertyHighlightedInfo && propertyHighlightedInfo.map((statInfo, i) => { 
 			      		return (
-					      	<p id={i} className="stat">
+					      	<p key={i} className="stat">
 			       				<span>{statInfo.fields.title}</span>
 			       				{statInfo.fields.body}
 			       			</p>
@@ -168,7 +169,7 @@ class PropertyDetail extends Component {
 						<ul className="indoor">
 							{indoorFeatures && indoorFeatures.map((indoorFeature, i) => { 
 					      		return (
-							      	<li id={i}>{indoorFeature}</li>
+							      	<li key={i}>{indoorFeature}</li>
 					      		);
 							})}
 						</ul>
@@ -176,7 +177,7 @@ class PropertyDetail extends Component {
 						<ul className="outdoor">
 							{outdoorFeatures && outdoorFeatures.map((outdoorFeature, i) => { 
 					      		return (
-							      	<li id={i}>{outdoorFeature}</li>
+							      	<li key={i}>{outdoorFeature}</li>
 					      		);
 							})}
 						</ul>
@@ -185,12 +186,16 @@ class PropertyDetail extends Component {
 			</div>
 			
 	      
-			<div className="quote-area content-container">
+			<InViewMonitor
+			  classNameNotInView='vis-hidden'
+			  intoViewMargin='100px'
+			  classNameInView='animated slideInLeft quote-area content-container'
+			>
 				<div className="the-quote">
-					<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
+					<img src="/images/man-white.png" />
 					<p>{primaryQuote}</p>
 				</div>
-			</div>
+			</InViewMonitor>
 			
 			
 			<div className="local-area">
@@ -202,7 +207,7 @@ class PropertyDetail extends Component {
 					<div className="landmarks">
 						{allPointsOfInterest && allPointsOfInterest.map((pointOfInterest, i) => { 
 				      		return (
-						      	<div id={i} className="place">
+						      	<div key={i} className="place">
 									<div className="content">
 										<div className="type">
 											{pointOfInterest.fields.title}
@@ -218,24 +223,28 @@ class PropertyDetail extends Component {
 			</div>
 			
 			
-			<div className="quote-area content-container black">
+			<InViewMonitor
+			  classNameNotInView='vis-hidden'
+			  intoViewMargin='100px'
+			  classNameInView='animated slideInLeft quote-area content-container black'
+			>
 				<div className="the-quote">
-					<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
+					<img src="/images/man-white.png" />
 					<p>{secondaryQuote}</p>
 				</div>
-			</div>
+			</InViewMonitor>
 			
 			
 			<div className="recent-listings">
 				<div className="content-container">
 					<div className="head list">
-						<img src="/images/graph.png" />
+						<img src="/images/graph.svg" />
 						<h3>Comparable sales in the local area.</h3>
 					</div>
 					
 					{listingComparableSales && listingComparableSales.map((compareableSale, i) => { 
 			      		return (
-					      	<div id={i} className="property">
+					      	<div key={i} className="property">
 							   <div className="property-image" style={{backgroundImage: `url(${compareableSale.fields.tileImage.fields.file.url})`}}>
 							  	 <img src={compareableSale.fields.tileImage.fields.file.url} />
 							   </div>
@@ -277,7 +286,7 @@ class PropertyDetail extends Component {
 					<div className="team-members">
 						{agents && agents.map((agent, i) => { 
 				      		return (
-						      	<div id={i} className="member">
+						      	<div key={i} className="member">
 									<img src="/images/adrian.jpg"/>
 									<div className="content">
 										<h3>{agent.fields.firstName}</h3>
