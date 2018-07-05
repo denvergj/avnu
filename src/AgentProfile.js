@@ -113,7 +113,7 @@ class AgentProfile extends Component {
 	       		<div className="stats">
 	       			{agentHighlightedInfo && agentHighlightedInfo.map((statInfo, i) => { 
 			      		return (
-					      	<p id={i} className="stat">
+					      	<p key={i} className="stat">
 			       				<span>{statInfo.fields.title}</span>
 			       				{statInfo.fields.body}
 			       			</p>
@@ -160,7 +160,7 @@ class AgentProfile extends Component {
 					
 					{pastListings && pastListings.map((propertyListing, i) => { 
 			      		return (
-					      	<div id={i} className="property">
+					      	<div key={i} className="property">
 							   <div className="property-image" style={{backgroundImage: `url(${propertyListing.fields.tileImage.fields.file.url})`}}>
 							  	 <img src={propertyListing.fields.tileImage.fields.file.url} />
 							   </div>
@@ -209,7 +209,7 @@ class AgentProfile extends Component {
 					</div>
 					{agentReviews && agentReviews.map((reviews, i) => { 
 			      		return (
-					      	<div id={i} className="review">
+					      	<div key={i} className="review">
 								<img src="/images/review-home.jpg" className="feature"/>
 								<div className="content">
 									<div className="star">

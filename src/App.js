@@ -14,13 +14,12 @@ import './App.css';
 
 class App extends Component {
 	
-
   componentDidMount() {
   }	
 	
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter forceRefresh>
         <div className="App">
           <header className="avnu-header">
           	<MenuArea />

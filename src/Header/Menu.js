@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import OverlayMenu from 'react-overlay-menu';
-import { Link } from 'react-router-dom';
+import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 import { createClient } from 'contentful';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
  
@@ -66,7 +66,9 @@ class MenuArea extends Component {
           		{this.state.agents && this.state.agents.map((agent, i) => { 
 				    return (
 	          			<div key={i} className="menu-item">
-	          				<Link to={"/our-agents/"+agent.fields.slug} className="menu-item">{agent.fields.firstName} {agent.fields.lastName}</Link>
+	          					<Link to={"/our-agents/"+agent.fields.slug} className="menu-item">
+	          						{agent.fields.firstName} {agent.fields.lastName}
+	          					</Link>
 	          			</div>
           			);
 				})}
