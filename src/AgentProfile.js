@@ -148,53 +148,62 @@ class AgentProfile extends Component {
 			
 			
 			<div className="recent-listings">
-				<div className="content-container">
-					<div className="head">
-						<img src="/images/rss.png" />
-						<h3>Discover some of {firstName +"'s"} recent listings in the area</h3>
-					</div>
-				</div>
-				
-				<MyMapComponent isMarkerShown />
-				
-				<div className="content-container">
-					<div className="head list">
-						<img src="/images/graph-icon.png" />
-						<h3>Browse all of {firstName +"'s"} past and present listings</h3>
-					</div>
-					
-					{pastListings && pastListings.map((propertyListing, i) => { 
-			      		return (
-					      	<div key={i} className="property">
-							   <div className="property-image" style={{backgroundImage: `url(${propertyListing.fields.tileImage.fields.file.url})`}}>
-							  	 <img src={propertyListing.fields.tileImage.fields.file.url} />
-							   </div>
-							   <div className="property-details">
-							      <p className="address">{propertyListing.fields.suburbAndPostcode}</p>
-							      <p className="addressLine1">{propertyListing.fields.addressLine1}</p>
-							      <p className="price">${propertyListing.fields.price}</p>
-							      <div className="bottom">
-							         <ul className="features">
-							            <li className="beds">
-							               <img src="/images/feature-home.png" />
-							               <p>3</p>
-							            </li>
-							            <li className="baths">
-							               <img src="/images/feature-showers.svg" />
-							               <p>2</p>
-							            </li>
-							            <li className="cars">
-							               <img src="/images/feature-carspots.svg" />
-							               <p>2</p>
-							            </li>
-							         </ul>
-							      </div>
-							   </div>
+				{pastListings ?
+		      		[
+			      		<div>
+						<div className="content-container">
+							<div className="head">
+								<img src="/images/rss.png" />
+								<h3>Discover some of {firstName +"'s"} recent listings in the area</h3>
 							</div>
-			      		);
-					})}
-					
-				</div>
+						</div>
+						
+						<MyMapComponent isMarkerShown />
+						</div>
+					] : null 
+				}
+				
+				{pastListings ?
+	      		[
+					<div className="content-container">
+						<div className="head list">
+							<img src="/images/graph-icon.png" />
+							<h3>Browse all of {firstName +"'s"} past and present listings</h3>
+						</div>
+						
+						{pastListings && pastListings.map((propertyListing, i) => { 
+				      		return (
+						      	<div key={i} className="property">
+								   <div className="property-image" style={{backgroundImage: `url(${propertyListing.fields.tileImage.fields.file.url})`}}>
+								  	 <img src={propertyListing.fields.tileImage.fields.file.url} />
+								   </div>
+								   <div className="property-details">
+								      <p className="address">{propertyListing.fields.suburbAndPostcode}</p>
+								      <p className="addressLine1">{propertyListing.fields.addressLine1}</p>
+								      <p className="price">${propertyListing.fields.price}</p>
+								      <div className="bottom">
+								         <ul className="features">
+								            <li className="beds">
+								               <img src="/images/feature-home.png" />
+								               <p>3</p>
+								            </li>
+								            <li className="baths">
+								               <img src="/images/feature-showers.svg" />
+								               <p>2</p>
+								            </li>
+								            <li className="cars">
+								               <img src="/images/feature-carspots.svg" />
+								               <p>2</p>
+								            </li>
+								         </ul>
+								      </div>
+								   </div>
+								</div>
+				      		);
+						})}
+					</div>
+				]
+      		 : null}
 			</div>
 			
 			
@@ -209,31 +218,35 @@ class AgentProfile extends Component {
 				</div>
 			</InViewMonitor>
       		
-      		
-      		<div className="vendors">
-      			<div className="content-container">
-					<div className="head">
-						<img src="/images/heart-icon.png" />
-						<h3>A snapshot of some of {firstName +"'s"} recent listings and sales.</h3>
-					</div>
-					{agentReviews && agentReviews.map((reviews, i) => { 
-			      		return (
-					      	<div key={i} className="review">
-								<img src="/images/review-home.jpg" className="feature"/>
-								<div className="content">
-									<div className="star">
-										<img src="/images/star.svg" /> 
-										<span>{reviews.fields.stars}</span>
-									</div>
-									<h3>{reviews.fields.tileTitle}</h3>
-									<p>{reviews.fields.tileBody}</p>
-									<a href={"https://www.google.com/maps/search/"+reviews.fields.fullAddress} target="_blank">{reviews.fields.fullAddress} <img src="/images/review-marker.png" /></a>
-								</div>
+      		{agentReviews ?
+	      		[
+		      		<div className="vendors">
+		      			<div className="content-container">
+							<div className="head">
+								<img src="/images/heart-icon.png" />
+								<h3>A snapshot of some of {firstName +"'s"} recent listings and sales.</h3>
 							</div>
-			      		);
-					})} 
-				</div>
-      		</div>
+							{agentReviews && agentReviews.map((reviews, i) => { 
+					      		return (
+							      	<div key={i} className="review">
+										<img src="/images/review-home.jpg" className="feature"/>
+										<div className="content">
+											<div className="star">
+												<img src="/images/star.svg" /> 
+												<span>{reviews.fields.stars}</span>
+											</div>
+											<h3>{reviews.fields.tileTitle}</h3>
+											<p>{reviews.fields.tileBody}</p>
+											<a href={"https://www.google.com/maps/search/"+reviews.fields.fullAddress} target="_blank">{reviews.fields.fullAddress} <img src="/images/review-marker.png" /></a>
+										</div>
+									</div>
+					      		);
+							})} 
+						</div>
+		      		</div>
+	      		]
+      		 : null}
+      		
       		
       					
 		</div>

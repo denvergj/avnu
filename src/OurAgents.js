@@ -49,6 +49,7 @@ class OurAgents extends Component {
         this.setState({
           hero: heroContent
         });
+        console.log(heroContent);
       })
       .catch(console.error);
 		
@@ -113,13 +114,13 @@ class OurAgents extends Component {
     
     return (
 	    <div className="our-agents-page">
-	    	<Helmet title="Avnu - Standard Page" />
+	    	<Helmet title={"Avnu - " + headline} />
 			<Hero 
-				mainTitle="Property experts, not just agents"
-				introText="Our agents are experts in the art of selling your properties. Find the right expert for you." 
-				imgSrc="/images/our-agents.jpg" 
+				mainTitle={mainTitle}
+				introText={introText} 
+				imgSrc={heroImage}
 				icon="/images/agent-icon.png"
-				headline="Meet the Avnu Mosman team, a collective of 2088 experts."
+				headline={headline}
 			/>
       		
       		

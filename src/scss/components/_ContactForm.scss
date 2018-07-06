@@ -208,9 +208,14 @@
 
 @media (max-width:767px) {
 	.contactForm {
-		width: 100%;
+		width: 200px;
+		float: right;
 		position: relative;
-		top: -71px;
+		top: 0;
+		&.is-active {
+			top: -71px;
+			width: 100%;
+		}
 		button {
 		    min-width: 50%;
 		    float:right;
