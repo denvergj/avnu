@@ -127,18 +127,20 @@ class OurAgents extends Component {
 	       	<div className="content-container">
 		      	<div className="row">
 			      	{this.state.agents && this.state.agents.map((agent, i) => { 
-			      		return (
-					      	<div key={i} className="content">
-					      		<img src={(agent.fields.agentTile ? agent.fields.agentTile.fields.tileImage.fields.file.url : '')} />
-				      			<div className="info">
-				      				<h3>{agent.fields.firstName}</h3>
-				      				<p>{agent.fields.tileBody}</p>
-				      				<Link to={`our-agents/${agent.fields.slug}/`} className="with-arrow">
-										See {agent.fields.firstName + "'s"} profile
-									</Link>
-				      			</div>
-				      		</div>
-			      		);
+				      	if(i < 3) {
+				      		return (
+						      	<div key={i} className="content">
+						      		<img src={(agent.fields.agentTile ? agent.fields.agentTile.fields.tileImage.fields.file.url : '')} />
+					      			<div className="info">
+					      				<h3>{agent.fields.firstName}</h3>
+					      				<p>{agent.fields.tileBody}</p>
+					      				<Link to={`our-agents/${agent.fields.slug}/`} className="with-arrow">
+											See {agent.fields.firstName + "'s"} profile
+										</Link>
+					      			</div>
+					      		</div>
+				      		);
+			      		}
 					})}
 		      	</div>
 		    </div>
@@ -148,15 +150,62 @@ class OurAgents extends Component {
 		  classNameNotInView='vis-hidden'
 		  classNameInView='animated slideInRight quote-area content-container'
 		>
-		  <div>
-		    	<div className="the-quote">
-					<img src="/images/man-white.png" />
-					<p>"Time or brand related quote that relates to the brand."</p>
-				</div>
+		   <div>
+		  		{this.state.quotes && this.state.quotes.map((quotes, i) => { 
+			      	if(i == 0) {
+			      		return (
+					      	<div key={i} className="the-quote">
+								<img src="/images/man-white.png" />
+								<p>{quotes.fields.quoteBody}</p>
+							</div>
+			      		);
+		      		}
+				})} 
 			</div>
 		</InViewMonitor>
 		
 		
+		<div className="three-tiles grey">
+			<div className="content-container">
+			  	<div className="row">
+			      	{this.state.agents && this.state.agents.map((agent, i) => { 
+				      	if(i > 2) {
+				      		return (
+						      	<div key={i} className="content">
+						      		<img src={(agent.fields.agentTile ? agent.fields.agentTile.fields.tileImage.fields.file.url : '')} />
+					      			<div className="info">
+					      				<h3>{agent.fields.firstName}</h3>
+					      				<p>{agent.fields.tileBody}</p>
+					      				<Link to={`our-agents/${agent.fields.slug}/`} className="with-arrow">
+											See {agent.fields.firstName + "'s"} profile
+										</Link>
+					      			</div>
+					      		</div>
+				      		);
+			      		}
+					})}
+			  	</div>
+			</div>
+		</div>
+		
+		
+		<InViewMonitor
+		  classNameNotInView='vis-hidden'
+		  classNameInView='animated slideInRight quote-area content-container black'
+		>
+		  <div>
+		  		{this.state.quotes && this.state.quotes.map((quotes, i) => { 
+			      	if(i == 1) {
+			      		return (
+					      	<div key={i} className="the-quote">
+								<img src="/images/man-white.png" />
+								<p>{quotes.fields.quoteBody}</p>
+							</div>
+			      		);
+		      		}
+				})} 
+			</div>
+		</InViewMonitor>
 			
       					
 		</div>
