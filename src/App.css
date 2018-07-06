@@ -6987,6 +6987,9 @@ footer {
         width: 44%;
         display: inline-block;
         vertical-align: top; }
+      .contactForm .overlay-menu .overlay-menu__wrap .blurb.success {
+        width: 90%;
+        text-align: center; }
       .contactForm .overlay-menu .overlay-menu__wrap .blurb h3 {
         font-size: 50px;
         color: #fff;

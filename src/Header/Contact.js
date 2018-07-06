@@ -62,33 +62,24 @@ class ContactArea extends Component {
 	let typeValue = type["value"];
 	let timeRequestedValue = timeRequested["value"];
 	let preferredAgentValue = preferredAgent["value"];
-/*
-    axios({
-	    method: 'POST',
-	    url: 'https://api.ljx.cloud/enquiry',
-	    data: { name, contact, address, type, timeRequested, preferredAgent, "g-recaptcha-response": 'ssss' },
-	    mode: 'no-cors',
-		headers: {
-			Accept: 'application/x-www-form-urlencoded',
-			'Content-Type': 'application/x-www-form-urlencoded',
-		},
-	}).then(function (response) {
-        //handle success
-        console.log(response);
-    })
-    .catch(function (response) {
-        //handle error
-        console.log(response);
-    });
-*/
 	
 	$.ajax({
 	    type: "post",
-	    contentType: "application/json;",
+	    contentType: "application/json",
 	    url: "https://api.ljx.cloud/enquiry",
-	    data: JSON.stringify({ 'type': typeValue, 'name': $('input[name="name"]').val(), 'contact': $('input[name="contact"]').val(), 'address': $('input[name="address"]').val(), 'timeRequested': timeRequestedValue, 'preferredAgent': preferredAgentValue, 'g-recaptcha-response': recaptcha }),
+	    data: JSON.stringify({ 
+		    'type': typeValue, 
+		    'name': $('input[name="name"]').val(), 
+		    'contact': $('input[name="contact"]').val(), 
+		    'address': $('input[name="address"]').val(), 
+		    'timeRequested': timeRequestedValue, 
+		    'preferredAgent': preferredAgentValue, 
+		    'g-recaptcha-response': recaptcha 
+		}),
 	    success: function(msg){
-	       
+	       $('.contactForm form, .blurb p').remove();
+	       $('.blurb').addClass('success');
+	       $('.blurb h3').text('Thanks, we\'ll be in touch soon.');
 	    }
 	});
 
@@ -119,15 +110,6 @@ class ContactArea extends Component {
       })
       .catch(console.error);
       
-  }
-  
-  componentDidMount() {
-	  const script = document.createElement("script");
-
-		script.src = "https://www.google.com/recaptcha/api.js";
-		script.async = true;
-		
-		document.body.appendChild(script);
   }
   
   
