@@ -150,7 +150,6 @@ class Home extends Component {
 	      		<div className="grey"></div>
 	      		 <InViewMonitor
 				  classNameNotInView='vis-hidden'
-				  intoViewMargin='10px'
 				  classNameInView='animated slideInRight content-container'
 				>
 		      		<div className="the-quote">

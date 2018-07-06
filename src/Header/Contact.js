@@ -5,8 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 import 'react-select/dist/react-select.css';
-import Recaptcha from 'react-recaptcha';
+import Reaptcha from 'reaptcha';
 import axios from 'axios';
+import $ from 'jquery';
  
 class ContactArea extends Component {
   constructor(props) {
@@ -25,7 +26,6 @@ class ContactArea extends Component {
 	};
     this.toggleForm = this.toggleForm.bind(this);
     
-    this.verifyCallback = this.verifyCallback.bind(this);
   }
  
   toggleForm() {
@@ -50,19 +50,23 @@ class ContactArea extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
   
-    verifyCallback(response) {
-	  console.log(response);
-	};
+	onVerify = (response) => {
+	    this.setState({ recaptcha: response });
+	  };
   
   onSubmit = (e) => {
     e.preventDefault();
     // get our form data out of state
-    const { name, contact, address, type, timeRequested, preferredAgent } = this.state;
-
+    const { name, contact, address, type, timeRequested, preferredAgent, recaptcha } = this.state;
+	
+	let typeValue = type["value"];
+	let timeRequestedValue = timeRequested["value"];
+	let preferredAgentValue = preferredAgent["value"];
+/*
     axios({
 	    method: 'POST',
 	    url: 'https://api.ljx.cloud/enquiry',
-	    data: { "name" : name, "g-recaptcha-response": 'ssss' },
+	    data: { name, contact, address, type, timeRequested, preferredAgent, "g-recaptcha-response": 'ssss' },
 	    mode: 'no-cors',
 		headers: {
 			Accept: 'application/x-www-form-urlencoded',
@@ -76,6 +80,18 @@ class ContactArea extends Component {
         //handle error
         console.log(response);
     });
+*/
+	
+	$.ajax({
+	    type: "post",
+	    contentType: "application/json;",
+	    url: "https://api.ljx.cloud/enquiry",
+	    data: JSON.stringify({ 'type': typeValue, 'name': $('input[name="name"]').val(), 'contact': $('input[name="contact"]').val(), 'address': $('input[name="address"]').val(), 'timeRequested': timeRequestedValue, 'preferredAgent': preferredAgentValue, 'g-recaptcha-response': recaptcha }),
+	    success: function(msg){
+	       
+	    }
+	});
+
   }
   
   componentWillMount() {
@@ -197,10 +213,7 @@ class ContactArea extends Component {
 			      />
           	</div>
           	
-          	<Recaptcha 
-          		sitekey="6LfEXGIUAAAAAPIvXJBqlEj8_KiKkA33BCkIsIuz"
-          		verifyCallback={this.verifyCallback}
-          	/>
+          	<Reaptcha sitekey="6LfEXGIUAAAAAPIvXJBqlEj8_KiKkA33BCkIsIuz" onVerify={this.onVerify} />
           	
           	<div className="enter">
           		<button>Send enquiry</button>

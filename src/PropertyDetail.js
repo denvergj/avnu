@@ -189,7 +189,7 @@ class PropertyDetail extends Component {
 			<InViewMonitor
 			  classNameNotInView='vis-hidden'
 			  intoViewMargin='100px'
-			  classNameInView='animated slideInLeft quote-area content-container'
+			  classNameInView='animated slideInRight quote-area content-container'
 			>
 				<div className="the-quote">
 					<img src="/images/man-white.png" />

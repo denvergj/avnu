@@ -10,9 +10,23 @@ import OurAgents from './OurAgents';
 import AgentProfile from './AgentProfile';
 import AgentProfileThird from './AgentProfileThird';
 import PropertyDetail from './PropertyDetail';
+import $ from 'jquery';
 import './App.css';
 
 class App extends Component {
+  componentDidMount() {
+    $(document).on('click','a.open-contact, a[href="#enquiry"]',function(e){
+	   $('.contactForm,.contactForm .hamburger--collapse').addClass('is-active');
+	   $('.contactForm .overlay-menu').addClass('is-open');
+	   e.preventDefault();
+    });
+    $(document).on('click','.contactForm .hamburger-box',function(e){
+	   $('.contactForm,.contactForm .hamburger--collapse').removeClass('is-active');
+	   $('.contactForm .overlay-menu').removeClass('is-open');
+	   e.preventDefault();
+    });
+    
+  }
   render() {
     return (
       <BrowserRouter forceRefresh>

@@ -86,7 +86,7 @@ class MenuArea extends Component {
           		<a href="/our-listings/">Our Listings</a>
           </div>
           <div className="menu-item">
-          		<a href="">Get in touch</a>
+          		<a href="#" className="open-contact">Get in touch</a>
           </div>
         </OverlayMenu>
       </div>

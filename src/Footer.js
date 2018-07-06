@@ -9,7 +9,7 @@ class Footer extends Component {
     		<div className="grey">
 				<div className="content-container">
 					<p>We have the time to help, lets chat.</p>
-					<a href="#" className="with-arrow">Call to action</a>
+					<a href="#" className="with-arrow open-contact">Call to action</a>
 				</div>
 			</div>
 			<div className="dark-grey">
@@ -20,7 +20,7 @@ class Footer extends Component {
 						<p>175 Sailors Bay Road
 							Northbridge Rd 175
 							Sydney, Australia</p>
-						<a href="#">Get in touch</a>
+						<a href="#enquiry">Get in touch</a>
 					</div>
 				</div>
 			</div>
