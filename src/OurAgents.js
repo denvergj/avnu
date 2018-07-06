@@ -66,6 +66,7 @@ class OurAgents extends Component {
         this.setState({
           agents: fields
         });
+         console.log("Agents:");
          console.log(fields);
       })
       .catch(console.error);
@@ -84,7 +85,8 @@ class OurAgents extends Component {
         this.setState({
           quotes: fields
         });
-       // console.log(fields);
+        console.log("Quotes");
+        console.log(fields);
       })
       .catch(console.error);
   }

@@ -138,7 +138,7 @@ class AgentProfile extends Component {
 			<InViewMonitor
 			  classNameNotInView='vis-hidden'
 			  intoViewMargin='50px'
-			  classNameInView='animated slideInLeft quote-area content-container'
+			  classNameInView='animated slideInRight quote-area content-container'
 			>
 				<div className="the-quote">
 					<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />

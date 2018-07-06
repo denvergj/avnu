@@ -7274,7 +7274,7 @@ a.with-arrow {
         line-height: 34px; } }
 
 .property {
-  box-shadow: 10px 9px 20px -15px #4a4a4a;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
   margin-bottom: 20px;
   position: relative;
   display: flex; }
@@ -7919,7 +7919,7 @@ a.with-arrow {
   .agent-profile-page-content .vendors .head {
     margin-bottom: 60px; }
   .agent-profile-page-content .vendors .review {
-    box-shadow: 10px 9px 20px -15px #4a4a4a;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
     display: flex;
     margin-top: 40px;
     background: #fff; }
@@ -8130,7 +8130,7 @@ a.with-arrow {
       float: right;
       margin-top: 90px; }
       .agent-profile-page-content .property-detail-page .local-area .landmarks .place {
-        box-shadow: 0px 0px 1px 1px rgba(150, 150, 150, 0.5);
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
         display: flex;
         margin-top: 10px;
         background: #fff; }
@@ -8164,7 +8164,7 @@ a.with-arrow {
     float: right;
     margin-top: 90px; }
     .agent-profile-page-content .property-detail-page .property-team .team-members .member {
-      box-shadow: 0px 0px 1px 1px rgba(150, 150, 150, 0.5);
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
       margin-bottom: 20px; }
       .agent-profile-page-content .property-detail-page .property-team .team-members .member img {
         max-width: 100%; }
