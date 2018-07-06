@@ -113,6 +113,15 @@ class ContactArea extends Component {
   }
   
   
+  componentDidMount() {
+	  const script = document.createElement("script");
+
+		script.src = "https://www.google.com/recaptcha/api.js?render=explicit";
+		script.async = true;
+		
+		document.body.appendChild(script);
+  }
+  
   
   render() {
 	  
