@@ -151,7 +151,7 @@ class AgentProfile extends Component {
 			<div className="recent-listings">
 				{pastListings ?
 		      		[
-			      		<div>
+			      		<div key="listing">
 							<div className="content-container">
 								<div className="head">
 									<img src="/images/rss.png" />
@@ -207,7 +207,7 @@ class AgentProfile extends Component {
 				
 				{pastListings ?
 	      		[
-					<div className="content-container">
+					<div className="content-container" key="listing">
 						<div className="head list">
 							<img src="/images/graph-icon.png" />
 							<h3>Browse all of {firstName +"'s"} past and present listings</h3>
@@ -262,7 +262,7 @@ class AgentProfile extends Component {
       		
       		{agentReviews ?
 	      		[
-		      		<div className="vendors">
+		      		<div className="vendors" key="review">
 		      			<div className="content-container">
 							<div className="head">
 								<img src="/images/heart-icon.png" />
