@@ -7674,7 +7674,7 @@ a.with-arrow {
 .standard-page .content img {
   max-width: 100%; }
 
-.standard-page .content caption {
+.standard-page .content .caption {
   width: 100%;
   display: inline-block;
   text-align: left;
@@ -7752,7 +7752,7 @@ a.with-arrow {
       display: block; }
     .standard-page .content.double .content-container img {
       margin-bottom: 40px; }
-    .standard-page .content.double .content-container caption {
+    .standard-page .content.double .content-container .caption {
       display: none; }
     .standard-page .content.double .content-container div {
       width: 100%;

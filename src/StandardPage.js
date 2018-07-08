@@ -78,7 +78,7 @@ class StandardPage extends Component {
 				 if(i < 1) {
 		       		 let blockBody = getMarkup(block.fields.blockBody);
 		             return (
-			             <Zoom>
+			             <Zoom key={i}>
 						 <section key={i} className="content double">
 							<div className="content-container flex">
 								<div>
@@ -141,7 +141,7 @@ class StandardPage extends Component {
 						</div>
 						<div>
 							<img src="/images/content-image.jpg" />
-							<caption>Caption goes here</caption>
+							<div className="caption">Caption goes here</div>
 						</div>
 				</div>
 			</section>
