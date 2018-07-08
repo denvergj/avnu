@@ -76,7 +76,8 @@ class AgentProfile extends Component {
     	primaryQuote = null,
     	secondaryQuote = null,
     	pastListings = null,
-    	agentReviews = null;
+    	agentReviews = null,
+    	divStyle = null;
 		
 	 if(this.state.data) {
 	  agentData = this.state.data;
@@ -151,14 +152,55 @@ class AgentProfile extends Component {
 				{pastListings ?
 		      		[
 			      		<div>
-						<div className="content-container">
-							<div className="head">
-								<img src="/images/rss.png" />
-								<h3>Discover some of {firstName +"'s"} recent listings in the area</h3>
+							<div className="content-container">
+								<div className="head">
+									<img src="/images/rss.png" />
+									<h3>Discover some of {firstName +"'s"} recent listings in the area</h3>
+								</div>
 							</div>
-						</div>
-						
-						<MyMapComponent isMarkerShown />
+							
+							<div className="mapHouse">
+								<MyMapComponent isMarkerShown theMarkers={pastListings}/>
+								{pastListings && pastListings.map((propertyListing, i) => { 
+									if(i > 0) {
+										divStyle = {
+										  display: 'none',
+										}
+								    } else {
+										divStyle = {
+										  display: 'block',
+										}
+									}
+						      		return (
+								      	<div key={i} className="mapHouseProperty property" id={"property-"+propertyListing.fields.location.lon} style={divStyle}>
+										   <div className="property-image" style={{backgroundImage: `url(${propertyListing.fields.tileImage.fields.file.url})`}}>
+										  	 <img src={propertyListing.fields.tileImage.fields.file.url} />
+										   </div>
+										   <div className="property-details">
+										      <p className="address">{propertyListing.fields.suburbAndPostcode}</p>
+										      <p className="addressLine1">{propertyListing.fields.addressLine1}</p>
+										      <p className="price">${propertyListing.fields.price}</p>
+										      <div className="bottom">
+										         <ul className="features">
+										           <li className="beds">
+										               <img src="/images/home-icon.svg" />
+										               <p>{propertyListing.fields.numberOfBeds}</p>
+										            </li>
+										            <li className="baths">
+										               <img src="/images/feature-showers.svg" />
+										               <p>{propertyListing.fields.numberOfBaths}</p>
+										            </li>
+										            <li className="cars">
+										               <img src="/images/feature-carspots.svg" />
+										               <p>{propertyListing.fields.numberOfCars}</p>
+										            </li>
+										         </ul>
+										      </div>
+										   </div>
+										</div>
+						      		);
+								})}
+							</div>
 						</div>
 					] : null 
 				}
@@ -184,16 +226,16 @@ class AgentProfile extends Component {
 								      <div className="bottom">
 								         <ul className="features">
 								            <li className="beds">
-								               <img src="/images/feature-home.png" />
-								               <p>3</p>
+								               <img src="/images/home-icon.svg" />
+								               <p>{propertyListing.fields.numberOfBeds}</p>
 								            </li>
 								            <li className="baths">
 								               <img src="/images/feature-showers.svg" />
-								               <p>2</p>
+								               <p>{propertyListing.fields.numberOfBaths}</p>
 								            </li>
 								            <li className="cars">
 								               <img src="/images/feature-carspots.svg" />
-								               <p>2</p>
+								               <p>{propertyListing.fields.numberOfCars}</p>
 								            </li>
 								         </ul>
 								      </div>

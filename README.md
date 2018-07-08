@@ -1,6 +1,4 @@
-## contentful-static-react
-
-A starter kit for building a static website with React as the templating library and Contentful as the CMS. This extends create-react-app with some additional packages:
+## Avnu Build
 
 - [contentful](https://github.com/contentful/contentful.js) - JavaScript library for Contentful's Delivery API
 - [react-router-dom](https://reacttraining.com/react-router/) for multiple pages.

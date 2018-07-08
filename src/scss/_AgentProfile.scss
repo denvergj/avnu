@@ -103,15 +103,19 @@
 		background: #E6E6E5;
 		margin-top: 200px;
 		padding: 300px 0;
+		
 		.head {
 			float: left;
 		}
 		.content-container {
 			overflow: hidden;
 		}
+		.mapHouse {
+			margin: 50px 0;
+		}
 		#googleMapContainer {
 			overflow: hidden;
-			margin: 50px 0;
+			margin: 0;
 		}
 		.property {
 			background: #fff;

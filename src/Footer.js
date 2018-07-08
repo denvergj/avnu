@@ -9,7 +9,7 @@ class Footer extends Component {
     		<div className="grey">
 				<div className="content-container">
 					<p>We have the time to help, lets chat.</p>
-					<a href="#" className="with-arrow open-contact">Call to action</a>
+					<a href="#" className="with-arrow open-contact">Get in touch</a>
 				</div>
 			</div>
 			<div className="dark-grey">

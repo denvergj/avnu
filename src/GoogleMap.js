@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { compose, withProps } from "recompose";
+import { compose, withProps, withHandlers } from "recompose";
 import {
   withScriptjs,
   withGoogleMap,
@@ -23,21 +23,45 @@ const MyMapComponent = compose(
     containerElement: <div id="googleMapContainer" style={{ height: `400px` }} />,
     mapElement: <div id="googleMap" style={{ height: `100%`, width: `85%` }} />
   }),
+  withHandlers({
+    onMarkerClick: () => (marker) => {
+	    var properties = document.getElementsByClassName("mapHouseProperty");
+	    var i;
+		for (i = 0; i < properties.length; i++) {
+		    properties[i].style.display = 'none';
+		}
+	    document.getElementById('property-'+marker.latLng.lng()).style.display = "block";
+    }
+  }),
   withScriptjs,
   withGoogleMap
 )(props => (
-  <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }} defaultOptions={{ styles: silverMaps, disableDefaultUI: true }} >
-    {props.isMarkerShown && (
-      <Marker 
-      	position={{ lat: -34.397, lng: 150.644 }} 
-      	icon={{
-		    url: "/images/marker.png"
-		}}
-      />
-    )}
-    <Marker position={{ lat: -34.300, lng: 150.644 }} icon={{
-		    url: "/images/marker.png"
-		}} />
+  <GoogleMap defaultZoom={10} defaultCenter={{ lat: -33.865143, lng: 151.209900 }} defaultOptions={{ styles: silverMaps, disableDefaultUI: true }} >
+
+	  	{props.theMarkers && props.theMarkers.map((markers, i) => { 
+	  		return (
+		      	<Marker 
+		      		key={i}
+		      		position={{ lat: markers.fields.location.lat, lng: markers.fields.location.lon }} 
+		      		icon={{
+				    	url: "/images/marker.png"
+					}} 
+					propertyId={markers.mapIconId}
+					onClick={props.onMarkerClick.bind(this.marker)}
+				/>
+	  		);
+		})}
+		{props.theMarker ?
+	      		[
+				<Marker 
+			      		position={{ lat: props.theMarker.lat, lng: props.theMarker.lon }} 
+			      		icon={{
+					    	url: "/images/marker.png"
+						}} 
+					/>
+			]
+      	: null}
+        
   </GoogleMap>
 ));
 

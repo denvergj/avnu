@@ -35,7 +35,6 @@ class OurAgents extends Component {
     });
 
 	
-	  // Quotes
       client
       // use getEntries because it does link resolution
       .getEntries({
@@ -119,7 +118,7 @@ class OurAgents extends Component {
 				mainTitle={mainTitle}
 				introText={introText} 
 				imgSrc={heroImage}
-				icon="/images/agent-icon.png"
+				icon="/images/man-sunrise.png"
 				headline={headline}
 			/>
       		
@@ -135,7 +134,7 @@ class OurAgents extends Component {
 					      			<div className="info">
 					      				<h3>{agent.fields.firstName}</h3>
 					      				<p>{agent.fields.tileBody}</p>
-					      				<Link to={`our-agents/${agent.fields.slug}/`} className="with-arrow">
+					      				<Link to={`/our-agents/${agent.fields.slug}/`} className="with-arrow">
 											See {agent.fields.firstName + "'s"} profile
 										</Link>
 					      			</div>
@@ -177,7 +176,7 @@ class OurAgents extends Component {
 					      			<div className="info">
 					      				<h3>{agent.fields.firstName}</h3>
 					      				<p>{agent.fields.tileBody}</p>
-					      				<Link to={`our-agents/${agent.fields.slug}/`} className="with-arrow">
+					      				<Link to={`/our-agents/${agent.fields.slug}/`} className="with-arrow">
 											See {agent.fields.firstName + "'s"} profile
 										</Link>
 					      			</div>

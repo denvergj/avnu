@@ -49,6 +49,7 @@ class PropertyDetail extends Component {
 		console.log(fields);
 	})
 	.catch(console.error);
+	
   }
   
   componentDidMount() {
@@ -71,7 +72,14 @@ class PropertyDetail extends Component {
     	secondaryQuote = null,
     	allPointsOfInterest = null,
     	listingComparableSales = null,
-    	agents = null;
+    	agents = null,
+    	location = null,
+    	heroImage = null,
+    	price = null,
+    	numberOfBaths = null,
+    	numberOfBeds = null,
+    	numberOfCars = null;
+    	
 		
 	if(this.state.data) {
 		propertyData = this.state.data;
@@ -89,6 +97,12 @@ class PropertyDetail extends Component {
 		allPointsOfInterest = propertyData.allPointsOfInterest;
 		listingComparableSales = propertyData.listingComparableSales;
 		agents = propertyData.agents;
+		location = propertyData.location;
+		heroImage = propertyData.allImages[0].fields.file.url;
+		price = propertyData.priceguide;
+		numberOfBaths = propertyData.numberOfBaths;
+		numberOfBeds = propertyData.numberOfBeds;
+		numberOfCars = propertyData.numberOfCars;
 	}
     
     return (
@@ -97,7 +111,7 @@ class PropertyDetail extends Component {
 			<Hero 
 				mainTitle={addressLine1 + " " + suburbAndPostcode}
 				introText={catchphrasePrimary}
-				imgSrc="/images/property-header.jpg" 
+				imgSrc={heroImage} 
 				icon="/images/our-listings.png"
 				headline={catchphraseSecondary}
 			/>
@@ -124,34 +138,30 @@ class PropertyDetail extends Component {
 			
 			
 			<div className="mapHouse">
-				<MyMapComponent isMarkerShown />
+				<MyMapComponent isMarkerShown theMarker={location}/>
 				<div className="property">
-				   <div className="property-image" style={{backgroundImage: `url(https://images.ctfassets.net/dkcrc82u6zt9/6aAUwXB1PGgmwiqQkKMOeK/9e3ab5010af7779a838391e91407b004/640x480__2_.jpg)`}}>
-				  	 <img src="https://images.ctfassets.net/dkcrc82u6zt9/6aAUwXB1PGgmwiqQkKMOeK/9e3ab5010af7779a838391e91407b004/640x480__2_.jpg" />
+				   <div className="property-image" style={{backgroundImage: `url(${heroImage})`}}>
+				  	 <img src={heroImage} />
 				   </div>
 				   <div className="property-details">
-				  		 <div className="type">
-							<img src="/images/home.png" />
-							<p>For Sale</p>
-						</div>
-				      <p className="address">100 Speith St, Mossman, 2088</p>
-				      <p className="price">$1,500,120</p>
+				      <p className="address">{suburbAndPostcode}</p>
+				      <p className="addressLine1">{addressLine1}</p>
+				      <p className="price">{price}</p>
 				      <div className="bottom">
 				         <ul className="features">
 				            <li className="beds">
 				               <img src="/images/feature-home.png" />
-				               <p>3</p>
+				               <p>{numberOfBeds}</p>
 				            </li>
 				            <li className="baths">
 				               <img src="/images/feature-showers.svg" />
-				               <p>2</p>
+				               <p>{numberOfBaths}</p>
 				            </li>
 				            <li className="cars">
 				               <img src="/images/feature-carspots.svg" />
-				               <p>2</p>
+				               <p>{numberOfCars}</p>
 				            </li>
 				         </ul>
-				         <a href="#" className="with-arrow">View</a>
 				      </div>
 				   </div>
 				</div>
@@ -255,16 +265,16 @@ class PropertyDetail extends Component {
 							      <div className="bottom">
 							         <ul className="features">
 							            <li className="beds">
-							               <img src="/images/feature-home.png" />
-							               <p>3</p>
+							               <img src="/images/home-icon.svg" />
+							               <p>{compareableSale.fields.numberOfBeds}</p>
 							            </li>
 							            <li className="baths">
 							               <img src="/images/feature-showers.svg" />
-							               <p>2</p>
+							               <p>{compareableSale.fields.numberOfBaths}</p>
 							            </li>
 							            <li className="cars">
 							               <img src="/images/feature-carspots.svg" />
-							               <p>2</p>
+							               <p>{compareableSale.fields.numberOfCars}</p>
 							            </li>
 							         </ul>
 							      </div>

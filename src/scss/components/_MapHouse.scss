@@ -1,0 +1,58 @@
+.mapHouse {
+	display: flex;
+	overflow: hidden;
+	#googleMapContainer {
+		float: left;
+		width: 50%;
+		height: auto!important;
+	}
+	#googleMap {
+		width: 100%!important;
+		display: inline-block;
+	}
+	.property {
+		background: #fff;
+		float: left;
+		margin-bottom: 0;
+		width: 35%;
+		display: block;
+		box-shadow: none;
+		border-bottom: 1px solid #E6E6E6;
+	    border-top: 1px solid #E6E6E6;
+	    border-right: 1px solid #E6E6E6;
+	    .type {
+		    p {
+			    color: $primary-color;
+			}
+	    }
+		.property-image,
+		.property-details {
+			max-width: 100%;
+			display: block;
+		}
+		.property-details {
+			padding-top: 17px;
+			.type {
+				padding-bottom: 15px;
+			}
+			.features {
+				margin-top: 5px;
+			}
+			a {
+				margin-top: -10px;
+			}
+		}
+	}
+}
+
+@media (max-width:767px) {
+	.mapHouse {
+		#googleMapContainer {
+			height: 400px!important;
+			width: 100%;
+		}
+		.property {
+			display: none;
+		}
+	}
+}

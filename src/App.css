@@ -7379,6 +7379,48 @@ a.with-arrow {
       .property .property-details .type {
         padding-bottom: 40px; } }
 
+.mapHouse {
+  display: flex;
+  overflow: hidden; }
+  .mapHouse #googleMapContainer {
+    float: left;
+    width: 50%;
+    height: auto !important; }
+  .mapHouse #googleMap {
+    width: 100% !important;
+    display: inline-block; }
+  .mapHouse .property {
+    background: #fff;
+    float: left;
+    margin-bottom: 0;
+    width: 35%;
+    display: block;
+    box-shadow: none;
+    border-bottom: 1px solid #E6E6E6;
+    border-top: 1px solid #E6E6E6;
+    border-right: 1px solid #E6E6E6; }
+    .mapHouse .property .type p {
+      color: #ee654d; }
+    .mapHouse .property .property-image,
+    .mapHouse .property .property-details {
+      max-width: 100%;
+      display: block; }
+    .mapHouse .property .property-details {
+      padding-top: 17px; }
+      .mapHouse .property .property-details .type {
+        padding-bottom: 15px; }
+      .mapHouse .property .property-details .features {
+        margin-top: 5px; }
+      .mapHouse .property .property-details a {
+        margin-top: -10px; }
+
+@media (max-width: 767px) {
+  .mapHouse #googleMapContainer {
+    height: 400px !important;
+    width: 100%; }
+  .mapHouse .property {
+    display: none; } }
+
 .hero-slider {
   min-height: 1136px; }
   .hero-slider .slick-slider:not(.slick-initialized) .slider-bg {
@@ -7747,7 +7789,8 @@ a.with-arrow {
   max-width: 370px; }
 
 .our-agents-page-content .row {
-  margin: 0 -30px; }
+  margin: 0 -30px;
+  display: flex; }
 
 .our-agents-page-content .three-tiles {
   margin-bottom: 100px;
@@ -7758,6 +7801,8 @@ a.with-arrow {
     box-shadow: 0px 0px 5px 1px rgba(150, 150, 150, 0.5);
     width: 28.3%;
     margin: 0 20px; }
+    .our-agents-page-content .three-tiles .content img {
+      min-height: 230px; }
   .our-agents-page-content .three-tiles.grey {
     background: #E6E6E5;
     margin-bottom: 0;
@@ -7795,7 +7840,8 @@ a.with-arrow {
   .our-agents-page-content .hero .icon-header h2 {
     max-width: 240px; }
   .our-agents-page-content .row {
-    margin: 0; }
+    margin: 0;
+    display: block; }
   .our-agents-page-content .three-tiles {
     margin-bottom: 0; }
     .our-agents-page-content .three-tiles .content {
@@ -7893,9 +7939,11 @@ a.with-arrow {
     float: left; }
   .agent-profile-page-content .recent-listings .content-container {
     overflow: hidden; }
+  .agent-profile-page-content .recent-listings .mapHouse {
+    margin: 50px 0; }
   .agent-profile-page-content .recent-listings #googleMapContainer {
     overflow: hidden;
-    margin: 50px 0; }
+    margin: 0; }
   .agent-profile-page-content .recent-listings .property {
     background: #fff;
     width: 47%;
@@ -8054,42 +8102,10 @@ a.with-arrow {
 .agent-profile-page-content .property-detail-page {
   display: inline-block;
   width: 100%; }
-  .agent-profile-page-content .property-detail-page .hero .icon-header h2 {
-    max-width: 347px; }
-  .agent-profile-page-content .property-detail-page .mapHouse {
-    display: flex;
-    overflow: hidden; }
-    .agent-profile-page-content .property-detail-page .mapHouse #googleMapContainer {
-      float: left;
-      width: 50%;
-      height: auto !important; }
-    .agent-profile-page-content .property-detail-page .mapHouse #googleMap {
-      width: 100% !important;
-      display: inline-block; }
-    .agent-profile-page-content .property-detail-page .mapHouse .property {
-      background: #fff;
-      float: left;
-      margin-bottom: 0;
-      width: 35%;
-      display: block;
-      box-shadow: none;
-      border-bottom: 1px solid #E6E6E6;
-      border-top: 1px solid #E6E6E6;
-      border-right: 1px solid #E6E6E6; }
-      .agent-profile-page-content .property-detail-page .mapHouse .property .type p {
-        color: #ee654d; }
-      .agent-profile-page-content .property-detail-page .mapHouse .property .property-image,
-      .agent-profile-page-content .property-detail-page .mapHouse .property .property-details {
-        max-width: 100%;
-        display: block; }
-      .agent-profile-page-content .property-detail-page .mapHouse .property .property-details {
-        padding-top: 17px; }
-        .agent-profile-page-content .property-detail-page .mapHouse .property .property-details .type {
-          padding-bottom: 15px; }
-        .agent-profile-page-content .property-detail-page .mapHouse .property .property-details .features {
-          margin-top: 5px; }
-        .agent-profile-page-content .property-detail-page .mapHouse .property .property-details a {
-          margin-top: -10px; }
+  .agent-profile-page-content .property-detail-page .hero {
+    min-height: 500px; }
+    .agent-profile-page-content .property-detail-page .hero .icon-header h2 {
+      max-width: 347px; }
   .agent-profile-page-content .property-detail-page .property-amenities {
     padding: 210px 0 290px 0;
     background: #E6E6E6;
@@ -8200,11 +8216,6 @@ a.with-arrow {
     padding-top: 310px; }
 
 @media (max-width: 767px) {
-  .property-detail-outer .property-detail-page .mapHouse #googleMapContainer {
-    height: 400px !important;
-    width: 100%; }
-  .property-detail-outer .property-detail-page .mapHouse .property {
-    display: none; }
   .property-detail-outer .property-detail-page .property-amenities {
     padding-bottom: 240px; }
     .property-detail-outer .property-detail-page .property-amenities .head {
