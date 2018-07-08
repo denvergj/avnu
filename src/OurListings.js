@@ -83,7 +83,7 @@ class OurListings extends Component {
     }
 	
     return (
-	    <div class="our-listings">
+	    <div className="our-listings">
 	      <Helmet title={"Avnu - " + headline} />
 			<Hero 
 				mainTitle={mainTitle}
