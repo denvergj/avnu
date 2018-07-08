@@ -54,6 +54,7 @@ const MyMapComponent = compose(
 		{props.theMarker ?
 	      		[
 				<Marker 
+				 		key={props.theMarker.lat}
 			      		position={{ lat: props.theMarker.lat, lng: props.theMarker.lon }} 
 			      		icon={{
 					    	url: "/images/marker.png"
