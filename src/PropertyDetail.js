@@ -36,7 +36,8 @@ class PropertyDetail extends Component {
 	// use getEntries because it does link resolution
 	.getEntries({
 		content_type: 'listing',
-		'fields.slug[in]': this.props.match.params.property
+		'fields.slug[in]': this.props.match.params.property,
+		include: 3
 	})
 	.then(response => {
 		// extract the data from the response array
@@ -112,7 +113,7 @@ class PropertyDetail extends Component {
 				mainTitle={addressLine1 + " " + suburbAndPostcode}
 				introText={catchphrasePrimary}
 				imgSrc={heroImage} 
-				icon="/images/our-listings.png"
+				icon="/images/listing-profile-icon.png"
 				headline={catchphraseSecondary}
 			/>
       		
@@ -297,7 +298,7 @@ class PropertyDetail extends Component {
 						{agents && agents.map((agent, i) => { 
 				      		return (
 						      	<div key={i} className="member">
-									<img src="/images/adrian.jpg"/>
+									<img src={agent.fields.agentTile.fields.tileImage.fields.file.url}/>
 									<div className="content">
 										<h3>{agent.fields.firstName}</h3>
 										<p>{agent.fields.tileBody}</p>

@@ -10,15 +10,10 @@ import {
 
 const silverMaps = require("./silver-maps.json");
 
-const MyMapComponent = compose(
+
+const mapEnvironment = compose(
   withProps({
-    /**
-     * Note: create and replace your own key in the Google console.
-     * https://console.developers.google.com/apis/dashboard
-     * The key "AIzaSyBkNaAGLEVq0YLQMi-PYEMabFeREadYe1Q" can be ONLY used in this sandbox (no forked).
-     */
-    googleMapURL:
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyAgtQXYfDyRONqa7nTYp17el-soHpuQt0Q&v=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: `https://maps.googleapis.com/maps/api/js?key=AIzaSyAgtQXYfDyRONqa7nTYp17el-soHpuQt0Q&v=3.exp`,
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div id="googleMapContainer" style={{ height: `400px` }} />,
     mapElement: <div id="googleMap" style={{ height: `100%`, width: `85%` }} />
@@ -35,7 +30,10 @@ const MyMapComponent = compose(
   }),
   withScriptjs,
   withGoogleMap
-)(props => (
+);
+
+
+const MapLayout = props => (
   <GoogleMap defaultZoom={10} defaultCenter={{ lat: -33.865143, lng: 151.209900 }} defaultOptions={{ styles: silverMaps, disableDefaultUI: true }} >
 
 	  	{props.theMarkers && props.theMarkers.map((markers, i) => { 
@@ -64,7 +62,9 @@ const MyMapComponent = compose(
       	: null}
         
   </GoogleMap>
-));
+);
+
+const MyMapComponent = mapEnvironment(MapLayout);
 
 
 export default MyMapComponent;

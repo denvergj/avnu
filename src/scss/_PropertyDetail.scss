@@ -8,6 +8,10 @@
 				h2 {
 					max-width: 347px;
 				}
+				img {
+					max-width: 60px;
+					height: auto;
+				}
 			}
 		}
 		.property-amenities {
@@ -143,6 +147,11 @@
 							text-decoration: none;
 							margin-left: 20px;
 							font-size: 12px;
+							&.with-arrow {
+								&:before {
+									right: 10px;
+								}
+							}
 							img {
 							    position: relative;
 								top: 4px;

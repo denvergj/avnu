@@ -6978,7 +6978,8 @@ footer {
     right: 0;
     max-width: 60%;
     top: 67px;
-    overflow-y: auto; }
+    max-height: calc(100% - 25%);
+    padding-bottom: 200px; }
     .contactForm .overlay-menu .overlay-menu__wrap {
       position: relative;
       width: 100%; }
@@ -7068,6 +7069,10 @@ footer {
             .contactForm .overlay-menu .overlay-menu__wrap form .field input::-webkit-input-placeholder {
               color: #fff;
               font-family: "GTWalsheimLight"; }
+        .contactForm .overlay-menu .overlay-menu__wrap form .g-recaptcha {
+          transform: scale(0.9);
+          float: left;
+          margin-left: -20px; }
         .contactForm .overlay-menu .overlay-menu__wrap form button {
           color: #fff;
           font-size: 18px;
@@ -7327,6 +7332,8 @@ a.with-arrow {
       .property .property-details .type p {
         line-height: 50px;
         margin-left: 15px; }
+      .property .property-details .type img {
+        max-width: 60px; }
     .property .property-details p {
       color: #4A4A4A; }
       .property .property-details p.address {
@@ -7767,6 +7774,10 @@ a.with-arrow {
   .standard-page .side-area.content-container {
     width: 100%; } }
 
+.listing-page .hero .icon-header img {
+  max-width: 60px;
+  height: auto; }
+
 .listing-page footer .grey {
   background: none;
   padding-top: 0; }
@@ -7801,8 +7812,6 @@ a.with-arrow {
     box-shadow: 0px 0px 5px 1px rgba(150, 150, 150, 0.5);
     width: 28.3%;
     margin: 0 20px; }
-    .our-agents-page-content .three-tiles .content img {
-      min-height: 230px; }
   .our-agents-page-content .three-tiles.grey {
     background: #E6E6E5;
     margin-bottom: 0;
@@ -8106,6 +8115,9 @@ a.with-arrow {
     min-height: 500px; }
     .agent-profile-page-content .property-detail-page .hero .icon-header h2 {
       max-width: 347px; }
+    .agent-profile-page-content .property-detail-page .hero .icon-header img {
+      max-width: 60px;
+      height: auto; }
   .agent-profile-page-content .property-detail-page .property-amenities {
     padding: 210px 0 290px 0;
     background: #E6E6E6;
@@ -8204,6 +8216,8 @@ a.with-arrow {
           text-decoration: none;
           margin-left: 20px;
           font-size: 12px; }
+          .agent-profile-page-content .property-detail-page .property-team .team-members .member .content a.with-arrow:before {
+            right: 10px; }
           .agent-profile-page-content .property-detail-page .property-team .team-members .member .content a img {
             position: relative;
             top: 4px;

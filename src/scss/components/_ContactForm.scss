@@ -36,7 +36,8 @@
 		right: 0;
 		max-width: 60%;
 		top: 67px;
-		overflow-y: auto;
+		max-height: calc(100% - 25%);
+		padding-bottom: 200px;
 		.overlay-menu__wrap {
 			position: relative;
 			width: 100%;
@@ -147,6 +148,11 @@
 							font-family: $primary-font;
    						}
 					}
+				}
+				.g-recaptcha {
+					transform: scale(0.9);
+				    float: left;
+				    margin-left: -20px;
 				}
 				button {
 					color: #fff;

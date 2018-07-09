@@ -17,7 +17,6 @@ const getMarkup = field => {
 
 class OurListings extends Component {
   state = {
-	hero: null,
 	pageData: null
   };
 
@@ -26,23 +25,6 @@ class OurListings extends Component {
       space: process.env.REACT_APP_SPACE_ID,
       accessToken: process.env.REACT_APP_ACCESS_TOKEN
     });
-
-	client
-      // use getEntries because it does link resolution
-      .getEntries({
-	    content_type: 'listingListPage'
-      })
-      .then(response => {
-        // extract the data from the response array
-        return response.items[0].fields;
-      })
-      .then(heroContent => {
-        this.setState({
-          hero: heroContent
-        });
-        console.log(heroContent);
-      })
-      .catch(console.error);
 
     client
       .getEntries({
@@ -64,33 +46,28 @@ class OurListings extends Component {
   }
   
   render() {
-    let mainTitle = null,
-    	introText = null,
-    	pageHeading = null,
-    	heroData = null,
-    	headline = null,
-    	heroImage = null;
+    let imgSrc = null,
+    	imgTileSrc = null;
+    let heroImageValuePropGreeting,
+    	heroImageValuePropHeading,
+    	heroImageValuePropBody,
+    	missionStatement,
+    	missionStatementLink,
+    	missionStatementLinkText,
+    	primaryQuote;
     
     let shortMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
-	
-	if(this.state.hero) {
-	  heroData = this.state.hero;
-	  mainTitle = heroData.heroImageBody;
-	  introText = heroData.heroImageHeading;
-	  heroImage = heroData.heroImage.fields.file.url;
-	  headline = heroData.pageHeading;
-    }
-	
+
     return (
 	    <div className="our-listings">
-	      <Helmet title={"Avnu - " + headline} />
+	      <Helmet title="Avnu - Our Listings" />
 			<Hero 
-				mainTitle={mainTitle}
-				introText={introText} 
-				imgSrc={heroImage}
-				icon="/images/our-listings.png"
-				headline={headline}
+				mainTitle="Find the right property for you." 
+				introText="Take a look at what we have listed at the moment" 
+				imgSrc="/images/our-listings-header.jpg" 
+				icon="/images/listing-icon.png"
+				headline="Find the right property for you and we will do the rest."
 			/>
 			
 			<div className="content-container listings">
@@ -112,7 +89,7 @@ class OurListings extends Component {
 						</div>
 						<div className="property-details">
 							<div className="type">
-								<img src="/images/home.png" />
+								<img src="/images/listing-icon.png" />
 								<p>{property.fields.saleMethod}</p>
 							</div>
 							<p className="address">
