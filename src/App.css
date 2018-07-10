@@ -7659,7 +7659,7 @@ a.with-arrow {
   display: inline-block;
   width: 100%; }
   .standard-page section:nth-of-type(even) {
-    background: #E6E6E6;
+    background: #e6e6e6;
     padding-top: 350px;
     padding-bottom: 350px; }
   .standard-page section:nth-of-type(odd) {
@@ -7687,17 +7687,29 @@ a.with-arrow {
   text-align: left;
   font-size: 14px;
   padding: 10px 0;
-  color: #9B9B9B; }
+  color: #9b9b9b; }
+
+.standard-page .content .content-container h1 {
+  font-size: 30px;
+  line-height: 32px;
+  margin-bottom: 27px; }
 
 .standard-page .content .content-container h2 {
   font-size: 26px;
   line-height: 30px;
-  margin-bottom: 25px; }
+  margin-bottom: 19px;
+  margin-top: 25px; }
 
 .standard-page .content .content-container p {
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 15px; }
+
+.standard-page .content .content-container li {
+  font-size: 16px;
+  line-height: 20px;
+  margin-left: 20px;
+  list-style-type: disc; }
 
 .standard-page .content.double .content-container.flex {
   display: flex;
@@ -7732,8 +7744,10 @@ a.with-arrow {
     margin-top: 0px; }
     .standard-page-content footer .grey {
       padding-top: 40px; }
+  .standard-page .hero {
+    margin-bottom: 5px; }
   .standard-page section {
-    background: #E6E6E6; }
+    background: #e6e6e6; }
     .standard-page section:first-of-type {
       padding-top: 0;
       margin-bottom: 40px;
@@ -7866,7 +7880,7 @@ a.with-arrow {
 .agent-profile-page-content .hero {
   margin-bottom: 150px; }
   .agent-profile-page-content .hero .icon-header h2 {
-    font-family: 'Montserrat-Regular'; }
+    font-family: "Montserrat-Regular"; }
 
 .agent-profile-page-content .intro {
   overflow: hidden;
@@ -7890,25 +7904,31 @@ a.with-arrow {
       color: #ee654d;
       font-size: 40px;
       line-height: 46px;
-      font-family: 'Montserrat-Regular'; }
+      font-family: "Montserrat-Regular"; }
       .agent-profile-page-content .intro .imageSide .stats .stat span {
         font-size: 16px;
         color: #232539;
         display: block;
         margin-bottom: 5px;
-        font-family: 'Montserrat-Light'; }
+        font-family: "Montserrat-Light"; }
   .agent-profile-page-content .intro .text {
     padding-left: 20px;
     padding-right: 0px; }
     .agent-profile-page-content .intro .text p {
       color: #232539;
       font-size: 16px;
-      font-family: 'Montserrat-Light';
+      font-family: "Montserrat-Light";
       margin-bottom: 20px; }
-      .agent-profile-page-content .intro .text p:first-child {
-        font-size: 26px;
-        line-height: 32px;
-        font-family: 'Montserrat-Regular'; }
+    .agent-profile-page-content .intro .text h2 {
+      font-size: 26px;
+      line-height: 30px;
+      margin-bottom: 19px;
+      margin-top: 25px; }
+    .agent-profile-page-content .intro .text h2 {
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 19px;
+      margin-top: 25px; }
   .agent-profile-page-content .intro .ctas {
     float: right;
     margin-top: 100px; }
@@ -7923,7 +7943,7 @@ a.with-arrow {
         margin-left: 10px; }
 
 .agent-profile-page-content .three-tiles {
-  background: #E6E6E5;
+  background: #e6e6e5;
   margin-bottom: 0px;
   padding: 50px 0 300px 0; }
   .agent-profile-page-content .three-tiles .head {
@@ -7941,7 +7961,7 @@ a.with-arrow {
     font-size: 26px; }
 
 .agent-profile-page-content .recent-listings {
-  background: #E6E6E5;
+  background: #e6e6e5;
   margin-top: 200px;
   padding: 300px 0; }
   .agent-profile-page-content .recent-listings .head {
@@ -7976,7 +7996,7 @@ a.with-arrow {
   margin-bottom: 250px; }
 
 .agent-profile-page-content .vendors {
-  background: #FFF; }
+  background: #fff; }
   .agent-profile-page-content .vendors .head {
     margin-bottom: 60px; }
   .agent-profile-page-content .vendors .review {
@@ -7995,10 +8015,10 @@ a.with-arrow {
           margin-left: 5px; }
       .agent-profile-page-content .vendors .review .content h3 {
         font-size: 26px;
-        color: #4A4A4A;
+        color: #4a4a4a;
         line-height: 56px; }
       .agent-profile-page-content .vendors .review .content p {
-        color: #4A4A4A;
+        color: #4a4a4a;
         font-size: 14px;
         line-height: 18px; }
       .agent-profile-page-content .vendors .review .content a {
@@ -8048,9 +8068,6 @@ a.with-arrow {
     box-sizing: border-box; }
   .agent-profile-page-content .intro .stats {
     margin-bottom: 20px; }
-  .agent-profile-page-content .intro .text p:first-child {
-    font-size: 22px;
-    line-height: 34px; }
   .agent-profile-page-content .intro .ctas {
     margin-top: 50px;
     float: left; }
@@ -8092,7 +8109,7 @@ a.with-arrow {
         .agent-profile-page-content .recent-listings .property .property-details p.price {
           margin-bottom: 5px; }
   .agent-profile-page-content .vendors {
-    background: #E6E6E5;
+    background: #e6e6e5;
     padding-top: 50px; }
     .agent-profile-page-content .vendors img.feature {
       width: 100%; }
