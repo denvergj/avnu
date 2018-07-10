@@ -18,16 +18,6 @@ const mapEnvironment = compose(
     containerElement: <div id="googleMapContainer" style={{ height: `400px` }} />,
     mapElement: <div id="googleMap" style={{ height: `100%`, width: `85%` }} />
   }),
-  withHandlers({
-    onMarkerClick: () => (marker) => {
-	    var properties = document.getElementsByClassName("mapHouseProperty");
-	    var i;
-		for (i = 0; i < properties.length; i++) {
-		    properties[i].style.display = 'none';
-		}
-	    document.getElementById('property-'+marker.latLng.lng()).style.display = "block";
-    }
-  }),
   withScriptjs,
   withGoogleMap
 );
@@ -44,8 +34,6 @@ const MapLayout = props => (
 		      		icon={{
 				    	url: "/images/marker.png"
 					}} 
-					propertyId={markers.mapIconId}
-					onClick={props.onMarkerClick.bind(this.marker)}
 				/>
 	  		);
 		})}

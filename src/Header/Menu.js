@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 class MenuArea extends Component {
   constructor(props) {
     super(props);
-    this.state = { isOpen: false, subMenuOpen: null, agents: null };
+    this.state = { isOpen: false, subMenuOpen: null, agents: null, contentPages: null };
     this.toggleMenu = this.toggleMenu.bind(this);
   }
  
@@ -43,6 +43,23 @@ class MenuArea extends Component {
       })
       .catch(console.error);
       
+      
+       client
+      // use getEntries because it does link resolution
+      .getEntries({
+	    content_type: 'standardContentPages'
+      })
+      .then(response => {
+        // extract the data from the response array
+        return response.items;
+      })
+      .then(fields => {
+        this.setState({
+          contentPages: fields
+        });
+      })
+      .catch(console.error);
+      
   }
  
   render() {
@@ -66,9 +83,9 @@ class MenuArea extends Component {
           		{this.state.agents && this.state.agents.map((agent, i) => { 
 				    return (
 	          			<div key={i} className="menu-item">
-	          					<Link to={"/our-agents/"+agent.fields.slug} className="menu-item">
-	          						{agent.fields.firstName} {agent.fields.lastName}
-	          					</Link>
+          					<Link to={"/our-agents/"+agent.fields.slug} className="menu-item">
+          						{agent.fields.firstName} {agent.fields.lastName}
+          					</Link>
 	          			</div>
           			);
 				})}
@@ -77,9 +94,15 @@ class MenuArea extends Component {
           <div className={"menu-item "+(this.state.subMenuOpen==1 ? 'open': '')} onClick={this.toggleSubMenu.bind(this, 1)}>
           		About Avnu <i className={"fas "+(this.state.subMenuOpen==1 ? 'fa-chevron-up': 'fa-chevron-down')}></i>
           		<div className="sub-menu">
-          			<div className="menu-item">
-          				<a href="/about/" className="menu-item">About</a>
-          			</div>
+          			{this.state.contentPages && this.state.contentPages.map((contentPage, i) => { 
+					    return (
+		          			<div key={i} className="menu-item">
+	          					<Link to={"/"+contentPage.fields.slug} className="menu-item">
+	          						{contentPage.fields.pageName}
+	          					</Link>
+		          			</div>
+	          			);
+					})}
           		</div>
           </div>
           <div className="menu-item">
