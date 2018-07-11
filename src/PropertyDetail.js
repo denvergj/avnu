@@ -79,7 +79,8 @@ class PropertyDetail extends Component {
     	price = null,
     	numberOfBaths = null,
     	numberOfBeds = null,
-    	numberOfCars = null;
+    	numberOfCars = null,
+    	allImages = null;
     	
 		
 	if(this.state.data) {
@@ -104,6 +105,7 @@ class PropertyDetail extends Component {
 		numberOfBaths = propertyData.numberOfBaths;
 		numberOfBeds = propertyData.numberOfBeds;
 		numberOfCars = propertyData.numberOfCars;
+		allImages = propertyData.allImages;
 	}
     
     return (
@@ -115,6 +117,7 @@ class PropertyDetail extends Component {
 				imgSrc={heroImage} 
 				icon="/images/listing-profile-icon.png"
 				headline={catchphraseSecondary}
+				gallery={allImages}
 			/>
       		
 			<div className="intro content-container">

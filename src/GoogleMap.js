@@ -13,7 +13,7 @@ const silverMaps = require("./silver-maps.json");
 
 const mapEnvironment = compose(
   withProps({
-    googleMapURL: `https://maps.googleapis.com/maps/api/js?key=AIzaSyAgtQXYfDyRONqa7nTYp17el-soHpuQt0Q&v=3.exp`,
+    googleMapURL: `https://maps.googleapis.com/maps/api/js?key=AIzaSyAgtQXYfDyRONqa7nTYp17el-soHpuQt0Q&v=3`,
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div id="googleMapContainer" style={{ height: `400px` }} />,
     mapElement: <div id="googleMap" style={{ height: `100%`, width: `85%` }} />

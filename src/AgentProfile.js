@@ -158,7 +158,6 @@ class AgentProfile extends Component {
 							</div>
 							
 							<div className="mapHouse">
-								<MyMapComponent isMarkerShown theMarkers={pastListings}/>
 								{pastListings && pastListings.map((propertyListing, i) => { 
 									if(i > 0) {
 										divStyle = {

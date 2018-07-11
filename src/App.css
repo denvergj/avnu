@@ -5,6 +5,7 @@
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
+@import url(vendors/lightbox/css/lightbox.min.css);
 @import url(~slick-carousel/slick/slick.css);
 @import url(~slick-carousel/slick/slick-theme.css);
 .hamburger {
@@ -7211,6 +7212,28 @@ a.with-arrow {
     margin-top: 0;
     position: absolute;
     bottom: 0; }
+  .hero .gallery {
+    background: #ea6646;
+    height: 100px;
+    width: 100px;
+    margin-top: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    text-align: center;
+    cursor: pointer;
+    z-index: 999; }
+    .hero .gallery img {
+      visibility: visible;
+      max-width: 30px;
+      margin: 0 auto;
+      text-align: center;
+      max-height: 50px;
+      margin-top: 19px; }
+    .hero .gallery span {
+      display: block;
+      color: #fff;
+      margin-top: 5px; }
 
 @media (min-width: 768px) and (max-width: 980px) {
   .hero .hero-text {
@@ -8107,6 +8130,44 @@ a.with-arrow {
           max-width: 15px; }
   .agent-profile-page-content .vendors .review {
     display: block; } }
+
+.lightbox {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99999;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  padding: 30px 0;
+  display: none; }
+  .lightbox .close {
+    float: right;
+    right: 0;
+    position: fixed;
+    right: 40px;
+    color: #fff;
+    font-size: 30px;
+    font-family: "GTWalsheimLight";
+    cursor: pointer; }
+  .lightbox .fas {
+    float: left;
+    top: 50%;
+    position: fixed;
+    left: 40px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer; }
+    .lightbox .fas.fa-chevron-right {
+      float: right;
+      right: 40px;
+      left: inherit; }
+  .lightbox .gallery-box img {
+    display: none;
+    margin: 0 auto;
+    max-width: 700px; }
+    .lightbox .gallery-box img.active {
+      display: block; }
 
 .agent-profile-page-content .property-detail-page {
   display: inline-block;
