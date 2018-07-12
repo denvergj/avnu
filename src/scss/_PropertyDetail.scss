@@ -1,3 +1,48 @@
+.lightbox {
+	position: fixed;
+	background: rgba(0,0,0,0.6);
+	z-index: 99999;
+	width: 100%;
+	top:0px;
+	left: 0px;
+	height: 100%;
+	padding: 30px 0;
+	display: none;
+	.close {
+		float: right;
+	    right: 0;
+	    position: fixed;
+	    right: 40px;
+	    color: #fff;
+	    font-size: 30px;
+	    font-family: "GTWalsheimLight";
+	    cursor: pointer;
+	}
+	.fas {
+		float: left;
+	    top: 50%;
+	    position: fixed;
+	    left: 40px;
+	    font-size: 30px;
+	    color: #fff;
+	    cursor: pointer;
+	    &.fa-chevron-right {
+		    float: right;
+		    right: 40px;
+		    left: inherit;
+	    }
+	}
+	.gallery-box {
+		img {
+			display: none;
+			margin: 0 auto;
+			max-width: 700px;
+			&.active {
+				display: block;
+			}
+		}
+	}
+}
 .agent-profile-page-content {
 	.property-detail-page {
 		display: inline-block;
