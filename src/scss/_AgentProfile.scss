@@ -1,372 +1,372 @@
 .agent-profile-page-content {
-	.hero {
-		margin-bottom: 150px;
-		.icon-header {
-			h2 {
-				font-family: 'Montserrat-Regular';
-			}
-		}
-	}
-	.intro {
-		overflow: hidden;
-		padding-bottom: 60px;
-		.imageSide,
-		.text {
-			width: 47%;
-			display: inline-block;
-			vertical-align: top;
-		}
-		.imageSide {
-			padding-left: 0;
-			padding-right: 20px;
-			img {
-				max-width: 100%;
-				margin-bottom: 25px;
-			}
-			.stats {
-				.stat {
-					width: 50%;
-					display: inline-block;
-					vertical-align: top;
-					margin-bottom: 20px;
-					color:$primary-color;
-					font-size: 40px;
-					line-height: 46px;
-					font-family: 'Montserrat-Regular';
-					span {
-						font-size: 16px;
-						color:#232539;
-						display: block;
-						margin-bottom: 5px;
-						font-family: 'Montserrat-Light';
-					}
-				}
-			}
-		}
-		.text {
-			padding-left: 20px;
-			padding-right: 0px;
-			p {
-				color:#232539;
-				font-size: 16px;
-				font-family: 'Montserrat-Light';
-				&:first-child {
-					font-size: 26px;
-					line-height: 32px;
-					font-family: 'Montserrat-Regular';
-				}
-				margin-bottom: 20px;
-			}
-		}
-		.ctas {
-			float: right;
-			margin-top: 100px;
-			a {
-				color: $primary-color;
-				text-decoration: none;
-				margin-left: 60px;
-				img {
-					display: inline-block;
-					position: relative;
-					top:5px;
-					margin-left: 10px;
-				}
-			}
-		}
-	}
-	
-	.three-tiles {
-		background: #E6E6E5;
-		margin-bottom: 0px;
-		padding: 50px 0 300px 0;
-		.head {
-			margin-bottom: 50px;
-			h3 {
-				line-height: 36px;
-			}
-		}
-	}
-	
-	.head {
-		width: 47%;
-		margin-right: 3%;
-		img {
-			margin-bottom: 30px;
-			max-width: 60px;
-		}
-		h3 {
-			font-size: 26px;
-		}
-	}
-	
-	.recent-listings {
-		background: #E6E6E5;
-		margin-top: 200px;
-		padding: 300px 0;
-		
-		.head {
-			float: left;
-		}
-		.content-container {
-			overflow: hidden;
-		}
-		.mapHouse {
-			margin: 50px 0;
-		}
-		#googleMapContainer {
-			overflow: hidden;
-			margin: 0;
-		}
-		.property {
-			background: #fff;
-			width: 47%;
-			float: left;
-			box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-			&:nth-child(odd) {
-				margin-right: 3%;
-			}
-			.property-details {
-				p {
-					&.address {
-						color: $primary-color;
-						font-size: 12px;
-					}
-					&.price {
-						margin-bottom: 5px;
-						font-size: 16px;
-						margin-top: 5px;
-					}
-					&.addressLine1 {
-						margin-top: 5px;
-					}
-				}
-			}
-		}
-	}
-	
-	.quote-area {
-		&.content-container {
-			&.black {
-				float: left;
-				margin-top: -200px;
-				margin-bottom: 250px;
-			}
-		}
-	}
-	
-	
-	.vendors  {
-		background: #FFF;
-		.head {
-			margin-bottom: 60px;
-		}
-		.review {
-			box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-			display: flex;
-			margin-top: 40px;
-			background: #fff;
-			img {
-				display: inline-block;
-			}
-			.content {
-				display: inline-block;
-				padding: 20px;
-				.star {
-					color: $primary-color;
-					span {
-						margin-left: 5px;
-					}
-				}
-				h3 {
-					font-size: 26px;
-					color: #4A4A4A;
-					line-height: 56px;
-				}
-				p {
-					color: #4A4A4A;
-					font-size: 14px;
-					line-height: 18px;
-				}
-				a {
-					float: right;
-					text-decoration: none;
-					color:$primary-color;
-					img {
-						margin-left: 10px;
-						position: relative;
-						top:5px;
-					}
-				}
-			}
-		}
-	}
-	
-	.agent-third-profile-page {
-		.recent-listings {
-			background: none;
-		}
-		.quote-area {
-			margin-top: -200px;
-		}
-		.recent-listings {
-			padding-top: 100px;
-		}
-	}
-	
-	footer {
-		margin-top: -100px;
-		.grey {
-			padding: 150px 0 150px 0;
-		}
-	}
+  .hero {
+    margin-bottom: 150px;
+    .icon-header {
+      h2 {
+        font-family: "Montserrat-Regular";
+      }
+    }
+  }
+  .intro {
+    overflow: hidden;
+    padding-bottom: 60px;
+    .imageSide,
+    .text {
+      width: 47%;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .imageSide {
+      padding-left: 0;
+      padding-right: 20px;
+      img {
+        max-width: 100%;
+        margin-bottom: 25px;
+      }
+      .stats {
+        .stat {
+          width: 50%;
+          display: inline-block;
+          vertical-align: top;
+          margin-bottom: 20px;
+          color: $primary-color;
+          font-size: 40px;
+          line-height: 46px;
+          font-family: "Montserrat-Regular";
+          span {
+            font-size: 16px;
+            color: #232539;
+            display: block;
+            margin-bottom: 5px;
+            font-family: "Montserrat-Light";
+          }
+        }
+      }
+    }
+    .text {
+      padding-left: 20px;
+      padding-right: 0px;
+      p {
+        color: #232539;
+        font-size: 16px;
+        font-family: "Montserrat-Light";
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 26px;
+        line-height: 30px;
+        margin-bottom: 19px;
+        margin-top: 25px;
+      }
+      h3 {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 19px;
+        margin-top: 25px;
+      }
+    }
+    .ctas {
+      float: right;
+      margin-top: 100px;
+      a {
+        color: $primary-color;
+        text-decoration: none;
+        margin-left: 60px;
+        img {
+          display: inline-block;
+          position: relative;
+          top: 5px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .three-tiles {
+    background: #e6e6e5;
+    margin-bottom: 0px;
+    padding: 50px 0 300px 0;
+    .head {
+      margin-bottom: 50px;
+      h3 {
+        line-height: 36px;
+      }
+    }
+  }
+
+  .head {
+    width: 47%;
+    margin-right: 3%;
+    img {
+      margin-bottom: 30px;
+      max-width: 60px;
+    }
+    h3 {
+      font-size: 26px;
+    }
+  }
+
+  .recent-listings {
+    background: #e6e6e5;
+    margin-top: 200px;
+    padding: 300px 0;
+
+    .head {
+      float: left;
+    }
+    .content-container {
+      overflow: hidden;
+    }
+    .mapHouse {
+      margin: 50px 0;
+    }
+    #googleMapContainer {
+      overflow: hidden;
+      margin: 0;
+    }
+    .property {
+      background: #fff;
+      width: 47%;
+      float: left;
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+        0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+      &:nth-child(odd) {
+        margin-right: 3%;
+      }
+      .property-details {
+        p {
+          &.address {
+            color: $primary-color;
+            font-size: 12px;
+          }
+          &.price {
+            margin-bottom: 5px;
+            font-size: 16px;
+            margin-top: 5px;
+          }
+          &.addressLine1 {
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .quote-area {
+    &.content-container {
+      &.black {
+        float: left;
+        margin-top: -200px;
+        margin-bottom: 250px;
+      }
+    }
+  }
+
+  .vendors {
+    background: #fff;
+    .head {
+      margin-bottom: 60px;
+    }
+    .review {
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+        0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+      display: flex;
+      margin-top: 40px;
+      background: #fff;
+      img {
+        display: inline-block;
+      }
+      .content {
+        display: inline-block;
+        padding: 20px;
+        .star {
+          color: $primary-color;
+          span {
+            margin-left: 5px;
+          }
+        }
+        h3 {
+          font-size: 26px;
+          color: #4a4a4a;
+          line-height: 56px;
+        }
+        p {
+          color: #4a4a4a;
+          font-size: 14px;
+          line-height: 18px;
+        }
+        a {
+          float: right;
+          text-decoration: none;
+          color: $primary-color;
+          img {
+            margin-left: 10px;
+            position: relative;
+            top: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .agent-third-profile-page {
+    .recent-listings {
+      background: none;
+    }
+    .quote-area {
+      margin-top: -200px;
+    }
+    .recent-listings {
+      padding-top: 100px;
+    }
+  }
+
+  footer {
+    margin-top: -100px;
+    .grey {
+      padding: 150px 0 150px 0;
+    }
+  }
 }
 
-
-@media (min-width: 768px) and (max-width:960px) {
-	.agent-profile-page-content {
-		.recent-listings {
-			.property {
-				.features {
-					margin-top: 0px;
-					li {
-						margin-right: 7px;
-						img {
-							margin-right: 5px;
-						}
-					}
-				}
-			}
-		}
-	}	
+@media (min-width: 768px) and (max-width: 960px) {
+  .agent-profile-page-content {
+    .recent-listings {
+      .property {
+        .features {
+          margin-top: 0px;
+          li {
+            margin-right: 7px;
+            img {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
+@media (max-width: 767px) {
+  .agent-profile-page-content {
+    .hero {
+      margin-bottom: 5px;
+    }
+    .intro {
+      .imageSide,
+      .text {
+        width: 100%;
+      }
+      &.content-container {
+        padding: 0;
+        padding-bottom: 50px;
+      }
+      .stats,
+      .text,
+      .ctas {
+        padding: 0 5px;
+        box-sizing: border-box;
+      }
+      .stats {
+        margin-bottom: 20px;
+      }
 
+      .ctas {
+        margin-top: 50px;
+        float: left;
+        a {
+          margin: 0;
+          &:first-child {
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+    .three-tiles {
+      padding-bottom: 210px;
+    }
+    .quote-area {
+      &.content-container {
+        &.black {
+          margin-bottom: 50px;
+        }
+      }
+      .the-quote {
+        margin-bottom: 0;
+      }
+    }
+    .head {
+      max-width: 100%;
+      margin-right: 0;
+    }
+    .recent-listings {
+      margin-top: 0px;
+      padding-top: 50px;
+      padding-bottom: 190px;
+      #googleMap {
+        width: 100% !important;
+      }
+      .head {
+        &.list {
+          margin-bottom: 30px;
+        }
+      }
+      .property {
+        width: 100%;
+        display: flex;
+        &:nth-child(odd) {
+          margin-right: 0;
+        }
+        .property-image {
+          max-width: 40%;
+        }
+        .property-details {
+          max-width: 60%;
+          padding-bottom: 10px;
+          padding-right: 5px;
+          padding-top: 5px;
+          .features {
+            margin-top: 10px;
+          }
+          p {
+            &.price {
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+    }
+    .vendors {
+      background: #e6e6e5;
+      padding-top: 50px;
+      img {
+        &.feature {
+          width: 100%;
+        }
+      }
+      .review {
+        .content {
+          padding: 10px;
+          h3 {
+            font-size: 22px;
+          }
+          a {
+            font-size: 12px;
+            margin-top: 30px;
+            img {
+              max-width: 15px;
+            }
+          }
+        }
+      }
+    }
 
-@media (max-width:767px) {
-	.agent-profile-page-content {
-		.hero {
-			margin-bottom: 5px;
-		}
-		.intro {
-			.imageSide,
-			.text {
-				width: 100%;
-			}
-			&.content-container {
-				padding: 0;
-				padding-bottom: 50px;
-			}
-			.stats,
-			.text,
-			.ctas {
-				padding: 0 5px;
-				box-sizing: border-box;
-			}
-			.stats {
-				margin-bottom: 20px;
-			}
-			.text {
-				p {
-					&:first-child {
-						font-size: 22px;
-						line-height: 34px;
-					}
-				}
-			}
-			.ctas {
-				margin-top: 50px;
-				float: left;
-				a {
-					margin: 0;
-					&:first-child {
-						margin-right: 15px;
-					}
-				}
-			}
-		}
-		.three-tiles {
-			padding-bottom: 210px;
-		}
-		.quote-area {
-			 &.content-container {
-				 &.black {
-					 margin-bottom: 50px;
-				 }
-			 }
-			 .the-quote {
-				 margin-bottom: 0;
-			 }
-		}
-		.head {
-			max-width: 100%;
-			margin-right: 0;
-		}
-		.recent-listings {
-			margin-top: 0px;
-			padding-top: 50px;
-			padding-bottom: 190px;
-			#googleMap {
-				width: 100%!important;
-			}
-			.head {
-				&.list {
-					margin-bottom: 30px;	
-				}
-			}
-			.property {
-				width: 100%;
-				display: flex;
-				&:nth-child(odd) {
-					margin-right: 0;
-				}
-				.property-image {
-					max-width: 40%;
-				}
-				.property-details {
-					max-width: 60%;
-					padding-bottom: 10px;
-					padding-right: 5px;
-					padding-top: 5px;
-					.features {
-						margin-top: 10px;
-					}
-					p {
-						&.price {
-							margin-bottom: 5px;
-						}
-					}
-				}
-			}
-		}
-		.vendors {
-			background: #E6E6E5;
-			padding-top: 50px;
-			img {
-				&.feature {
-					width: 100%;
-				}
-			}
-			.review {
-				.content{
-					padding: 10px;
-					h3 {
-						font-size: 22px;
-					}
-					a {
-						font-size: 12px;
-						margin-top: 30px;
-						img {
-							max-width: 15px;
-						}
-					}
-				}
-			}
-		}
-		
-		.vendors {
-			.review {
-				display: block;
-			}
-		}
-	}
+    .vendors {
+      .review {
+        display: block;
+      }
+    }
+  }
 }
