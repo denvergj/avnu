@@ -142,6 +142,7 @@ class PropertyDetail extends Component {
 			
 			
 			<div className="mapHouse">
+				<MyMapComponent isMarkerShown theMarker={location}/>
 				<div className="property">
 				   <div className="property-image" style={{backgroundImage: `url(${heroImage})`}}>
 				  	 <img src={heroImage} />
