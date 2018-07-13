@@ -1,10 +1,9 @@
-import React, { Component, createElement } from "react";
-import Helmet from "react-helmet";
-import { createClient } from "contentful";
-import Hero from "./Hero";
-import Zoom from "react-reveal/Zoom";
-import { withRouter } from "react-router-dom";
-import marksy from "marksy";
+import React, { Component, createElement } from 'react';
+import Helmet from 'react-helmet';
+import { createClient } from 'contentful';
+import Hero from './Hero';
+import Zoom from 'react-reveal/Zoom';
+import marksy from 'marksy'; 
 
 const getMarkup = field => {
   if (!field) return null;
@@ -18,6 +17,7 @@ const getMarkup = field => {
 class StandardPage extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       data: null
     };
@@ -32,8 +32,9 @@ class StandardPage extends Component {
     client
       // use getEntries because it does link resolution
       .getEntries({
-        content_type: "aboutAvnuStandardContentPages",
-        "fields.menuItemText[in]": this.props.match.params.id
+	    content_type: 'standardContentPages',
+        'fields.slug[in]': this.props.match.params.id,
+        include: 3
       })
       .then(response => {
         // extract the data from the response array
@@ -47,56 +48,97 @@ class StandardPage extends Component {
       })
       .catch(console.error);
   }
-
+  
   componentDidMount() {
-    document.body.classList.add("standard-page-content");
+	  document.body.classList.add('standard-page-content');
   }
 
   render() {
     let mainTitle = null,
-      introText = null,
-      pageHeading = null;
-
-    if (this.state.data) {
-      mainTitle = this.state.data.heroImageHeading;
-      introText = this.state.data.heroImageBody;
-      pageHeading = this.state.data.pageHeading;
+    	introText = null,
+    	pageHeading = null,
+    	heroData = null,
+    	headline = null,
+    	heroImage = null,
+    	pageData = null,
+    	contentBloks;
+		
+	 if (this.state.data) {
+      heroData = this.state.data;
+      pageData = this.state.data;
+	  mainTitle = heroData.heroImageBody;
+	  introText = heroData.heroImageHeading;
+	  heroImage = heroData.heroImage.fields.file.url;
+	  headline = heroData.pageHeading;
+	  contentBloks = pageData.contentBloks;
     }
-
+    
     return (
-      <div className="standard-page">
-        <Helmet title="Avnu - Standard Page" />
-        <Hero
-          mainTitle={mainTitle}
-          introText={introText}
-          imgSrc="/images/header.jpg"
-          icon="/images/clock.svg"
-          headline={pageHeading}
-        />
-
-        {this.state.data &&
-          this.state.data.contentBlocks.map((block, i) => {
-            console.log("block", block);
-
-            if (i < 1) {
-              let blockBody = getMarkup(block.fields.blockBody);
-              return (
-                <Zoom key={i}>
-                  <section key={i} className="content double">
-                    <div className="content-container flex">
-                      <div>
-                        <img src="/images/content-image.jpg" />
-                      </div>
-                      <div className="text">{blockBody}</div>
-                    </div>
-                  </section>
-                </Zoom>
-              );
-            }
-          })}
-      </div>
+	    <div className="standard-page">
+	    	<Helmet title={"Avnu - " + mainTitle} />
+			<Hero 
+				mainTitle={mainTitle}
+				introText={introText}
+				imgSrc={heroImage} 
+				icon="/images/clock.svg"
+				headline={headline}
+			/>
+			
+			
+			{contentBloks && contentBloks.map((block, i) => {   
+		       		 let blockBody = getMarkup(block.fields.blockBody);
+		       		 let blockImage = block.fields.blockImage;
+		       		 let blockTitle = block.fields.blockTitle;
+			   		 
+			   		 
+			   		 if(block.fields.image) {
+				   		 return (
+					   		 <div className="side-area content-container">
+								<img src={block.fields.image.fields.file.url} />
+				      		</div>
+				   		 );
+			   		 } else if(block.fields.quoteBody) {
+			       		 return (
+							 <div className="quote-area content-container">
+								<div className="the-quote">
+					      			<img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
+					      			<p>{block.fields.quoteBody}</p>
+					      		</div>
+					      	   </div>
+			            ); 
+		       		 } else {
+			             return (
+							 <section key={i} className="content double">
+							 	{blockTitle ?
+									[
+									<div className="content-container full-width">
+										<img src="/images/listings.png" />
+										<h2>{blockTitle}</h2>
+									</div>
+									] : null
+								}
+								<div className="content-container flex">
+								{blockImage ?
+									[
+									<div>
+										<img src={blockImage.fields.file.url} />
+									</div>
+									] : null
+								}
+									<div className="text">
+										{blockBody}
+									</div>
+								</div>
+							 </section>
+			            );   
+		            }  
+		             
+	        })}
+			
+			
+		</div>
     );
   }
 }
 
-export default withRouter(StandardPage);
+export default StandardPage;
