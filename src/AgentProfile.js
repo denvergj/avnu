@@ -72,7 +72,8 @@ class AgentProfile extends Component {
       secondaryQuote = null,
       pastListings = null,
       agentReviews = null,
-      divStyle = null;
+      divStyle = null,
+      heroImageLifestyle = null;
 
     if (this.state.data) {
       agentData = this.state.data;
@@ -81,6 +82,9 @@ class AgentProfile extends Component {
       mainTitle = agentData.firstName + " " + agentData.lastName;
       introText = agentData.mainCopyInterestingPersonalMessage;
       catchphrasePrimary = agentData.catchphrasePrimary;
+      heroImageLifestyle = agentData.heroImageLifestyle
+        ? agentData.heroImageLifestyle.fields.file.url
+        : "";
       secondaryImage = agentData.secondaryImage
         ? agentData.secondaryImage.fields.file.url
         : "";
@@ -102,7 +106,7 @@ class AgentProfile extends Component {
         <Hero
           mainTitle={mainTitle}
           introText={introText}
-          imgSrc="/images/header.jpg"
+          imgSrc={heroImageLifestyle}
           icon="/images/agent-icon.png"
           headline={catchphrasePrimary}
         />
