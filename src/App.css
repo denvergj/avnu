@@ -7457,36 +7457,37 @@ a.with-arrow {
   .mapHouse .property {
     display: none; } }
 
-.hero-slider {
-  height: 1136px; }
-  .hero-slider .slick-slider:not(.slick-initialized) .slider-bg {
-    background-image: none; }
-  .hero-slider .slider-bg {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
-    position: relative; }
-    .hero-slider .slider-bg img {
-      visibility: hidden;
-      max-width: 100%;
-      height: 1130px; }
-  .hero-slider .welcome {
-    max-width: 500px;
-    color: #fff; }
-    .hero-slider .welcome p {
-      margin-bottom: 40px;
-      font-weight: 300; }
-      .hero-slider .welcome p:last-child {
-        margin-top: 30px; }
-    .hero-slider .welcome h1 {
-      font-size: 90px;
-      font-weight: 300; }
-  .hero-slider .hero-text {
-    position: absolute;
-    top: 50%;
-    z-index: 9;
-    width: 100%;
-    margin-top: -450px; }
+.hero-slider .slick-slider:not(.slick-initialized) .slider-bg {
+  background-image: none; }
+
+.hero-slider .slider-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  position: relative; }
+  .hero-slider .slider-bg img {
+    visibility: hidden;
+    max-width: 100%;
+    height: 1130px; }
+
+.hero-slider .welcome {
+  max-width: 500px;
+  color: #fff; }
+  .hero-slider .welcome p {
+    margin-bottom: 40px;
+    font-weight: 300; }
+    .hero-slider .welcome p:last-child {
+      margin-top: 30px; }
+  .hero-slider .welcome h1 {
+    font-size: 90px;
+    font-weight: 300; }
+
+.hero-slider .hero-text {
+  position: absolute;
+  top: 50%;
+  z-index: 9;
+  width: 100%;
+  margin-top: -450px; }
 
 .mission-statement {
   width: 50%;
