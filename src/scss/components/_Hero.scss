@@ -1,122 +1,134 @@
 .hero {
-	background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  min-height: 560px;
+  background-position: 50% 50%;
+  img {
+    visibility: hidden;
+    max-width: 100%;
+    height: 100%;
+  }
+  h1 {
+    font-size: 90px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 103px;
+    margin-bottom: 40px;
+    max-width: 80%;
+  }
+  p {
+    color: #fff;
+    font-size: 18px;
+  }
+  .hero-text {
+    position: absolute;
+    top: 40%;
+    transform: translate(0%, -40%);
+    left: 50%;
+    margin-left: -485px;
+  }
+  .icon-header {
+    margin-top: -150px;
+    @-moz-document url-prefix() {
+      margin-top: 0;
+    }
+    z-index: 1;
     position: relative;
-    min-height: 560px;
+    top: 70px;
     img {
-	    visibility: hidden;
-	    max-width: 100%;
-	    height: 100%;
+      visibility: visible;
+      margin-bottom: 30px;
     }
-    h1 {
-		font-size: 90px;
-		font-weight: 300;
-		color: #fff;
-		line-height: 103px;
-	    margin-bottom: 40px;
-	    max-width: 80%;
-	}
-	p {
-		color: #fff;
-		font-size: 18px;
-	}
-    .hero-text {
-	    position: absolute;
-	    top: 50%;
-	    transform: translate(0%, -50%);
-	    left: 50%;
-		margin-left: -485px;
+    h2 {
+      font-size: 26px;
+      max-width: 340px;
     }
-    .icon-header {
-	    margin-top: -80px;
-	    @-moz-document url-prefix() { 
-		  margin-top: 0;
-		}
-	    z-index: 1;
-	    position: relative;
-		top: 70px;
-	    img {
-		    visibility: visible;
-		    margin-bottom: 30px;
-	    }
-	    h2 {
-		    font-size: 26px;
-		    max-width: 340px;
-	    }
+  }
+  .white-box {
+    background: #fff;
+    height: 100px;
+    width: 50%;
+    margin-top: 0;
+    position: absolute;
+    bottom: 0;
+  }
+  .gallery {
+    background: #ea6646;
+    height: 100px;
+    width: 100px;
+    margin-top: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    text-align: center;
+    cursor: pointer;
+    z-index: 999;
+    img {
+      visibility: visible;
+      max-width: 30px;
+      margin: 0 auto;
+      text-align: center;
+      max-height: 50px;
+      margin-top: 19px;
     }
-    .white-box {
-	    background: #fff;
-	    height: 100px;
-	    width: 50%;
-	    margin-top: 0;
-	    position: absolute;
-	    bottom: 0;
+    span {
+      display: block;
+      color: #fff;
+      margin-top: 5px;
     }
-    .gallery {
-        background: #ea6646;
-		height: 100px;
-	    width: 100px;
-	    margin-top: 0;
-	    position: absolute;
-	    bottom: 0;
-	    left: 50%;
-	    text-align: center;
-	    cursor: pointer;
-	    z-index: 999;
-	    img {
-	        visibility: visible;
-		    max-width: 30px;
-		    margin: 0 auto;
-		    text-align: center;
-		    max-height: 50px;
-		    margin-top: 19px;
-	    }
-	    span {
-		 	display: block;
-		    color: #fff;
-		    margin-top: 5px;
-	    }
-    }
+  }
 }
 
-
 @media (min-width: 768px) and (max-width: 980px) {
-	.hero {
-		.hero-text {
-			margin-left: -385px;
-			h1 {
-				line-height: 82px;
-			}
-		}
-	}
+  .hero {
+    .hero-text {
+      margin-left: -385px;
+      h1 {
+        margin-bottom: 15px;
+        line-height: 82px;
+      }
+    }
+  }
+}
+
+@media (min-width: 767px) {
+  .hero {
+    height: 560px;
+  }
 }
 
 @media (max-width: 767px) {
-	.hero {
-		background-position: 75% 0;
-		.hero-text {
-			margin-left: -50%;
-			transform: translate(0%, -85%);
-			h1 {
-				font-size: 40px;
-				line-height: 43px;
-				margin-bottom: 20px;
-			}
-		}
-		.icon-header {
-			margin-top: -150px;
-			margin-bottom: 0;
-			top: 0px;
-			h2 {
-				font-size: 20px;
-				max-width: 220px;
-				line-height: 28px;
-			}
-		}
-		.white-box {
-			height: 195px;
-			width: 85%;
-		}
-	}
+  .hero {
+    background-position: 50% 50%;
+    height: 760px;
+    margin-bottom: 5px;
+    .gallery {
+      height: 20%;
+      left: 85%;
+      width: 15%;
+      img {
+        max-width: 60%;
+      }
+    }
+    .hero-text {
+      margin-left: -50%;
+      transform: translate(0%, -60%);
+      h1 {
+        font-size: 75px;
+        line-height: 68px;
+        margin-bottom: 20px;
+      }
+    }
+    .icon-header {
+      margin-top: -260px;
+      margin-bottom: 0;
+      top: 0px;
+    }
+    .white-box {
+      height: 295px;
+      width: 85%;
+    }
+  }
 }

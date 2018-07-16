@@ -1,300 +1,303 @@
 .lightbox {
-	position: fixed;
-	background: rgba(0,0,0,0.6);
-	z-index: 99999;
-	width: 100%;
-	top:0px;
-	left: 0px;
-	height: 100%;
-	padding: 30px 0;
-	display: none;
-	.close {
-		float: right;
-	    right: 0;
-	    position: fixed;
-	    right: 40px;
-	    color: #fff;
-	    font-size: 30px;
-	    font-family: "GTWalsheimLight";
-	    cursor: pointer;
-	}
-	.fas {
-		float: left;
-	    top: 50%;
-	    position: fixed;
-	    left: 40px;
-	    font-size: 30px;
-	    color: #fff;
-	    cursor: pointer;
-	    &.fa-chevron-right {
-		    float: right;
-		    right: 40px;
-		    left: inherit;
-	    }
-	}
-	.gallery-box {
-		img {
-			display: none;
-			margin: 0 auto;
-			max-width: 700px;
-			&.active {
-				display: block;
-			}
-		}
-	}
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99999;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  padding: 30px 0;
+  display: none;
+  .close {
+    float: right;
+    right: 0;
+    position: fixed;
+    right: 40px;
+    color: #fff;
+    font-size: 30px;
+    font-family: "GTWalsheimLight";
+    cursor: pointer;
+  }
+  .fas {
+    float: left;
+    top: 50%;
+    position: fixed;
+    left: 40px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    &.fa-chevron-right {
+      float: right;
+      right: 40px;
+      left: inherit;
+    }
+  }
+  .gallery-box {
+    img {
+      display: none;
+      margin: 0 auto;
+      max-width: 700px;
+      &.active {
+        display: block;
+      }
+    }
+  }
 }
 .agent-profile-page-content {
-	.property-detail-page {
-		display: inline-block;
-		width: 100%;
-		.hero {
-			min-height: 500px;
-			.icon-header {
-				h2 {
-					max-width: 347px;
-				}
-				img {
-					max-width: 60px;
-					height: auto;
-				}
-			}
-		}
-		.property-amenities {
-			padding: 210px 0 290px 0;
-			background: #E6E6E6;
-			margin-top: -189px;
-			overflow: hidden;
-			.head {
-				float: left;
-			}
-			.features {
-				width: 50%;
-				float: right;
-				margin-top: 90px;
-				p {
-					&.title {
-						margin-bottom: 20px;
-					}
-				}
-				ul {
-					overflow: hidden;
-					&.indoor {
-						margin-bottom: 50px;
-					}
-					&.outdoor {
-						li {
-							width: 100%;
-						}
-					}
-					li {
-						width: 50%;
-						float: left;
-						margin-bottom: 20px;
-					}
-				}
-			}
-		}
-		.quote-area {
-			.the-quote {
-				margin-top: -200px;
-				margin-bottom: 50px;
-				img {
-					max-width: 60px;
-				}
-			}
-			&.black {
-				float: left;
-				margin-top: 300px;
-				margin-bottom: -250px;
-			}
-		}
-		.local-area {
-		    background: #fff;
-		    clear: both;
-		    display: inline-block;
-		    width: 100%;
-			.head {
-				float: left;
-			}
-			.landmarks {
-				width: 50%;
-				float: right;
-				margin-top: 90px;
-				.place {
-					box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-					display: flex;
-					margin-top: 10px;
-					background: #fff;
-					.content {
-						display: inline-block;
-						padding: 20px;
-						width: 100%;
-						.type {
-							color: $primary-color;
-						}
-						h3 {
-							font-size: 26px;
-							color: #4A4A4A;
-							line-height: 56px;
-						}
-						a {
-							float: right;
-							text-decoration: none;
-							color:$primary-color;
-							img {
-								margin-left: 10px;
-								position: relative;
-								top:5px;
-							}
-						}
-					}
-				}
-			}
-		}
-		.recent-listings {
-			margin-top: 0;
-			clear: both;
-			padding-bottom: 60px;
-			margin-bottom: 50px;
-		}
-		
-		
-		.property-team {
-			.head {
-				float: left;
-			}
-			.team-members {
-				width: 50%;
-				float: right;
-				margin-top: 90px;
-				.member {
-					box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-					margin-bottom: 20px;
-					img {
-						max-width: 100%;
-					}
-					.content {
-						padding: 25px;
-						padding-right: 0;
-						overflow: hidden;
-						background: #fff;
-						h3 {
-							font-size: 26px;
-						}
-						p {
-							font-size: 14px;
-						}
-						.links {
-							float: right;
-						}
-						a {
-							color: $primary-color;
-							text-decoration: none;
-							margin-left: 20px;
-							font-size: 12px;
-							&.with-arrow {
-								&:before {
-									right: 10px;
-								}
-							}
-							img {
-							    position: relative;
-								top: 4px;
-								max-width: 20px;
-								margin-left: 10px;
-							}
-						} 
-					}
-				}
-			}
-		}
-	}	
-}
+  .property-detail-page {
+    display: inline-block;
+    width: 100%;
+    .hero {
+      min-height: 500px;
+      .icon-header {
+        margin-top: -150px;
+        h2 {
+          max-width: 347px;
+        }
+        img {
+          max-width: 60px;
+          height: auto;
+        }
+      }
+    }
+    .property-amenities {
+      padding: 210px 0 290px 0;
+      background: #e6e6e6;
+      margin-top: -189px;
+      overflow: hidden;
+      .head {
+        float: left;
+      }
+      .features {
+        width: 50%;
+        float: right;
+        margin-top: 90px;
+        p {
+          &.title {
+            margin-bottom: 20px;
+          }
+        }
+        ul {
+          overflow: hidden;
+          &.indoor {
+            margin-bottom: 50px;
+          }
+          &.outdoor {
+            li {
+              width: 100%;
+            }
+          }
+          li {
+            width: 50%;
+            float: left;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+    .quote-area {
+      .the-quote {
+        margin-top: -200px;
+        margin-bottom: 50px;
+        img {
+          max-width: 60px;
+        }
+      }
+      &.black {
+        float: left;
+        margin-top: 300px;
+        margin-bottom: -250px;
+      }
+    }
+    .local-area {
+      background: #fff;
+      clear: both;
+      display: inline-block;
+      width: 100%;
+      .head {
+        float: left;
+      }
+      .landmarks {
+        width: 50%;
+        float: right;
+        margin-top: 90px;
+        .place {
+          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+            0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+            0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+          display: flex;
+          margin-top: 10px;
+          background: #fff;
+          .content {
+            display: inline-block;
+            padding: 20px;
+            width: 100%;
+            .type {
+              color: $primary-color;
+            }
+            h3 {
+              font-size: 26px;
+              color: #4a4a4a;
+              line-height: 56px;
+            }
+            a {
+              float: right;
+              text-decoration: none;
+              color: $primary-color;
+              img {
+                margin-left: 10px;
+                position: relative;
+                top: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .recent-listings {
+      margin-top: 0;
+      clear: both;
+      padding-bottom: 60px;
+      margin-bottom: 50px;
+    }
 
+    .property-team {
+      .head {
+        float: left;
+      }
+      .team-members {
+        width: 50%;
+        float: right;
+        margin-top: 90px;
+        .member {
+          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+            0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+            0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+          margin-bottom: 20px;
+          img {
+            max-width: 100%;
+          }
+          .content {
+            padding: 25px;
+            padding-right: 0;
+            overflow: hidden;
+            background: #fff;
+            h3 {
+              font-size: 26px;
+            }
+            p {
+              font-size: 14px;
+            }
+            .links {
+              float: right;
+            }
+            a {
+              color: $primary-color;
+              text-decoration: none;
+              margin-left: 20px;
+              font-size: 12px;
+              &.with-arrow {
+                &:before {
+                  right: 10px;
+                }
+              }
+              img {
+                position: relative;
+                top: 4px;
+                max-width: 20px;
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 .property-detail-outer {
-	footer {
-		margin-top: -250px;
-		.grey {
-			padding-top: 310px;
-		}
-	}
+  footer {
+    margin-top: -250px;
+    .grey {
+      padding-top: 310px;
+    }
+  }
 }
 
-@media (max-width:767px) {
-	.property-detail-outer {
-		.property-detail-page {	
-			.property-amenities {
-				padding-bottom: 240px;
-				.head {
-					width: 100%;
-				}
-				.features {
-					float: left;
-					width: 100%;
-					margin-top: 30px;
-				}
-			}
-			.local-area {
-				padding-bottom: 0;
-				.head {
-					width: 100%;
-				}
-				.landmarks {
-					float: left;
-					width: 100%;
-					margin-top: 30px;
-					.place {
-						margin-top: 5px;
-						.content {
-							h3 {
-								font-size: 18px;
-							}
-						}
-					}
-				}
-			}
-			.quote-area {
-				&.black {
-					margin-top: 220px;
-					margin-bottom: -70px;
-				}
-			}
-			.recent-listings {
-				width: 100%;
-				padding-bottom: 30px;
-				margin-bottom: 0;
-			}
-			.property-team {
-				background: #E6E6E5;
-			    display: inline-block;
-			    width: 100%;
-				.head {
-					width: 100%;
-				}
-				.team-members {
-					float: left;
-					width: 100%;
-					margin-top: 30px;
-					.member {
-						.content {
-							.links {
-								float: left;
-								a {
-									margin-left: 0;
-									margin-right: 10px;
-									&.with-arrow {
-										margin-right: 0;
-										&:after {
-											margin-left: 15px;
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+@media (max-width: 767px) {
+  .property-detail-outer {
+    .property-detail-page {
+      .property-amenities {
+        padding-bottom: 240px;
+        .head {
+          width: 100%;
+        }
+        .features {
+          float: left;
+          width: 100%;
+          margin-top: 30px;
+        }
+      }
+      .local-area {
+        padding-bottom: 0;
+        .head {
+          width: 100%;
+        }
+        .landmarks {
+          float: left;
+          width: 100%;
+          margin-top: 30px;
+          .place {
+            margin-top: 5px;
+            .content {
+              h3 {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+      .quote-area {
+        &.black {
+          margin-top: 220px;
+          margin-bottom: -70px;
+        }
+      }
+      .recent-listings {
+        width: 100%;
+        padding-bottom: 30px;
+        margin-bottom: 0;
+      }
+      .property-team {
+        background: #e6e6e5;
+        display: inline-block;
+        width: 100%;
+        .head {
+          width: 100%;
+        }
+        .team-members {
+          float: left;
+          width: 100%;
+          margin-top: 30px;
+          .member {
+            .content {
+              .links {
+                float: left;
+                a {
+                  margin-left: 0;
+                  margin-right: 10px;
+                  &.with-arrow {
+                    margin-right: 0;
+                    &:after {
+                      margin-left: 15px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

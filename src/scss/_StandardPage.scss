@@ -1,3 +1,6 @@
+.iconography {
+  width: 60px;
+}
 .standard-page {
   .row {
     margin: 0 -30px;
@@ -43,6 +46,11 @@
       color: #9b9b9b;
     }
     .content-container {
+      blockquote p {
+        font-style: italic;
+        font-size: 16px;
+        margin-bottom: 27px;
+      }
       h1 {
         font-size: 30px;
         line-height: 32px;
@@ -54,16 +62,36 @@
         margin-bottom: 19px;
         margin-top: 25px;
       }
+      h3 {
+        font-size: 19px;
+        line-height: 20px;
+        margin-bottom: 10px;
+        margin-top: 25px;
+        font-weight: bold;
+      }
+      b {
+        font-weight: bold;
+      }
       p {
         font-size: 16px;
-        line-height: 20px;
-        margin-bottom: 15px;
+      }
+      em {
+        line-height: 5px;
+      }
+      strong {
+        line-height: 15px;
+        margin-bottom: 5px;
       }
       li {
         font-size: 16px;
         line-height: 20px;
         margin-left: 20px;
+      }
+      ul li {
         list-style-type: disc;
+      }
+      ol li {
+        list-style-type: decimal;
       }
     }
     &.double {
@@ -116,9 +144,6 @@
     }
   }
   .standard-page {
-    .hero {
-      margin-bottom: 5px;
-    }
     section {
       background: #e6e6e6;
       &:first-of-type {
