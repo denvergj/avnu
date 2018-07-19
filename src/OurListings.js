@@ -17,7 +17,8 @@ const getMarkup = field => {
 
 class OurListings extends Component {
   state = {
-    pageData: null
+    pageData: null,
+    isLoading: false
   };
 
   componentWillMount() {
@@ -25,6 +26,23 @@ class OurListings extends Component {
       space: process.env.REACT_APP_SPACE_ID,
       accessToken: process.env.REACT_APP_ACCESS_TOKEN
     });
+
+    client
+      // use getEntries because it does link resolution
+      .getEntries({
+        content_type: "listingListPage"
+      })
+      .then(response => {
+        // extract the data from the response array
+        return response.items[0].fields;
+      })
+      .then(heroContent => {
+        this.setState({
+          hero: heroContent
+        });
+        console.log(heroContent);
+      })
+      .catch(console.error);
 
     client
       .getEntries({
@@ -48,13 +66,12 @@ class OurListings extends Component {
   render() {
     let imgSrc = null,
       imgTileSrc = null;
-    let heroImageValuePropGreeting,
-      heroImageValuePropHeading,
-      heroImageValuePropBody,
-      missionStatement,
-      missionStatementLink,
-      missionStatementLinkText,
-      primaryQuote;
+    let heroImage, heroImageBody, heroImageHeading, pageHeading;
+
+    if (this.state.hero) {
+      ({ heroImageBody, heroImageHeading, pageHeading } = this.state.hero);
+      heroImage = this.state.hero.heroImage.fields.file.url;
+    }
 
     let shortMonths = [
       "Jan",
@@ -76,11 +93,11 @@ class OurListings extends Component {
       <div className="our-listings">
         <Helmet title="Avnu - Our Listings" />
         <Hero
-          mainTitle="Find the right property for you."
-          introText="Take a look at what we have listed at the moment"
-          imgSrc="/images/our-listings-header.jpg"
+          mainTitle={heroImageBody}
+          introText={heroImageHeading}
+          imgSrc={heroImage}
           icon="/images/listing-icon.png"
-          headline="Find the right property for you and we will do the rest."
+          headline={pageHeading}
         />
 
         <div className="content-container listings">
@@ -155,15 +172,39 @@ class OurListings extends Component {
               );
             })}
         </div>
-        <div className="content-container">
-          <div className="infinite-scroll">Hello</div>
-          <div class="loading-wrapper">
-            <div class="clock-loader">
-              <div class="clock-loader__minutes" />
-              <div class="clock-loader__hours" />
-            </div>
+
+        <div
+          className={`content-container ${
+            this.state.isLoading ? "animated bounceOutLeft" : ""
+          }`}
+        >
+          <div className="infinite-scroll">
+            <a
+              onClick={() => this.setState({ isLoading: true })}
+              className="with-arrow"
+            >
+              Load more listings
+            </a>
           </div>
         </div>
+        {this.state.isLoading && (
+          <React.Fragment>
+            <div className="content-container animated bounceInRight">
+              <div className="loading-wrapper">
+                <div className="clock-loader clock-loader--error">
+                  <div className="clock-loader__minutes" />
+                  <div className="clock-loader__hours" />
+                </div>
+              </div>
+            </div>
+            <div className="content-container error animated fadeIn">
+              <div className="error">
+                Ooops, we're still ironing out the kinks. Error occurred
+                retrieving other listings
+              </div>
+            </div>
+          </React.Fragment>
+        )}
       </div>
     );
   }

@@ -95,7 +95,7 @@ class AgentProfile extends Component {
       primaryQuote = agentData.primaryQuote.fields.quoteBody;
       secondaryQuote = agentData.secondaryQuote
         ? agentData.secondaryQuote.fields.quoteBody
-        : '"Time or brand related quote that relates to the brand."';
+        : null;
       pastListings = agentData.listingPast;
       agentReviews = agentData.agentReviews;
     }
@@ -149,153 +149,161 @@ class AgentProfile extends Component {
             <p>{primaryQuote}</p>
           </div>
         </InViewMonitor>
-
-        <div className="recent-listings">
-          <div className="content-container">
-            <div className="head">
-              <img src="/images/rss.png" />
-              <h3>
-                Discover some of {firstName + "'s"} recent listings in the area
-              </h3>
+        {pastListings && (
+          <div className="recent-listings">
+            <div className="content-container">
+              <div className="head">
+                <img src="/images/rss.png" />
+                <h3>
+                  Discover some of {firstName + "'s"} recent listings in the
+                  area
+                </h3>
+              </div>
             </div>
-          </div>
-
-          <div className="mapHouse">
-            <MyMapComponent isMarkerShown theMarkers={pastListings} />
-            {pastListings &&
-              pastListings.map((propertyListing, i) => {
-                if (i > 0) {
-                  divStyle = {
-                    display: "none"
-                  };
-                } else {
-                  divStyle = {
-                    display: "block"
-                  };
-                }
-                return (
-                  <div
-                    key={i}
-                    className="mapHouseProperty property"
-                    id={"property-" + propertyListing.fields.location.lon}
-                    style={divStyle}
-                  >
+            <div className="mapHouse">
+              <MyMapComponent isMarkerShown theMarkers={pastListings} />
+              {pastListings &&
+                pastListings.map((propertyListing, i) => {
+                  if (i > 0) {
+                    divStyle = {
+                      display: "none"
+                    };
+                  } else {
+                    divStyle = {
+                      display: "block"
+                    };
+                  }
+                  return (
                     <div
-                      className="property-image"
-                      style={{
-                        backgroundImage: `url(${
-                          propertyListing.fields.tileImage.fields.file.url
-                        })`
-                      }}
+                      key={i}
+                      className="mapHouseProperty property"
+                      id={"property-" + propertyListing.fields.location.lon}
+                      style={divStyle}
                     >
-                      <img
-                        src={propertyListing.fields.tileImage.fields.file.url}
-                      />
-                    </div>
-                    <div className="property-details">
-                      <p className="address">
-                        {propertyListing.fields.suburbAndPostcode}
-                      </p>
-                      <p className="addressLine1">
-                        {propertyListing.fields.addressLine1}
-                      </p>
-                      <p className="price">${propertyListing.fields.price}</p>
-                      <div className="bottom">
-                        <ul className="features">
-                          <li className="beds">
-                            <img src="/images/home-icon.svg" />
-                            <p>{propertyListing.fields.numberOfBeds}</p>
-                          </li>
-                          <li className="baths">
-                            <img src="/images/feature-showers.svg" />
-                            <p>{propertyListing.fields.numberOfBaths}</p>
-                          </li>
-                          <li className="cars">
-                            <img src="/images/feature-carspots.svg" />
-                            <p>{propertyListing.fields.numberOfCars}</p>
-                          </li>
-                        </ul>
+                      <div
+                        className="property-image"
+                        style={{
+                          backgroundImage: `url(${
+                            propertyListing.fields.tileImage.fields.file.url
+                          })`
+                        }}
+                      >
+                        <img
+                          src={propertyListing.fields.tileImage.fields.file.url}
+                        />
+                      </div>
+                      <div className="property-details">
+                        <p className="address">
+                          {propertyListing.fields.suburbAndPostcode}
+                        </p>
+                        <p className="addressLine1">
+                          {propertyListing.fields.addressLine1}
+                        </p>
+                        <p className="price">${propertyListing.fields.price}</p>
+                        <div className="bottom">
+                          <ul className="features">
+                            <li className="beds">
+                              <img src="/images/home-icon.svg" />
+                              <p>{propertyListing.fields.numberOfBeds}</p>
+                            </li>
+                            <li className="baths">
+                              <img src="/images/feature-showers.svg" />
+                              <p>{propertyListing.fields.numberOfBaths}</p>
+                            </li>
+                            <li className="cars">
+                              <img src="/images/feature-carspots.svg" />
+                              <p>{propertyListing.fields.numberOfCars}</p>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
-          </div>
+                  );
+                })}
+            </div>
 
-          {pastListings
-            ? [
-                <div className="content-container" key="listing">
-                  <div className="head list">
-                    <img src="/images/graph-icon.png" />
-                    <h3>
-                      Browse all of {firstName + "'s"} past and present listings
-                    </h3>
-                  </div>
+            {pastListings
+              ? [
+                  <div className="content-container" key="listing">
+                    <div className="head list">
+                      <img src="/images/graph-icon.png" />
+                      <h3>
+                        Browse all of {firstName + "'s"} past and present
+                        listings
+                      </h3>
+                    </div>
 
-                  {pastListings &&
-                    pastListings.map((propertyListing, i) => {
-                      return (
-                        <div key={i} className="property">
-                          <div
-                            className="property-image"
-                            style={{
-                              backgroundImage: `url(${
-                                propertyListing.fields.tileImage.fields.file.url
-                              })`
-                            }}
-                          >
-                            <img
-                              src={
-                                propertyListing.fields.tileImage.fields.file.url
-                              }
-                            />
-                          </div>
-                          <div className="property-details">
-                            <p className="address">
-                              {propertyListing.fields.suburbAndPostcode}
-                            </p>
-                            <p className="addressLine1">
-                              {propertyListing.fields.addressLine1}
-                            </p>
-                            <p className="price">
-                              ${propertyListing.fields.price}
-                            </p>
-                            <div className="bottom">
-                              <ul className="features">
-                                <li className="beds">
-                                  <img src="/images/home-icon.svg" />
-                                  <p>{propertyListing.fields.numberOfBeds}</p>
-                                </li>
-                                <li className="baths">
-                                  <img src="/images/feature-showers.svg" />
-                                  <p>{propertyListing.fields.numberOfBaths}</p>
-                                </li>
-                                <li className="cars">
-                                  <img src="/images/feature-carspots.svg" />
-                                  <p>{propertyListing.fields.numberOfCars}</p>
-                                </li>
-                              </ul>
+                    {pastListings &&
+                      pastListings.map((propertyListing, i) => {
+                        return (
+                          <div key={i} className="property">
+                            <div
+                              className="property-image"
+                              style={{
+                                backgroundImage: `url(${
+                                  propertyListing.fields.tileImage.fields.file
+                                    .url
+                                })`
+                              }}
+                            >
+                              <img
+                                src={
+                                  propertyListing.fields.tileImage.fields.file
+                                    .url
+                                }
+                              />
+                            </div>
+                            <div className="property-details">
+                              <p className="address">
+                                {propertyListing.fields.suburbAndPostcode}
+                              </p>
+                              <p className="addressLine1">
+                                {propertyListing.fields.addressLine1}
+                              </p>
+                              <p className="price">
+                                ${propertyListing.fields.price}
+                              </p>
+                              <div className="bottom">
+                                <ul className="features">
+                                  <li className="beds">
+                                    <img src="/images/home-icon.svg" />
+                                    <p>{propertyListing.fields.numberOfBeds}</p>
+                                  </li>
+                                  <li className="baths">
+                                    <img src="/images/feature-showers.svg" />
+                                    <p>
+                                      {propertyListing.fields.numberOfBaths}
+                                    </p>
+                                  </li>
+                                  <li className="cars">
+                                    <img src="/images/feature-carspots.svg" />
+                                    <p>{propertyListing.fields.numberOfCars}</p>
+                                  </li>
+                                </ul>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      );
-                    })}
-                </div>
-              ]
-            : null}
-        </div>
-
-        <InViewMonitor
-          classNameNotInView="vis-hidden thisisit"
-          intoViewMargin="100px"
-          classNameInView="animated slideInLeft quote-area content-container black"
-        >
-          <div className="the-quote">
-            <img src="/images/graph-grey.png" />
-            <p>{secondaryQuote}</p>
+                        );
+                      })}
+                  </div>
+                ]
+              : null}
           </div>
-        </InViewMonitor>
-
+        )}
+        {secondaryQuote ? (
+          <InViewMonitor
+            classNameNotInView="vis-hidden thisisit"
+            intoViewMargin="100px"
+            classNameInView="animated slideInLeft quote-area content-container black"
+          >
+            <div className="the-quote">
+              <img src="/images/graph-grey.png" />
+              <p>{secondaryQuote}</p>
+            </div>
+          </InViewMonitor>
+        ) : (
+          <div className="blankSpace" />
+        )}
         {agentReviews
           ? [
               <div className="vendors" key="review">

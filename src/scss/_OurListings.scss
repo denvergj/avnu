@@ -32,11 +32,25 @@ $anime-delay: $first-anime-duration - 0.3s;
     }
   }
 }
+.infinite-scroll {
+  margin-top: 40px;
+  color: rgb(243, 100, 82);
+  text-align: center;
+}
+.error {
+  color: rgb(243, 100, 82);
+  text-align: center;
+  margin-top: 49px;
+}
 
 .loading-wrapper {
   position: absolute;
-  height: 100%;
+  margin-top: 00px;
+
   width: 100%;
+}
+.error {
+  -webkit-animation-delay: 5s;
 }
 
 /*
@@ -83,7 +97,7 @@ $anime-delay: $first-anime-duration - 0.3s;
   transform-origin: 1px 1px;
 }
 
-// Error loading
+// Error loading HACK there is a 2 second delay
 .clock-loader--error > .clock-loader__hours {
   animation: broken-clock 5s ease-out 0s 1 normal forwards;
 }

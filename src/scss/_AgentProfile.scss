@@ -374,3 +374,12 @@
     }
   }
 }
+
+.blankSpace {
+  margin: 370px;
+}
+@media (max-width: 767px) {
+  .blankSpace {
+    margin: 100px;
+  }
+}

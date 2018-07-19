@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import OverlayMenu from 'react-overlay-menu';
 import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 import { createClient } from 'contentful';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
  
 class MenuArea extends Component {
   constructor(props) {

@@ -7253,7 +7253,7 @@ a.with-arrow {
       left: 85%;
       width: 15%; }
       .hero .gallery img {
-        max-width: 60%; }
+        max-width: 40%; }
     .hero .hero-text {
       margin-left: -50%;
       transform: translate(0%, -60%); }
@@ -7495,7 +7495,7 @@ a.with-arrow {
   position: absolute;
   margin-top: -640px;
   padding: 40px 0 0 7px;
-  height: 597px;
+  height: 600px;
   overflow: hidden; }
   .mission-statement .content {
     float: right;
@@ -7514,7 +7514,7 @@ a.with-arrow {
         right: -30px; }
 
 .secondary-tiles {
-  margin-top: -248px;
+  margin-top: -245px;
   z-index: 1;
   position: relative; }
   .secondary-tiles .content {
@@ -7863,10 +7863,23 @@ a.with-arrow {
     .listings .property .property-details {
       padding: 25px 10px; } }
 
+.infinite-scroll {
+  margin-top: 40px;
+  color: #f36452;
+  text-align: center; }
+
+.error {
+  color: #f36452;
+  text-align: center;
+  margin-top: 49px; }
+
 .loading-wrapper {
   position: absolute;
-  height: 100%;
+  margin-top: 00px;
   width: 100%; }
+
+.error {
+  -webkit-animation-delay: 5s; }
 
 /*
 	Clock
@@ -8267,6 +8280,13 @@ a.with-arrow {
           max-width: 15px; }
   .agent-profile-page-content .vendors .review {
     display: block; } }
+
+.blankSpace {
+  margin: 370px; }
+
+@media (max-width: 767px) {
+  .blankSpace {
+    margin: 100px; } }
 
 .lightbox {
   position: fixed;
