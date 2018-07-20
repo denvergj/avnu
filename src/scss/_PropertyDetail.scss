@@ -36,7 +36,7 @@
     img {
       display: none;
       margin: 0 auto;
-      max-width: 700px;
+      width: 80%;
       &.active {
         display: block;
       }
@@ -47,6 +47,55 @@
   .property-detail-page {
     display: inline-block;
     width: 100%;
+    .intro {
+      .text {
+        blockquote p {
+          font-style: italic;
+          font-size: 16px;
+          margin-bottom: 27px;
+        }
+        h1 {
+          font-size: 30px;
+          line-height: 32px;
+          margin-bottom: 27px;
+        }
+        h2 {
+          font-size: 26px;
+          line-height: 30px;
+          margin-bottom: 19px;
+        }
+        h3 {
+          font-size: 19px;
+          line-height: 20px;
+          margin-bottom: 10px;
+          font-weight: bold;
+        }
+        b {
+          font-weight: bold;
+        }
+        p {
+          font-size: 16px;
+        }
+        em {
+          line-height: 5px;
+        }
+        strong {
+          line-height: 15px;
+          margin-bottom: 5px;
+        }
+        li {
+          font-size: 16px;
+          line-height: 20px;
+          margin-left: 20px;
+        }
+        ul li {
+          list-style-type: disc;
+        }
+        ol li {
+          list-style-type: decimal;
+        }
+      }
+    }
     .hero {
       min-height: 500px;
       .icon-header {
@@ -182,6 +231,7 @@
             padding-right: 0;
             overflow: hidden;
             background: #fff;
+
             h3 {
               font-size: 26px;
             }

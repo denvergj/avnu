@@ -8059,7 +8059,7 @@ a.with-arrow {
       vertical-align: top;
       margin-bottom: 20px;
       color: #ee654d;
-      font-size: 40px;
+      font-size: 36px;
       line-height: 46px;
       font-family: "Montserrat-Regular"; }
       .agent-profile-page-content .intro .imageSide .stats .stat span {
@@ -8074,7 +8074,6 @@ a.with-arrow {
     .agent-profile-page-content .intro .text p {
       color: #232539;
       font-size: 16px;
-      font-family: "Montserrat-Light";
       margin-bottom: 20px; }
     .agent-profile-page-content .intro .text h2 {
       font-size: 26px;
@@ -8322,13 +8321,47 @@ a.with-arrow {
   .lightbox .gallery-box img {
     display: none;
     margin: 0 auto;
-    max-width: 700px; }
+    width: 80%; }
     .lightbox .gallery-box img.active {
       display: block; }
 
 .agent-profile-page-content .property-detail-page {
   display: inline-block;
   width: 100%; }
+  .agent-profile-page-content .property-detail-page .intro .text blockquote p {
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 27px; }
+  .agent-profile-page-content .property-detail-page .intro .text h1 {
+    font-size: 30px;
+    line-height: 32px;
+    margin-bottom: 27px; }
+  .agent-profile-page-content .property-detail-page .intro .text h2 {
+    font-size: 26px;
+    line-height: 30px;
+    margin-bottom: 19px; }
+  .agent-profile-page-content .property-detail-page .intro .text h3 {
+    font-size: 19px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    font-weight: bold; }
+  .agent-profile-page-content .property-detail-page .intro .text b {
+    font-weight: bold; }
+  .agent-profile-page-content .property-detail-page .intro .text p {
+    font-size: 16px; }
+  .agent-profile-page-content .property-detail-page .intro .text em {
+    line-height: 5px; }
+  .agent-profile-page-content .property-detail-page .intro .text strong {
+    line-height: 15px;
+    margin-bottom: 5px; }
+  .agent-profile-page-content .property-detail-page .intro .text li {
+    font-size: 16px;
+    line-height: 20px;
+    margin-left: 20px; }
+  .agent-profile-page-content .property-detail-page .intro .text ul li {
+    list-style-type: disc; }
+  .agent-profile-page-content .property-detail-page .intro .text ol li {
+    list-style-type: decimal; }
   .agent-profile-page-content .property-detail-page .hero {
     min-height: 500px; }
     .agent-profile-page-content .property-detail-page .hero .icon-header {
