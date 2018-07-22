@@ -1,109 +1,109 @@
 .avnu-header {
-	width: 100%;
-	border-top: 5px solid $primary-color;
-	position: fixed;
-	z-index: 100;
-	.menuArea {
-		float: left;
-	}
-	button {
-		background: $primary-color;
-		border: none;
-		min-width: 300px;
-		padding: 20px 30px 20px 30px;
-		img {
-			float: right;
-			max-width: 100px;
-		}
-		&.hamburger {
-			.hamburger-box {
-				float: left;
-				top:10px;
-			}
-			&.is-active {
-				.hamburger-inner {
-					background: #fff;
-					border-radius: 0;
-					width: 20px;
-					height: 2px;
-				}
-			}
-			&:hover {
-				opacity: 1;
-			}
-		}
-	}
-	.overlay-menu {
-		top:87px;
-		padding-left: 0;
-		max-width: 300px;
-		&.is-open {
-			background: $primary-color;
-		}
-		.menu-item {
-			color: #fff;
-			font-size: 30px;
-			font-family: $primary-font;
-			cursor: pointer;
-			margin-bottom: 50px;
-			.fas {
-				float: right;
-			    margin-right: 50px;
-			    font-size: 18px;
-			    line-height: 28px;
-			    color: #fff;
-			} 
-			a {
-				text-decoration: none;
-				color: #fff;
-			}
-			&.open {
-				.sub-menu {
-					display: block;
-				}
-			}
-			.sub-menu {
-				display: none;
-				.menu-item {
-					padding-top: 15px;
-					margin-bottom: 0;
-				}
-				a {
-					font-size: 22px;
-				}
-			}
-		}
-	}
-	.is-open.overlay-menu {
-		.overlay-menu__wrap {
-			min-width: 300px;
-			padding-top: 50px;
-		}	
-		.overlay-menu__overlay {
-			display: none;
-		}
-	}
-	.overlay-menu__overlay,
-	.overlay-menu__wrap {
-		background: none;
-		box-shadow: none;
-	}
-	.overlay-menu__wrap {
-		padding-left: 30px;
-	}
+  width: 100vw;
+  border-top: 5px solid $primary-color;
+  position: fixed;
+  z-index: 100;
+  .menuArea {
+    float: left;
+  }
+  button {
+    background: $primary-color;
+    border: none;
+    min-width: 300px;
+    padding: 20px 30px 20px 30px;
+    img {
+      float: right;
+      max-width: 100px;
+    }
+    &.hamburger {
+      .hamburger-box {
+        float: left;
+        top: 10px;
+      }
+      &.is-active {
+        .hamburger-inner {
+          background: #fff;
+          border-radius: 0;
+          width: 20px;
+          height: 2px;
+        }
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .overlay-menu {
+    top: 87px;
+    padding-left: 0;
+    max-width: 300px;
+    &.is-open {
+      background: $primary-color;
+    }
+    .menu-item {
+      color: #fff;
+      font-size: 30px;
+      font-family: $primary-font;
+      cursor: pointer;
+      margin-bottom: 50px;
+      .fas {
+        float: right;
+        margin-right: 50px;
+        font-size: 18px;
+        line-height: 28px;
+        color: #fff;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+      &.open {
+        .sub-menu {
+          display: block;
+        }
+      }
+      .sub-menu {
+        display: none;
+        .menu-item {
+          padding-top: 15px;
+          margin-bottom: 0;
+        }
+        a {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+  .is-open.overlay-menu {
+    .overlay-menu__wrap {
+      min-width: 300px;
+      padding-top: 50px;
+    }
+    .overlay-menu__overlay {
+      display: none;
+    }
+  }
+  .overlay-menu__overlay,
+  .overlay-menu__wrap {
+    background: none;
+    box-shadow: none;
+  }
+  .overlay-menu__wrap {
+    padding-left: 30px;
+  }
 }
 
-@media (max-width:767px) {
-	.avnu-header {
-		button {
-			padding: 20px 15px 27px 15px;
-			min-width: 10px;
-			img {
-				display: none;
-			}
-		}
-		.overlay-menu {
-			top:74px;
-		}
-	}	
+@media (max-width: 767px) {
+  .avnu-header {
+    button {
+      padding: 20px 15px 27px 15px;
+      min-width: 10px;
+      img {
+        display: none;
+      }
+    }
+    .overlay-menu {
+      top: 74px;
+    }
+  }
 }

@@ -1,145 +1,145 @@
 .property {
-	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-	margin-bottom: 20px;
-	position: relative;
-	display: flex;
-	.property-image {
-		vertical-align: bottom;
-		max-width: 50%;
-		position: relative;
-		background-size: cover;
-		background-position: top center;
-		img {
-			max-width: 100%;
-			display: block;
-			vertical-align: top;
-			visibility: hidden;
-		}
-		.overlay-details {
-			position: absolute;
-			right: 0;
-			bottom: 0px;
-			* {
-				display: inline-block;
-			}
-			div {
-				padding: 10px 20px;
-				p {
-					font-size: 12px;
-				}
-				&.status {
-					background: $primary-color;
-					p {
-						color: #fff;
-					}
-				}
-				&.date {
-					background: #EBEDF5;
-					p {
-						color: $primary-color;
-					}
-				}
-			}
-		}
-	}
-	.property-details {
-		vertical-align: top;
-		padding: 25px 25px 5px 25px;
-		max-width: 50%;
-		box-sizing: border-box;
-		color: $primary-color;
-		overflow: hidden;
-		display: grid;
-		.type {
-			padding-bottom: 70px;
-			overflow: hidden;
-			* {
-				float: left;
-			}
-			p {
-				line-height: 50px;
-				margin-left: 15px;
-			}
-			img {
-				max-width: 60px;
-			}
-		}
-		p {
-			color: #4A4A4A;
-			&.address {
-				font-size: 26px;
-			}
-			&.price {
-				font-size: 18px;
-				margin-bottom: 15px;
-			}
-			&.description {
-				font-size: 16px;
-			}
-		}
-		.bottom {
-			align-self: flex-end;
-		}
-		.features {
-			max-width: 200px;
-			position: relative;
-			margin-top: 43px;
-			float: left;
-			li {
-				margin-right: 15px;
-				display: inline-block;
-				* {
-					float: left;
-				}
-				img {
-					margin-right: 10px;
-					max-width: 20px;
-				}
-				&.beds {
-					img {
-						margin-top:1px;
-					}
-				}
-				&.baths {
-					img {
-						margin-top:2px;
-					}
-				}
-				&.cars {
-					img {
-						margin-top:2px;
-					}
-				}
-				p {
-				    line-height: 21px;
-				    color:$primary-color;
-					font-size: 16px;
-				}
-			}
-		}
-		a {
-			position: relative;
-			margin-top: 27px;
-			right: -10px;
-			float: right;
-			color:$primary-color;
-		}
-	}
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  .property-image {
+    vertical-align: bottom;
+    max-width: 50%;
+    position: relative;
+    background-size: cover;
+    background-position: top center;
+    img {
+      max-width: 100%;
+      display: block;
+      vertical-align: top;
+      visibility: hidden;
+    }
+    .overlay-details {
+      position: absolute;
+      right: 0;
+      bottom: 0px;
+      * {
+        display: inline-block;
+      }
+      div {
+        padding: 10px 20px;
+        p {
+          font-size: 12px;
+        }
+        &.status {
+          background: $primary-color;
+          p {
+            color: #fff;
+          }
+        }
+        &.date {
+          background: #ebedf5;
+          p {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+  .property-details {
+    vertical-align: top;
+    padding: 25px 25px 5px 25px;
+    max-width: 50%;
+    box-sizing: border-box;
+    color: $primary-color;
+    overflow: hidden;
+    display: grid;
+    .type {
+      padding-bottom: 70px;
+      overflow: hidden;
+      * {
+        float: left;
+      }
+      p {
+        line-height: 50px;
+        margin-left: 15px;
+      }
+      img {
+        max-width: 60px;
+      }
+    }
+    p {
+      color: #4a4a4a;
+      &.address {
+        font-size: 26px;
+      }
+      &.price {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+      &.description {
+        font-size: 16px;
+      }
+    }
+    .bottom {
+      align-self: flex-end;
+    }
+    .features {
+      max-width: 200px;
+      position: relative;
+      margin-top: 43px;
+      float: left;
+      li {
+        margin-right: 15px;
+        display: inline-block;
+        * {
+          float: left;
+        }
+        img {
+          margin-right: 10px;
+          max-width: 20px;
+        }
+        &.beds {
+          img {
+            margin-top: 1px;
+          }
+        }
+        &.baths {
+          img {
+            margin-top: 2px;
+          }
+        }
+        &.cars {
+          img {
+            margin-top: 2px;
+          }
+        }
+        p {
+          line-height: 21px;
+          color: $primary-color;
+          font-size: 16px;
+        }
+      }
+    }
+    a {
+      position: relative;
+      margin-top: 27px;
+      right: -10px;
+      float: right;
+      color: $primary-color;
+    }
+  }
 }
 
-
-@media (max-width:767px) {
-	.property {
-		display: block;
-		.property-image,
-		.property-details {
-			max-width: 100%;
-		}
-		.property-details {
-			padding-bottom: 55px;
-			.type {
-				padding-bottom: 40px;
-			}
-		}
-	}
+@media (max-width: 767px) {
+  .property {
+    display: block;
+    .property-image,
+    .property-details {
+      max-width: 60%;
+    }
+    .property-details {
+      padding-bottom: 55px;
+      .type {
+        padding-bottom: 40px;
+      }
+    }
+  }
 }

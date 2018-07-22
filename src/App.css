@@ -6804,7 +6804,7 @@ input {
     width: 20px; }
 
 .avnu-header {
-  width: 100%;
+  width: 100vw;
   border-top: 5px solid #ee654d;
   position: fixed;
   z-index: 100; }
@@ -7110,7 +7110,6 @@ footer {
 
 @media (max-width: 767px) {
   .contactForm {
-    width: 200px;
     float: right;
     position: relative;
     top: 0; }
@@ -7211,7 +7210,7 @@ a.with-arrow {
     position: absolute;
     bottom: 0; }
   .hero .gallery {
-    background: #ea6646;
+    background: #ee654d;
     height: 100px;
     width: 100px;
     margin-top: 0;
@@ -7220,7 +7219,7 @@ a.with-arrow {
     left: 50%;
     text-align: center;
     cursor: pointer;
-    z-index: 999; }
+    z-index: 90; }
     .hero .gallery img {
       visibility: visible;
       max-width: 30px;
@@ -7343,7 +7342,7 @@ a.with-arrow {
           .property .property-image .overlay-details div.status p {
             color: #fff; }
         .property .property-image .overlay-details div.date {
-          background: #EBEDF5; }
+          background: #ebedf5; }
           .property .property-image .overlay-details div.date p {
             color: #ee654d; }
   .property .property-details {
@@ -7365,7 +7364,7 @@ a.with-arrow {
       .property .property-details .type img {
         max-width: 60px; }
     .property .property-details p {
-      color: #4A4A4A; }
+      color: #4a4a4a; }
       .property .property-details p.address {
         font-size: 26px; }
       .property .property-details p.price {
@@ -7410,7 +7409,7 @@ a.with-arrow {
     display: block; }
     .property .property-image,
     .property .property-details {
-      max-width: 100%; }
+      max-width: 60%; }
     .property .property-details {
       padding-bottom: 55px; }
       .property .property-details .type {
