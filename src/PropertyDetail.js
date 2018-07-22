@@ -72,6 +72,7 @@ class PropertyDetail extends Component {
       listingComparableSales = null,
       agents = null,
       location = null,
+      firstGalleryImage = null,
       heroImage = null,
       price = null,
       numberOfBaths = null,
@@ -96,7 +97,8 @@ class PropertyDetail extends Component {
       listingComparableSales = propertyData.listingComparableSales;
       agents = propertyData.agents;
       location = propertyData.location;
-      heroImage = propertyData.allImages[0].fields.file.url;
+      firstGalleryImage = propertyData.allImages[0].fields.file.url;
+      heroImage = propertyData.heroImageLifestyle.fields.file.url;
       price = propertyData.priceguide;
       numberOfBaths = propertyData.numberOfBaths;
       numberOfBeds = propertyData.numberOfBeds;
@@ -142,9 +144,9 @@ class PropertyDetail extends Component {
           <div className="property">
             <div
               className="property-image"
-              style={{ backgroundImage: `url(${heroImage})` }}
+              style={{ backgroundImage: `url(${firstGalleryImage})` }}
             >
-              <img src={heroImage} />
+              <img src={firstGalleryImage} />
             </div>
             <div className="property-details">
               <p className="address">{suburbAndPostcode}</p>

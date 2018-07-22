@@ -72,6 +72,7 @@ class OurListings extends Component {
       ({ heroImageBody, heroImageHeading, pageHeading } = this.state.hero);
       heroImage = this.state.hero.heroImage.fields.file.url;
     }
+    console.log("this.state", this.state);
 
     let shortMonths = [
       "Jan",
@@ -126,7 +127,7 @@ class OurListings extends Component {
                       </div>
                       <div className="date">
                         <p>
-                          Open {days[date.getDay()]} {date.getMonth()}{" "}
+                          Open {days[date.getDay()]} {date.getDate()}{" "}
                           {shortMonths[date.getMonth()]}
                         </p>
                       </div>
