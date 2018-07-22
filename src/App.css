@@ -7348,7 +7348,6 @@ a.with-arrow {
   .property .property-details {
     vertical-align: top;
     padding: 25px 25px 5px 25px;
-    max-width: 50%;
     box-sizing: border-box;
     color: #ee654d;
     overflow: hidden;
@@ -7407,11 +7406,14 @@ a.with-arrow {
 @media (max-width: 767px) {
   .property {
     display: block; }
+    .property .property-image {
+      max-width: 100%; }
+    .property .comparable {
+      max-width: 50%; }
     .property .property-image,
     .property .property-details {
-      max-width: 60%; }
-    .property .property-details {
       padding-bottom: 55px; }
+      .property .property-image .type,
       .property .property-details .type {
         padding-bottom: 40px; } }
 
@@ -8255,6 +8257,7 @@ a.with-arrow {
       .agent-profile-page-content .recent-listings .property:nth-child(odd) {
         margin-right: 0; }
       .agent-profile-page-content .recent-listings .property .property-details {
+        max-width: 60%;
         padding-bottom: 10px;
         padding-right: 5px;
         padding-top: 5px; }

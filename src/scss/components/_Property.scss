@@ -7,6 +7,7 @@
   .property-image {
     vertical-align: bottom;
     max-width: 50%;
+
     position: relative;
     background-size: cover;
     background-position: top center;
@@ -46,7 +47,7 @@
   .property-details {
     vertical-align: top;
     padding: 25px 25px 5px 25px;
-    max-width: 50%;
+    // max-width: 50%;
     box-sizing: border-box;
     color: $primary-color;
     overflow: hidden;
@@ -131,10 +132,13 @@
 @media (max-width: 767px) {
   .property {
     display: block;
-    .property-image,
-    .property-details {
-      max-width: 60%;
+    .property-image {
+      max-width: 100%;
     }
+    .comparable {
+      max-width: 50%;
+    }
+    .property-image,
     .property-details {
       padding-bottom: 55px;
       .type {

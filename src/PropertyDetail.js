@@ -261,7 +261,7 @@ class PropertyDetail extends Component {
                 return (
                   <div key={i} className="property">
                     <div
-                      className="property-image"
+                      className="property-image comparable"
                       style={{
                         backgroundImage: `url(${
                           compareableSale.fields.tileImage.fields.file.url
