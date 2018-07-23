@@ -7750,7 +7750,8 @@ a.with-arrow {
   font-weight: bold; }
 
 .standard-page .content .content-container p {
-  font-size: 16px; }
+  font-size: 16px;
+  margin-bottom: 20px; }
 
 .standard-page .content .content-container em {
   line-height: 5px; }

@@ -171,7 +171,7 @@ class Home extends Component {
             classNameInView="animated slideInRight content-container"
           >
             <div className="the-quote">
-              <img src="https://images.ctfassets.net/dkcrc82u6zt9/GCYZPz8aAeo8Uw4miyIIo/06f487a622bb6d2d3681c87d0b3d1bd0/man.png" />
+              <img src="/images/" />
               {primaryQuote}
             </div>
           </InViewMonitor>
@@ -185,6 +185,10 @@ class Home extends Component {
                 {this.state.pageData &&
                   this.state.pageData.standardContentBlockTiles.map(
                     (contentBlocks, i) => {
+                      console.log(
+                        "contentBlocks",
+                        contentBlocks.fields.homePageDisplayTile
+                      );
                       imgTileSrc =
                         contentBlocks.fields.homePageDisplayTile.fields
                           .tileImage.fields.file.url;
