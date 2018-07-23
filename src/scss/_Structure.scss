@@ -1,26 +1,26 @@
 main {
-	max-width: 1920px;
+  // max-width: 1920px;
 }
 .content-container {
-	max-width: 930px;
-	padding: 0 20px;
-	margin: 0 auto;
-	position: relative;
+  max-width: 930px;
+  padding: 0 20px;
+  margin: 0 auto;
+  position: relative;
 }
 
-@media (max-width:1199px) {
-	.content-container {
-// 		max-width: 100%; 
-		padding: 0 40px;
-	}
+@media (max-width: 1199px) {
+  .content-container {
+    // 		max-width: 100%;
+    padding: 0 40px;
+  }
 }
 
-@media (max-width:767px) {
-	.content-container {
-		padding: 0 10px;
-		max-width: 100%;
-		h3 {
-			line-height: 30px;
-		}
-	}
+@media (max-width: 767px) {
+  .content-container {
+    padding: 10px;
+    max-width: 100%;
+    h3 {
+      line-height: 30px;
+    }
+  }
 }

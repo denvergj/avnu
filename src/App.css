@@ -5,7 +5,6 @@
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
-@import url(vendors/lightbox/css/lightbox.min.css);
 @import url(~slick-carousel/slick/slick.css);
 @import url(~slick-carousel/slick/slick-theme.css);
 .hamburger {
@@ -628,9 +627,6 @@
     bottom: 0;
     transform: rotate(-90deg); }
 
-main {
-  max-width: 1920px; }
-
 .content-container {
   max-width: 930px;
   padding: 0 20px;
@@ -643,7 +639,7 @@ main {
 
 @media (max-width: 767px) {
   .content-container {
-    padding: 0 10px;
+    padding: 10px;
     max-width: 100%; }
     .content-container h3 {
       line-height: 30px; } }
@@ -6808,7 +6804,7 @@ input {
     width: 20px; }
 
 .avnu-header {
-  width: 100%;
+  width: 100vw;
   border-top: 5px solid #ee654d;
   position: fixed;
   z-index: 100; }
@@ -6966,6 +6962,7 @@ footer {
     min-width: 100%;
     background: none; }
     .contactForm button img {
+      height: 29px;
       display: block; }
     .contactForm button .hamburger-box {
       display: none; }
@@ -7113,7 +7110,6 @@ footer {
 
 @media (max-width: 767px) {
   .contactForm {
-    width: 200px;
     float: right;
     position: relative;
     top: 0; }
@@ -7169,7 +7165,8 @@ a.with-arrow {
   background-size: cover;
   background-position: top center;
   position: relative;
-  min-height: 560px; }
+  min-height: 560px;
+  background-position: 50% 50%; }
   .hero img {
     visibility: hidden;
     max-width: 100%;
@@ -7186,12 +7183,12 @@ a.with-arrow {
     font-size: 18px; }
   .hero .hero-text {
     position: absolute;
-    top: 50%;
-    transform: translate(0%, -50%);
+    top: 40%;
+    transform: translate(0%, -40%);
     left: 50%;
     margin-left: -485px; }
   .hero .icon-header {
-    margin-top: -80px;
+    margin-top: -150px;
     z-index: 1;
     position: relative;
     top: 70px; }
@@ -7213,7 +7210,7 @@ a.with-arrow {
     position: absolute;
     bottom: 0; }
   .hero .gallery {
-    background: #ea6646;
+    background: #ee654d;
     height: 100px;
     width: 100px;
     margin-top: 0;
@@ -7222,7 +7219,7 @@ a.with-arrow {
     left: 50%;
     text-align: center;
     cursor: pointer;
-    z-index: 999; }
+    z-index: 90; }
     .hero .gallery img {
       visibility: visible;
       max-width: 30px;
@@ -7239,28 +7236,37 @@ a.with-arrow {
   .hero .hero-text {
     margin-left: -385px; }
     .hero .hero-text h1 {
+      margin-bottom: 15px;
       line-height: 82px; } }
+
+@media (min-width: 767px) {
+  .hero {
+    height: 560px; } }
 
 @media (max-width: 767px) {
   .hero {
-    background-position: 75% 0; }
+    background-position: 50% 50%;
+    height: 760px;
+    margin-bottom: 5px; }
+    .hero .gallery {
+      height: 20%;
+      left: 85%;
+      width: 15%; }
+      .hero .gallery img {
+        max-width: 40%; }
     .hero .hero-text {
       margin-left: -50%;
-      transform: translate(0%, -85%); }
+      transform: translate(0%, -60%); }
       .hero .hero-text h1 {
-        font-size: 40px;
-        line-height: 43px;
+        font-size: 60px;
+        line-height: 60px;
         margin-bottom: 20px; }
     .hero .icon-header {
-      margin-top: -150px;
+      margin-top: -260px;
       margin-bottom: 0;
       top: 0px; }
-      .hero .icon-header h2 {
-        font-size: 20px;
-        max-width: 220px;
-        line-height: 28px; }
     .hero .white-box {
-      height: 195px;
+      height: 295px;
       width: 85%; } }
 
 .quote-area.content-container {
@@ -7336,13 +7342,12 @@ a.with-arrow {
           .property .property-image .overlay-details div.status p {
             color: #fff; }
         .property .property-image .overlay-details div.date {
-          background: #EBEDF5; }
+          background: #ebedf5; }
           .property .property-image .overlay-details div.date p {
             color: #ee654d; }
   .property .property-details {
     vertical-align: top;
     padding: 25px 25px 5px 25px;
-    max-width: 50%;
     box-sizing: border-box;
     color: #ee654d;
     overflow: hidden;
@@ -7358,7 +7363,7 @@ a.with-arrow {
       .property .property-details .type img {
         max-width: 60px; }
     .property .property-details p {
-      color: #4A4A4A; }
+      color: #4a4a4a; }
       .property .property-details p.address {
         font-size: 26px; }
       .property .property-details p.price {
@@ -7401,11 +7406,14 @@ a.with-arrow {
 @media (max-width: 767px) {
   .property {
     display: block; }
+    .property .property-image {
+      max-width: 100%; }
+    .property .comparable {
+      max-width: 50%; }
     .property .property-image,
     .property .property-details {
-      max-width: 100%; }
-    .property .property-details {
       padding-bottom: 55px; }
+      .property .property-image .type,
       .property .property-details .type {
         padding-bottom: 40px; } }
 
@@ -7451,44 +7459,45 @@ a.with-arrow {
   .mapHouse .property {
     display: none; } }
 
-.hero-slider {
-  min-height: 1136px; }
-  .hero-slider .slick-slider:not(.slick-initialized) .slider-bg {
-    background-image: none; }
-  .hero-slider .slider-bg {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
-    position: relative; }
-    .hero-slider .slider-bg img {
-      visibility: hidden;
-      max-width: 100%;
-      min-height: 1130px; }
-  .hero-slider .welcome {
-    max-width: 500px;
-    color: #fff; }
-    .hero-slider .welcome p {
-      margin-bottom: 40px;
-      font-weight: 300; }
-      .hero-slider .welcome p:last-child {
-        margin-top: 30px; }
-    .hero-slider .welcome h1 {
-      font-size: 90px;
-      font-weight: 300; }
-  .hero-slider .hero-text {
-    position: absolute;
-    top: 50%;
-    z-index: 9;
-    width: 100%;
-    margin-top: -450px; }
+.hero-slider .slick-slider:not(.slick-initialized) .slider-bg {
+  background-image: none; }
+
+.hero-slider .slider-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  position: relative; }
+  .hero-slider .slider-bg img {
+    visibility: hidden;
+    max-width: 100%;
+    height: 1130px; }
+
+.hero-slider .welcome {
+  max-width: 500px;
+  color: #fff; }
+  .hero-slider .welcome p {
+    margin-bottom: 40px;
+    font-weight: 300; }
+    .hero-slider .welcome p:last-child {
+      margin-top: 30px; }
+  .hero-slider .welcome h1 {
+    font-size: 90px;
+    font-weight: 300; }
+
+.hero-slider .hero-text {
+  position: absolute;
+  top: 50%;
+  z-index: 9;
+  width: 100%;
+  margin-top: -450px; }
 
 .mission-statement {
   width: 50%;
   background: #fff;
   position: absolute;
   margin-top: -640px;
-  padding: 40px 0 0 0;
-  height: 597px;
+  padding: 40px 0 0 7px;
+  height: 600px;
   overflow: hidden; }
   .mission-statement .content {
     float: right;
@@ -7507,11 +7516,12 @@ a.with-arrow {
         right: -30px; }
 
 .secondary-tiles {
-  margin-top: -248px;
+  margin-top: -245px;
   z-index: 1;
   position: relative; }
   .secondary-tiles .content {
     width: 49%;
+    max-width: 453px;
     display: inline-block; }
     .secondary-tiles .content img {
       max-width: 100%; }
@@ -7545,7 +7555,7 @@ a.with-arrow {
     padding: 100px 0; }
   .quoting-area .grey {
     padding: 220px 0;
-    background: #E6E6E5; }
+    background: #e6e6e5; }
   .quoting-area .the-quote {
     background: #ee654d;
     padding: 30px 30px;
@@ -7607,11 +7617,11 @@ a.with-arrow {
     min-height: 703px; }
     .hero-slider .slider-bg {
       height: 700px;
-      background-position: 30% 0; }
+      background-position: 50% 50%; }
     .hero-slider .hero-text {
       margin-top: -220px; }
     .hero-slider .welcome h1 {
-      font-size: 50px; }
+      font-size: 45px; }
     .hero-slider .welcome p {
       margin-bottom: 10px;
       font-size: 14px; }
@@ -7675,6 +7685,9 @@ a.with-arrow {
       width: 100%;
       padding: 0; } }
 
+.iconography {
+  width: 60px; }
+
 .standard-page .row {
   margin: 0 -30px; }
 
@@ -7712,6 +7725,11 @@ a.with-arrow {
   padding: 10px 0;
   color: #9b9b9b; }
 
+.standard-page .content .content-container blockquote p {
+  font-style: italic;
+  font-size: 16px;
+  margin-bottom: 27px; }
+
 .standard-page .content .content-container h1 {
   font-size: 30px;
   line-height: 32px;
@@ -7720,19 +7738,41 @@ a.with-arrow {
 .standard-page .content .content-container h2 {
   font-size: 26px;
   line-height: 30px;
-  margin-bottom: 19px;
-  margin-top: 25px; }
+  margin-bottom: 19px; }
+
+.standard-page .content .content-container h3 {
+  font-size: 19px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  font-weight: bold; }
+
+.standard-page .content .content-container b {
+  font-weight: bold; }
 
 .standard-page .content .content-container p {
   font-size: 16px;
-  line-height: 20px;
-  margin-bottom: 15px; }
+  margin-bottom: 20px; }
+
+.standard-page .content .content-container em {
+  line-height: 5px; }
+
+.standard-page .content .content-container strong {
+  line-height: 15px;
+  margin-bottom: 5px; }
 
 .standard-page .content .content-container li {
   font-size: 16px;
   line-height: 20px;
-  margin-left: 20px;
+  margin-left: 20px; }
+
+.standard-page .content .content-container ul {
+  margin-bottom: 20px; }
+
+.standard-page .content .content-container ul li {
   list-style-type: disc; }
+
+.standard-page .content .content-container ol li {
+  list-style-type: decimal; }
 
 .standard-page .content.double .content-container.flex {
   display: flex;
@@ -7767,8 +7807,6 @@ a.with-arrow {
     margin-top: 0px; }
     .standard-page-content footer .grey {
       padding-top: 40px; }
-  .standard-page .hero {
-    margin-bottom: 5px; }
   .standard-page section {
     background: #e6e6e6; }
     .standard-page section:first-of-type {
@@ -7828,6 +7866,106 @@ a.with-arrow {
     padding: 0; }
     .listings .property .property-details {
       padding: 25px 10px; } }
+
+.infinite-scroll {
+  margin-top: 40px;
+  color: #f36452;
+  text-align: center; }
+
+.error {
+  color: #f36452;
+  text-align: center;
+  margin-top: 49px; }
+
+.loading-wrapper {
+  position: absolute;
+  margin-top: 00px;
+  width: 100%; }
+
+.error {
+  -webkit-animation-delay: 5s; }
+
+/*
+	Clock
+  */
+.clock-loader {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid 2px #f36452;
+  left: 50%;
+  margin-left: -45px;
+  top: 50%;
+  margin-top: -25px;
+  animation: pop-in 0.5s ease-in-out 0s 1 normal forwards; }
+
+.clock-loader__hours {
+  position: absolute;
+  height: 2px;
+  width: 15px;
+  top: 50%;
+  left: 50%;
+  margin-top: -1px;
+  margin-left: -1px;
+  background: #f36452;
+  border-radius: 2px;
+  animation: spin-me-round 6s linear 0.2s infinite;
+  transform-origin: 1px 1px; }
+
+.clock-loader__minutes {
+  position: absolute;
+  height: 2px;
+  width: 23px;
+  top: 50%;
+  left: 50%;
+  margin-top: -1px;
+  margin-left: -1px;
+  background: #f36452;
+  border-radius: 2px;
+  animation: spin-me-round 1s linear 0.2s infinite;
+  transform-origin: 1px 1px; }
+
+.clock-loader--error > .clock-loader__hours {
+  animation: broken-clock 5s ease-out 0s 1 normal forwards; }
+
+.clock-loader--error > .clock-loader__minutes {
+  animation: broken-clock-minutes 5s ease-out 0s 1 normal forwards; }
+
+/*
+	Animations
+  */
+@keyframes pop-in {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0; }
+  90% {
+    transform: scale(1.3, 1.3);
+    opacity: 1; }
+  100% {
+    transform: scale(1, 1); } }
+
+@keyframes spin-me-round {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes broken-clock {
+  0% {
+    transform: rotate(0deg); }
+  89% {
+    transform: rotate(180deg); }
+  100% {
+    transform: translate(-28px, 36px) rotate(-15deg); } }
+
+@keyframes broken-clock-minutes {
+  0% {
+    transform: rotate(0deg); }
+  90% {
+    transform: rotate(1050deg); }
+  100% {
+    transform: translate(36px, 38px) rotate(195deg); } }
 
 .our-agents-page-content .hero .icon-header img {
   max-width: 60px;
@@ -7901,7 +8039,7 @@ a.with-arrow {
     margin-bottom: 200px; } }
 
 .agent-profile-page-content .hero {
-  margin-bottom: 150px; }
+  margin-bottom: 130px; }
   .agent-profile-page-content .hero .icon-header h2 {
     font-family: "Montserrat-Regular"; }
 
@@ -7925,14 +8063,14 @@ a.with-arrow {
       vertical-align: top;
       margin-bottom: 20px;
       color: #ee654d;
-      font-size: 40px;
-      line-height: 46px;
+      font-size: 36px;
+      line-height: 26px;
       font-family: "Montserrat-Regular"; }
       .agent-profile-page-content .intro .imageSide .stats .stat span {
         font-size: 16px;
         color: #232539;
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 25px;
         font-family: "Montserrat-Light"; }
   .agent-profile-page-content .intro .text {
     padding-left: 20px;
@@ -7940,18 +8078,15 @@ a.with-arrow {
     .agent-profile-page-content .intro .text p {
       color: #232539;
       font-size: 16px;
-      font-family: "Montserrat-Light";
       margin-bottom: 20px; }
     .agent-profile-page-content .intro .text h2 {
       font-size: 26px;
       line-height: 30px;
-      margin-bottom: 19px;
-      margin-top: 25px; }
+      margin-bottom: 19px; }
     .agent-profile-page-content .intro .text h3 {
       font-size: 24px;
       line-height: 30px;
-      margin-bottom: 19px;
-      margin-top: 25px; }
+      margin-bottom: 19px; }
   .agent-profile-page-content .intro .ctas {
     float: right;
     margin-top: 100px; }
@@ -8003,6 +8138,8 @@ a.with-arrow {
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12); }
     .agent-profile-page-content .recent-listings .property:nth-child(odd) {
       margin-right: 3%; }
+    .agent-profile-page-content .recent-listings .property .property-details li > img {
+      height: 16px; }
     .agent-profile-page-content .recent-listings .property .property-details p.address {
       color: #ee654d;
       font-size: 12px; }
@@ -8082,7 +8219,7 @@ a.with-arrow {
   .agent-profile-page-content .intro .text {
     width: 100%; }
   .agent-profile-page-content .intro.content-container {
-    padding: 0;
+    padding-left: 10px;
     padding-bottom: 50px; }
   .agent-profile-page-content .intro .stats,
   .agent-profile-page-content .intro .text,
@@ -8120,8 +8257,6 @@ a.with-arrow {
       display: flex; }
       .agent-profile-page-content .recent-listings .property:nth-child(odd) {
         margin-right: 0; }
-      .agent-profile-page-content .recent-listings .property .property-image {
-        max-width: 40%; }
       .agent-profile-page-content .recent-listings .property .property-details {
         max-width: 60%;
         padding-bottom: 10px;
@@ -8147,6 +8282,13 @@ a.with-arrow {
           max-width: 15px; }
   .agent-profile-page-content .vendors .review {
     display: block; } }
+
+.blankSpace {
+  margin: 370px; }
+
+@media (max-width: 767px) {
+  .blankSpace {
+    margin: 100px; } }
 
 .lightbox {
   position: fixed;
@@ -8182,23 +8324,61 @@ a.with-arrow {
   .lightbox .gallery-box img {
     display: none;
     margin: 0 auto;
-    max-width: 700px; }
+    width: 80%; }
     .lightbox .gallery-box img.active {
       display: block; }
 
 .agent-profile-page-content .property-detail-page {
   display: inline-block;
   width: 100%; }
+  .agent-profile-page-content .property-detail-page .intro .text blockquote p {
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 27px; }
+  .agent-profile-page-content .property-detail-page .intro .text h1 {
+    font-size: 30px;
+    line-height: 32px;
+    margin-bottom: 27px; }
+  .agent-profile-page-content .property-detail-page .intro .text h2 {
+    font-size: 26px;
+    line-height: 30px;
+    margin-bottom: 19px; }
+  .agent-profile-page-content .property-detail-page .intro .text h3 {
+    font-size: 19px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    font-weight: bold; }
+  .agent-profile-page-content .property-detail-page .intro .text b {
+    font-weight: bold; }
+  .agent-profile-page-content .property-detail-page .intro .text p {
+    font-size: 16px; }
+  .agent-profile-page-content .property-detail-page .intro .text em {
+    line-height: 5px; }
+  .agent-profile-page-content .property-detail-page .intro .text strong {
+    line-height: 15px;
+    margin-bottom: 5px; }
+  .agent-profile-page-content .property-detail-page .intro .text li {
+    font-size: 16px;
+    line-height: 20px;
+    margin-left: 20px; }
+  .agent-profile-page-content .property-detail-page .intro .text ul {
+    margin-bottom: 20px; }
+  .agent-profile-page-content .property-detail-page .intro .text ul li {
+    list-style-type: disc; }
+  .agent-profile-page-content .property-detail-page .intro .text ol li {
+    list-style-type: decimal; }
   .agent-profile-page-content .property-detail-page .hero {
     min-height: 500px; }
-    .agent-profile-page-content .property-detail-page .hero .icon-header h2 {
-      max-width: 347px; }
-    .agent-profile-page-content .property-detail-page .hero .icon-header img {
-      max-width: 60px;
-      height: auto; }
+    .agent-profile-page-content .property-detail-page .hero .icon-header {
+      margin-top: -150px; }
+      .agent-profile-page-content .property-detail-page .hero .icon-header h2 {
+        max-width: 347px; }
+      .agent-profile-page-content .property-detail-page .hero .icon-header img {
+        max-width: 60px;
+        height: auto; }
   .agent-profile-page-content .property-detail-page .property-amenities {
     padding: 210px 0 290px 0;
-    background: #E6E6E6;
+    background: #e6e6e6;
     margin-top: -189px;
     overflow: hidden; }
     .agent-profile-page-content .property-detail-page .property-amenities .head {
@@ -8252,7 +8432,7 @@ a.with-arrow {
             color: #ee654d; }
           .agent-profile-page-content .property-detail-page .local-area .landmarks .place .content h3 {
             font-size: 26px;
-            color: #4A4A4A;
+            color: #4a4a4a;
             line-height: 56px; }
           .agent-profile-page-content .property-detail-page .local-area .landmarks .place .content a {
             float: right;
@@ -8336,7 +8516,7 @@ a.with-arrow {
     padding-bottom: 30px;
     margin-bottom: 0; }
   .property-detail-outer .property-detail-page .property-team {
-    background: #E6E6E5;
+    background: #e6e6e5;
     display: inline-block;
     width: 100%; }
     .property-detail-outer .property-detail-page .property-team .head {

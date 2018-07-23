@@ -1,30 +1,159 @@
+$clock-color: rgb(243, 100, 82);
+$first-anime-duration: 0.5s;
+$anime-delay: $first-anime-duration - 0.3s;
+
 .listing-page {
-	.hero {
-		.icon-header {
-			img {
-				max-width: 60px;
-				height: auto;
-			}
-		}
-	}
-	footer {
-		.grey {
-			background: none;
-			padding-top: 0;
-		}
-	}
+  .hero {
+    .icon-header {
+      img {
+        max-width: 60px;
+        height: auto;
+      }
+    }
+  }
+  footer {
+    .grey {
+      background: none;
+      padding-top: 0;
+    }
+  }
 }
 .listings {
-	padding-top: 150px;
+  padding-top: 150px;
 }
-@media (max-width:767px) {
-	.listings {
-		padding-top: 0px;
-		padding: 0;
-		.property {
-			.property-details {
-				padding: 25px 10px;
-			}
-		}
-	}	
-} 
+@media (max-width: 767px) {
+  .listings {
+    padding-top: 0px;
+    padding: 0;
+    .property {
+      .property-details {
+        padding: 25px 10px;
+      }
+    }
+  }
+}
+.infinite-scroll {
+  margin-top: 40px;
+  color: rgb(243, 100, 82);
+  text-align: center;
+}
+.error {
+  color: rgb(243, 100, 82);
+  text-align: center;
+  margin-top: 49px;
+}
+
+.loading-wrapper {
+  position: absolute;
+  margin-top: 00px;
+
+  width: 100%;
+}
+.error {
+  -webkit-animation-delay: 5s;
+}
+
+/*
+	Clock
+  */
+.clock-loader {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid 2px $clock-color;
+  left: 50%;
+  margin-left: -45px;
+  top: 50%;
+  margin-top: -25px;
+  animation: pop-in $first-anime-duration ease-in-out 0s 1 normal forwards;
+}
+
+.clock-loader__hours {
+  position: absolute;
+  height: 2px;
+  width: 15px;
+  top: 50%;
+  left: 50%;
+  margin-top: -1px;
+  margin-left: -1px;
+  background: $clock-color;
+  border-radius: 2px;
+  animation: spin-me-round 6s linear $anime-delay infinite;
+  transform-origin: 1px 1px;
+}
+
+.clock-loader__minutes {
+  position: absolute;
+  height: 2px;
+  width: 23px;
+  top: 50%;
+  left: 50%;
+  margin-top: -1px;
+  margin-left: -1px;
+  background: $clock-color;
+  border-radius: 2px;
+  animation: spin-me-round 1s linear $anime-delay infinite;
+  transform-origin: 1px 1px;
+}
+
+// Error loading HACK there is a 2 second delay
+.clock-loader--error > .clock-loader__hours {
+  animation: broken-clock 5s ease-out 0s 1 normal forwards;
+}
+.clock-loader--error > .clock-loader__minutes {
+  animation: broken-clock-minutes 5s ease-out 0s 1 normal forwards;
+}
+
+/*
+	Animations
+  */
+
+// scale-in when loading the page
+@keyframes pop-in {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+  90% {
+    transform: scale(1.3, 1.3);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+// normal clock
+@keyframes spin-me-round {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// broken clock hands
+@keyframes broken-clock {
+  0% {
+    transform: rotate(0deg);
+  }
+  89% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: translate(-28px, 36px) rotate(-15deg);
+  }
+}
+@keyframes broken-clock-minutes {
+  0% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(1050deg);
+  }
+  100% {
+    transform: translate(36px, 38px) rotate(195deg);
+  }
+}
