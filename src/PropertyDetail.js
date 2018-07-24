@@ -213,9 +213,7 @@ class PropertyDetail extends Component {
           <div className="content-container">
             <div className="head">
               <img src="/images/rss.png" />
-              <h3>
-                Parts of the local area that will. make it time well spent.
-              </h3>
+              <h3>Property surroundings. This is what's close by.</h3>
             </div>
             <div className="landmarks">
               {allPointsOfInterest &&
