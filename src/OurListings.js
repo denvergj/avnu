@@ -111,12 +111,18 @@ class OurListings extends Component {
                   <div
                     className="property-image"
                     style={{
-                      backgroundImage: `url(${
-                        property.fields.allImages[0].fields.file.url
-                      })`
+                      backgroundImage: `url(${property.fields.allImages &&
+                        property.fields.allImages[0].fields.file.url})`
                     }}
                   >
-                    <img src={property.fields.allImages[0].fields.file.url} />
+                    <Link to={`/our-listings/${property.fields.slug}/`}>
+                      <img
+                        src={
+                          property.fields.allImages &&
+                          property.fields.allImages[0].fields.file.url
+                        }
+                      />
+                    </Link>
                     <div className="overlay-details">
                       <div
                         className={
@@ -133,6 +139,7 @@ class OurListings extends Component {
                       </div>
                     </div>
                   </div>
+
                   <div className="property-details">
                     <div className="type">
                       <img src="/images/listing-icon.png" />

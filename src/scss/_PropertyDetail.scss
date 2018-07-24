@@ -129,20 +129,20 @@
             margin-bottom: 20px;
           }
         }
+        h3 {
+          font-size: 19px;
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
         ul {
           overflow: hidden;
           &.indoor {
             margin-bottom: 50px;
           }
-          &.outdoor {
-            li {
-              width: 100%;
-            }
-          }
           li {
             width: 50%;
             float: left;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
           }
         }
       }
@@ -286,6 +286,11 @@
           width: 100%;
         }
         .features {
+          h3 {
+            font-size: 19px;
+            font-weight: bold;
+          }
+
           float: left;
           width: 100%;
           margin-top: 30px;

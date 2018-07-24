@@ -23,6 +23,9 @@ class Hero extends Component {
     $(document).on("click", ".gallery", function() {
       $(".lightbox").show();
     });
+    $(document).on("click", ".hero", function() {
+      $(".lightbox").show();
+    });
     $(document).on("click", ".lightbox .close", function() {
       $(".lightbox").hide();
     });

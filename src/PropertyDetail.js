@@ -97,7 +97,8 @@ class PropertyDetail extends Component {
       listingComparableSales = propertyData.listingComparableSales;
       agents = propertyData.agents;
       location = propertyData.location;
-      firstGalleryImage = propertyData.allImages[0].fields.file.url;
+      firstGalleryImage =
+        propertyData.allImages && propertyData.allImages[0].fields.file.url;
       heroImage = propertyData.heroImageLifestyle.fields.file.url;
       price = propertyData.priceguide;
       numberOfBaths = propertyData.numberOfBaths;
@@ -179,14 +180,14 @@ class PropertyDetail extends Component {
               <h3>Property Amenities</h3>
             </div>
             <div className="features">
-              <p className="title">Indoor Features</p>
+              <h3 className="title">Indoor Features</h3>
               <ul className="indoor">
                 {indoorFeatures &&
                   indoorFeatures.map((indoorFeature, i) => {
                     return <li key={i}>{indoorFeature}</li>;
                   })}
               </ul>
-              <p className="title">Outdoor Features</p>
+              <h3 className="title">Outdoor Features</h3>
               <ul className="outdoor">
                 {outdoorFeatures &&
                   outdoorFeatures.map((outdoorFeature, i) => {

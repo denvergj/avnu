@@ -171,7 +171,7 @@ class Home extends Component {
             classNameInView="animated slideInRight content-container"
           >
             <div className="the-quote">
-              <img src="/images/" />
+              <img src="/images/HEART_WHITE_RGB.svg" />
               {primaryQuote}
             </div>
           </InViewMonitor>
