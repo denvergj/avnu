@@ -2,6 +2,11 @@ $clock-color: rgb(243, 100, 82);
 $first-anime-duration: 0.5s;
 $anime-delay: $first-anime-duration - 0.3s;
 
+.property {
+  &.hidden {
+    display: none;
+  }
+}
 .listing-page {
   .hero {
     .icon-header {

@@ -106,8 +106,12 @@ class OurListings extends Component {
             this.state.data.map((property, i) => {
               let date = new Date(property.fields.nextOpenDate);
 
+              const propertyClass = property.fields.isLive
+                ? "property"
+                : "property hidden";
+
               return (
-                <div key={i} className="property">
+                <div key={i} className={propertyClass}>
                   <div
                     className="property-image"
                     style={{

@@ -7853,6 +7853,9 @@ a.with-arrow {
   .standard-page .side-area.content-container {
     width: 100%; } }
 
+.property.hidden {
+  display: none; }
+
 .listing-page .hero .icon-header img {
   max-width: 60px;
   height: auto; }

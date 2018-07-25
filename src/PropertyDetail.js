@@ -156,7 +156,7 @@ class PropertyDetail extends Component {
               <div className="bottom">
                 <ul className="features">
                   <li className="beds">
-                    <img src="/images/feature-home.png" />
+                    <img src="/images/home-icon.svg" />
                     <p>{numberOfBeds}</p>
                   </li>
                   <li className="baths">
@@ -213,7 +213,7 @@ class PropertyDetail extends Component {
           <div className="content-container">
             <div className="head">
               <img src="/images/rss.png" />
-              <h3>Property surroundings. This is what's close by.</h3>
+              <h3>Property surroundings. What's close by.</h3>
             </div>
             <div className="landmarks">
               {allPointsOfInterest &&
